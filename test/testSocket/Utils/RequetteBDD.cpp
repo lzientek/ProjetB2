@@ -16,18 +16,18 @@ RequetteBDD::RequetteBDD(string query)
 
 vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int nombre)
 {
-    ostringstream query;
+    ostringstream query("");
     query <<"SELECT * FROM files WHERE ";
     for(unsigned i = 0; i < words.size(); i++)
         query<< "url "<<like(words[i])<<" OR motImportant "<<like(words[i])<< "OR txt "<<like(words[i]);
     query << " LIMIT " << debut <<","<< nombre;
 
     sql::ResultSet  *result;
-    result = executeSQL(query);
+    result = executeSQL(query.str());
 
     vector<Files::Fichier> resultTab;
 
-    while (res->next())
+    while (result->next())
     {
 
          resultTab.insert(resultTab.end(), Files::Fichier( result->getString("titre"),
@@ -50,7 +50,7 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
 
 sql::ResultSet* RequetteBDD::executeSQL(string query)
 {
-    return stmt->execute(query);
+    return stmt->executeQuery(query);
 }
 
 RequetteBDD::~RequetteBDD()

@@ -18,3 +18,9 @@ char* utils::str::stringToChar(string str){
     char* cstr=const_cast<char*>(str.c_str());
     return cstr;
 }
+
+
+int utils::str::calculNote(string text,string motImportant)
+{
+    return 2;//TODO: implémenter calcul note
+}

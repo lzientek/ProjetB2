@@ -16,7 +16,7 @@ Resultat::Resultat(vector<string> words)
 int Resultat::search()
 {
     utils::RequetteBDD req;
-    req.search(words);
+    req.search(this->words);
     return 0;
 }
 

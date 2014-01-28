@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <stdexcept>
+#include <sstream>
 #include <ctime>
 
 namespace utils

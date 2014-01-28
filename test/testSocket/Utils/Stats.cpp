@@ -20,7 +20,9 @@ int Stats::getNbRequeteServ()
 void Stats::incRequeteServ(int act,string key)
 {
     nbRequeteServeur++;
-    actualAction = (string)act + ":" + key;
+    ostringstream stream;
+    stream << act << ":"<<key;
+    actualAction = stream.str();
     save();
 }
 

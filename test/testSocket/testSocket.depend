@@ -3482,3 +3482,133 @@
 	<stdexcept>
 	<ctime>
 
+1390936477 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Files/Fichier.cpp
+	"Fichier.h"
+
+1390936462 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Files/Fichier.h
+	<iostream>
+
+1390938123 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Recherche/Resultat.cpp
+	"Resultat.h"
+
+1390937841 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Recherche/Resultat.h
+	<iostream>
+	<string>
+	<sstream>
+	<vector>
+	"../Files/Fichier.h"
+	"../Utils/RequetteBDD.h"
+
+1390936925 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
+	"Conf.h"
+	<iostream>
+	<vector>
+	<sstream>
+	<string>
+	"mysql_connection.h"
+	"mysql_driver.h"
+	"../Files/Fichier.h"
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	<cppconn/statement.h>
+
+1390922138 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.h
+	<map>
+	<iostream>
+	<string>
+	<fstream>
+	<stdexcept>
+	"StringUtils.h"
+
+1390936329 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
+	<string>
+	<vector>
+	<string.h>
+
+1390937841 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.cpp
+	"Serveur.h"
+	"Serveur/HttpHeader.h"
+
+1390937841 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.h
+	"defines.h"
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<sys/fcntl.h>
+	<string.h>
+	"Serveur/HttpHeader.h"
+	"Recherche/Resultat.h"
+	"Files/Fichier.h"
+	"Utils/Stats.h"
+	"ajout/Ajout.h"
+
+1390937841 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/defines.h
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<stdio.h>
+	<vector>
+	"Utils/Conf.h"
+	"Utils/Processus.h"
+	"Utils/Stats.h"
+
+1390923919 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Processus.h
+	<iostream>
+	<stdio.h>
+	<unistd.h>
+	<errno.h>
+	<sys/types.h>
+	<thread>
+	<cstdlib>
+	"../Serveur.h"
+	"Conf.h"
+
+1390937045 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Stats.h
+	"Conf.h"
+	<iostream>
+	<string>
+	<fstream>
+	<stdexcept>
+	<sstream>
+	<ctime>
+
+1390937841 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur/HttpHeader.h
+	<iostream>
+	<string>
+	<vector>
+	"../Utils/StringUtils.h"
+	"../Serveur.h"
+
+1390937841 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.h
+	<iostream>
+	<string>
+	"../Files/Fichier.h"
+
+1390937841 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur/HttpHeader.cpp
+	"HttpHeader.h"
+
+1390922123 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.cpp
+	"Conf.h"
+
+1390936818 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+	"RequetteBDD.h"
+
+1390937118 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
+	"StringUtils.h"
+
+1390937841 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+	"Ajout.h"
+
+1390937841 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
+	"defines.h"
+
+1390930349 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Processus.cpp
+	"Processus.h"
+
+1390937015 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Stats.cpp
+	"Stats.h"
+
