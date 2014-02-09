@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="Files/Fichier.cpp" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="Files/Fichier.h" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="Recherche/Resultat.cpp" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="Recherche/Resultat.h" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="Serveur.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="1043" topLine="41" />
+	</File>
+	<File name="Serveur.h" open="1" top="0" tabpos="2">
+		<Cursor position="179" topLine="0" />
+	</File>
+	<File name="Serveur/HttpHeader.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="491" topLine="10" />
+	</File>
+	<File name="Serveur/HttpHeader.h" open="1" top="0" tabpos="5">
+		<Cursor position="301" topLine="3" />
+	</File>
+	<File name="Utils/RequetteBDD.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="Utils/RequetteBDD.h" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="Utils/StringUtils.h" open="0" top="0" tabpos="7">
+		<Cursor position="294" topLine="0" />
+	</File>
+	<File name="ajout/Ajout.h" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="defines.h" open="0" top="0" tabpos="0">
+		<Cursor position="127" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="135" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

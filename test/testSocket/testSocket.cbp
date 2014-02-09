@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="testSocket" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/testSocket" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/testSocket" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="/usr/local/include" />
+			<Add directory="/usr/include" />
+			<Add directory="/home/dev1/Documents/projet/test/testSocket/" />
+		</Compiler>
+		<Unit filename="Files/Fichier.cpp" />
+		<Unit filename="Files/Fichier.h" />
+		<Unit filename="Recherche/Resultat.cpp" />
+		<Unit filename="Recherche/Resultat.h" />
+		<Unit filename="Serveur.cpp" />
+		<Unit filename="Serveur.h" />
+		<Unit filename="Serveur/HttpHeader.cpp" />
+		<Unit filename="Serveur/HttpHeader.h" />
+		<Unit filename="Utils/Conf.cpp" />
+		<Unit filename="Utils/Conf.h" />
+		<Unit filename="Utils/RequetteBDD.cpp" />
+		<Unit filename="Utils/RequetteBDD.h" />
+		<Unit filename="Utils/StringUtils.cpp" />
+		<Unit filename="Utils/StringUtils.h" />
+		<Unit filename="ajout/Ajout.cpp" />
+		<Unit filename="ajout/Ajout.h" />
+		<Unit filename="defines.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
