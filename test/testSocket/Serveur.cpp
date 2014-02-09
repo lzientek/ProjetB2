@@ -13,6 +13,9 @@ Serveur::Serveur()
     Serveur(8080);
 }
 
+
+
+
 Serveur::Serveur(int port)
 {
     error = false;
@@ -50,6 +53,8 @@ Serveur::Serveur(int port)
 }
 
 
+
+
 bool Serveur::ecoute()
 {
     if(error)
@@ -77,6 +82,8 @@ bool Serveur::ecoute()
     //si aucune erreur on continue l'écoute
     return !error; //TODO : better (exeption)
 }
+
+
 
 void Serveur::envoieReponse()
 {
@@ -122,11 +129,13 @@ bool Serveur::getError()
     return error;
 }
 
+
 void Serveur::closeSocket()
 {
     close(newsockfd);
     close(sockfd);
 }
+
 
 Serveur::~Serveur()
 {
