@@ -3,3 +3,4 @@ userMysql=root
 mdpMysql=root
 BDDname=test
 statFile=stats.log
+portServeur=8080

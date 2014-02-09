@@ -7,15 +7,14 @@ Processus::Processus()
 {
 
     cout<<"[prog]demarrage des processus"<<endl;
-
+//TODO:un try catch
     thread threadServeur(runServeur);
     thread threadCrawl(runCrawl );
     thread threadCmd(runCommande );
     threadServeur.join();
     threadCrawl.join();
-
-
     threadCmd.join();
+
 
 }
 
@@ -89,6 +88,7 @@ void utils::runCommande()
         boucle = cmd();
     }
     Conf::setQuitter(true);
+    cout<<"[cmd]arret cmd"<<endl;
 }
 
 
@@ -104,11 +104,13 @@ bool utils::cmd()
 
     //on split pour les différents arguments
     vector<string> args = str::split(commande," ");
-    commande = args[0];
+    if(args.size() > 0)
+        commande = args[0];
+
 
     //gros if tout moche car pas de switch pour les string
 
-    if(commande == "exit" || commande=="")
+    if(commande == "exit")
     {
         cout<<"[prog]Le programme va quitter."<<endl;
         boucle = false;
@@ -123,6 +125,9 @@ bool utils::cmd()
     else if(commande == "clear")
         system("clear");
 
+
+    else if(commande == "port")
+        cout<<"Port serveur:"<<Conf::getConf("portServeur")<<endl;
 
     else if(commande == "connection")
     {
@@ -150,6 +155,7 @@ bool utils::cmd()
         cout<<"reloadconf : pour charger la conf de nouveau"<<endl;
         cout<<"clear : clear l'écran"<<endl;
         cout<<"connection [show|hide] : affiche les headers du serveur"<<endl;
+        cout<<"port : affiche le port utilisé par le serveur"<<endl;
         //TODO : implementer pour chaque nouvelle commande et p⁻e le mettre dans un fichier
     }
 

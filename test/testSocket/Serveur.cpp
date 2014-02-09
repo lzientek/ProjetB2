@@ -45,11 +45,13 @@ Serveur::Serveur(int port)
 
 
     listen(sockfd,10);//écoute
+
     if (fcntl(sockfd, F_SETFL, O_NDELAY) < 0)
     {
         cerr<<"Can't set socket to non-blocking";
         error = true;
     }
+
 }
 
 
@@ -71,11 +73,10 @@ bool Serveur::ecoute()
     }
     else
     {
+        if(verbose)
+            cout<<"envoie rep"<<endl;
         envoieReponse();
     }
-
-
-
 
     close(newsockfd);
 

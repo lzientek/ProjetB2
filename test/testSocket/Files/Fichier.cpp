@@ -33,7 +33,7 @@ string Fichier::getType()
             return "html";
             break;
         default:
-            return "";
+            return "file";
             break;
     }
 }

@@ -10,13 +10,14 @@ Resultat::Resultat(vector<string> words)
     this->words = words;
     for(int i = 0; i<words.size();i++)
         wordsStr += words[i] + " ";
+    search();
 }
 
 
 int Resultat::search()
 {
     utils::RequetteBDD req;
-    req.search(this->words);
+    files = req.search(this->words);
     return 0;
 }
 
@@ -36,11 +37,11 @@ string Resultat::toXml()
 
     for(unsigned int i=0; i<files.size(); i++) //pour chaque objet une nouvelle balise xml
     {
-        streamToRet<<"<"<< files[i].getType() <<">";
+        streamToRet<<"<file type=\""<< files[i].getType() <<"\">";
 
         streamToRet<<"<titre>";
         streamToRet<< files[i].getNom();
-        streamToRet<<"</titre>";
+        streamToRet<<"</titre>"<<endl;
 
         streamToRet<<"<url>";
         streamToRet<< files[i].getURL();
@@ -54,7 +55,7 @@ string Resultat::toXml()
         streamToRet<< files[i].getResume();
         streamToRet<<"</resume>";
 
-        streamToRet<<"</"<<files[i].getType()<<">";
+        streamToRet<<"</file>";
     }
     streamToRet<<"</results>"<<endl;
     return streamToRet.str();

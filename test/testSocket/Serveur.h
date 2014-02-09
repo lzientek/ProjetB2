@@ -15,7 +15,7 @@
 
 namespace serv
 {
-    const string HTTPOK = "HTTP/1.1 200 OK \n\n";
+    const string HTTPOK = "HTTP/1.1 200 OK\n\n\n";
     const string HTTP404 = "HTTP/1.1 404 Not Found\n\n";
 
     class Serveur
