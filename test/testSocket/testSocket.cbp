@@ -45,8 +45,12 @@
 		<Unit filename="Serveur/HttpHeader.h" />
 		<Unit filename="Utils/Conf.cpp" />
 		<Unit filename="Utils/Conf.h" />
+		<Unit filename="Utils/Processus.cpp" />
+		<Unit filename="Utils/Processus.h" />
 		<Unit filename="Utils/RequetteBDD.cpp" />
 		<Unit filename="Utils/RequetteBDD.h" />
+		<Unit filename="Utils/Stats.cpp" />
+		<Unit filename="Utils/Stats.h" />
 		<Unit filename="Utils/StringUtils.cpp" />
 		<Unit filename="Utils/StringUtils.h" />
 		<Unit filename="ajout/Ajout.cpp" />
