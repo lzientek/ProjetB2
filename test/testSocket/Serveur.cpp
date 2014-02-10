@@ -98,15 +98,14 @@ void Serveur::envoieReponse()
 
     if(action !=A_404ERROR)
     {
-        if(action ==A_RECHERCHE)
+        if(action ==A_RECHERCHE) //si l'utilisateur fais un recherche
         {
             Recherche::Resultat resultRecherche = Recherche::Resultat(header.getKeys()); // on passe les arguments de recherche du header a a recherche
             rep = HTTPOK;//on met le header
-            resultRecherche.add(Files::Fichier("test","http://lucas.zientek.fr","coucou c'est un test"));
             rep += resultRecherche.toXml();
         }
 
-        else if( action == A_AJOUT )
+        else if( action == A_AJOUT ) //si il veut ajouter une url
         {
             Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
             rep = HTTPOK;//header ok

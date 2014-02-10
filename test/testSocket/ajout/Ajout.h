@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 #include "../Files/Fichier.h"
-
+#include "../Client/ClientHTTP.h"
+#include "../Utils/Url.h"
+#include "../Client/HTTPclientHeader.h"
 
 namespace Add
 {
@@ -13,8 +15,9 @@ namespace Add
 
             Ajout(string url);
             virtual ~Ajout();
+            bool getFile();
         protected:
-            std::string url;
+            utils::Url url;
             Files::Fichier file;
         private:
     };

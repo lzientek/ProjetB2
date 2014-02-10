@@ -35,6 +35,10 @@
 			<Add directory="/usr/include" />
 			<Add directory="/home/dev1/Documents/projet/test/testSocket/" />
 		</Compiler>
+		<Unit filename="Client/ClientHTTP.cpp" />
+		<Unit filename="Client/ClientHTTP.h" />
+		<Unit filename="Client/HTTPclientHeader.cpp" />
+		<Unit filename="Client/HTTPclientHeader.h" />
 		<Unit filename="Files/Fichier.cpp" />
 		<Unit filename="Files/Fichier.h" />
 		<Unit filename="Recherche/Resultat.cpp" />
@@ -53,6 +57,8 @@
 		<Unit filename="Utils/Stats.h" />
 		<Unit filename="Utils/StringUtils.cpp" />
 		<Unit filename="Utils/StringUtils.h" />
+		<Unit filename="Utils/Url.cpp" />
+		<Unit filename="Utils/Url.h" />
 		<Unit filename="ajout/Ajout.cpp" />
 		<Unit filename="ajout/Ajout.h" />
 		<Unit filename="defines.h" />

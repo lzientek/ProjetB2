@@ -82,7 +82,9 @@ string HttpHeader::getChemin()
 {
     string returnValue = "";
     for(unsigned i = 0; i < keys.size(); i++)
-        returnValue += keys[i];
+        returnValue += "/"+keys[i]; //on remet les '/' au cas ou des urls
+    returnValue.erase(0,1);//onsupprime le premier '/'
+
     return returnValue;
 }
 
