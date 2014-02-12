@@ -15,6 +15,7 @@ namespace utils
             string getUrl(){return url;}
             string getGet(){return get;}
             string getUri(){return uri;}
+            bool isValid(){return (get!="" && url!="");}
             virtual ~Url();
         protected:
         private:

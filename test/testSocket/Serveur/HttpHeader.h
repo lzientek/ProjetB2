@@ -37,7 +37,7 @@ namespace serv
             string header;
             string action;
             string cheminRequete;
-            vector<string> keys;
+            string keys;
             bool method;
     };
 }

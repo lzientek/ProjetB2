@@ -13,7 +13,7 @@ ClientHTTP::ClientHTTP(utils::Url uri)
         struct hostent * host = gethostbyname(utils::str::stringToChar(urlClient.getUrl()));
 
         if ( (host == NULL) || (host->h_addr == NULL) )
-            cerr << "[ClientHttp]Error retrieving DNS information."<<urlClient.getUrl() << endl;
+            cerr << "[ClientHttp]Error retrieving DNS information."<<endl<<urlClient.getUrl() << endl;
 
 
         bzero(&client, sizeof(client));
@@ -25,14 +25,14 @@ ClientHTTP::ClientHTTP(utils::Url uri)
         //creation du socket
         sock = socket(AF_INET, SOCK_STREAM, 0);
         if (sock < 0)
-            cerr << "[Client]Error creating socket." << endl;
+            cerr << "[ClientHttp]Error creating socket." << endl;
 
 
         //connection au serveur distant
         if ( connect(sock, (struct sockaddr *)&client, sizeof(client)) < 0 )
         {
             close(sock);
-            cerr << "[Client]Could not connect" << endl;
+            cerr << "[ClientHttp]Could not connect" << endl;
         }
 
         //creation du header
@@ -45,7 +45,7 @@ ClientHTTP::ClientHTTP(utils::Url uri)
 
 
         if (send(sock, request.c_str(), request.length(), 0) != (int)request.length())
-            cerr << "Error sending request." << endl;
+            cerr << "[ClientHttp]Error sending request." << endl;
 
         //TODO : faire quelque chose de potable qui fonctionne
         char cur[999999];
@@ -53,11 +53,12 @@ ClientHTTP::ClientHTTP(utils::Url uri)
         if ( read(sock, &cur, 999999) > 0 )
         {
             page<< cur;
+
         }
         file = page.str();
     }
     else
-    cerr<<"[clientHttp]error url"<<urlClient.getUrl()<<endl;
+        cerr<<"[clientHttp]error url"<<endl<<urlClient.getUri()<<endl;
 }
 
 

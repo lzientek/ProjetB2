@@ -8,7 +8,7 @@ using namespace std;
 
 namespace utils
 {
-    const string RETOURLIGNE = "\n";
+    const string RETOURLIGNE = "\r\n";
     class str
     {
         public:

@@ -31,14 +31,17 @@ bool HttpHeader::parse()
     {
         string lineGET = lignes[0];
         unsigned posEnd = lineGET.find(HTTP_PROTOCOLE);
+
         if( lineGET.find("GET") != string::npos )//si le GET est bien présent
         {
-            cheminRequete = lineGET.substr(4,posEnd-4);
+            cheminRequete = lineGET.substr(5,posEnd-5);
             parseChemin();
-        }
 
-        if(serv::Serveur::verbose)
-            cout<<"chemin requete: "<<cheminRequete<<endl<<"action: "<<action<<endl;
+            if(serv::Serveur::verbose)
+                cout<<"chemin requete: "<<endl
+                    <<lineGET<<endl
+                    <<"action: "<<action<<endl;
+        }
     }
     else
         return false;
@@ -51,12 +54,10 @@ bool HttpHeader::parseChemin()
 {
     if(cheminRequete != ERROR404)
     {
-        vector<string> vectStr = str::split(cheminRequete,"/");
+        vector<string> vectStr = str::split(cheminRequete,"?");
         action = vectStr[0];
-        vectStr.erase( vectStr.begin() ); //on supprime le premier
 
-        if(vectStr.size()>0)
-            keys = vectStr;
+        keys = vectStr[1];
     }
     return true;
 }
@@ -80,17 +81,12 @@ int HttpHeader::getAction()
 
 string HttpHeader::getChemin()
 {
-    string returnValue = "";
-    for(unsigned i = 0; i < keys.size(); i++)
-        returnValue += "/"+keys[i]; //on remet les '/' au cas ou des urls
-    returnValue.erase(0,1);//onsupprime le premier '/'
-
-    return returnValue;
+    return keys;
 }
 
 vector<string> HttpHeader::getKeys()
 {
-    return keys;
+    return str::split(keys,"&");
 }
 
 

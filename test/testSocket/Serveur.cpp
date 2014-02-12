@@ -108,7 +108,7 @@ void Serveur::envoieReponse()
         else if( action == A_AJOUT ) //si il veut ajouter une url
         {
             Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
-            rep = HTTPOK;//header ok
+            nouvelleAjout.getFile();
         }
     }
 

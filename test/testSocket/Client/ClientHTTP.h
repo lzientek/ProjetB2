@@ -12,10 +12,7 @@ namespace client
         public:
             ClientHTTP(utils::Url uri);
             Files::Fichier getResultFile();
-            string getResultStr()
-            {
-                return file;
-            }
+            string getResultStr(){return file;}
             virtual ~ClientHTTP();
         protected:
         private:

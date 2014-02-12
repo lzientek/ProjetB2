@@ -6,6 +6,7 @@
 #include "../Client/ClientHTTP.h"
 #include "../Utils/Url.h"
 #include "../Client/HTTPclientHeader.h"
+#include "../Serveur.h"
 
 namespace Add
 {
