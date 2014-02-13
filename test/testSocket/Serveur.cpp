@@ -98,7 +98,7 @@ void Serveur::envoieReponse()
 
     if(action !=A_404ERROR)
     {
-        if(action ==A_RECHERCHE) //si l'utilisateur fais un recherche
+        if(action ==A_RECHERCHE) //si l'utilisateur fais une recherche
         {
             Recherche::Resultat resultRecherche = Recherche::Resultat(header.getKeys()); // on passe les arguments de recherche du header a a recherche
             rep = HTTPOK;//on met le header
@@ -107,8 +107,10 @@ void Serveur::envoieReponse()
 
         else if( action == A_AJOUT ) //si il veut ajouter une url
         {
-            Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
-            nouvelleAjout.getFile();
+            thread threadAjout(ajout,header.getChemin());
+
+            threadAjout.join();
+            rep = HTTPOK;
         }
     }
 
@@ -142,3 +144,16 @@ Serveur::~Serveur()
 
 }
 
+//----------------------------------------foction de thread pour ajout()
+
+void serv::ajout(string chemin)
+{
+    if(serv::Serveur::verbose)
+        cout<<"[treadAdd]strat"<<endl;
+
+    Add::Ajout nouvelleAjout = Add::Ajout(chemin);
+    nouvelleAjout.getFile();
+
+    if(serv::Serveur::verbose)
+        cout<<"[treadAdd]end"<<endl;
+}

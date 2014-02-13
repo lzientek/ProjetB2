@@ -39,7 +39,7 @@ ClientHTTP::ClientHTTP(utils::Url uri)
         stringstream ss;
         ss << "GET " << urlClient.getGet() << " HTTP/1.1\r\n"
         << "Host: "<< urlClient.getUrl() <<"\r\n"
-        << "Accept: text/html,text/xml\r\n"
+        << "Accept: text/html,text/xml, */*\r\n"
         << "\r\n\r\n";
         string request = ss.str();
 
@@ -48,12 +48,12 @@ ClientHTTP::ClientHTTP(utils::Url uri)
             cerr << "[ClientHttp]Error sending request." << endl;
 
         //TODO : faire quelque chose de potable qui fonctionne
-        char cur[999999];
+        char server_reply[2000];
         stringstream page;
-        if ( read(sock, &cur, 999999) > 0 )
+        int n = 0;
+        while ((n = recv(sock , server_reply , 2000 , 0))> 0 )
         {
-            page<< cur;
-
+            page<< server_reply;
         }
         file = page.str();
     }
@@ -63,10 +63,7 @@ ClientHTTP::ClientHTTP(utils::Url uri)
 
 
 
-Files::Fichier ClientHTTP::getResultFile()
-{
-    return resultFile;
-}
+
 
 
 

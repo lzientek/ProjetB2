@@ -18,6 +18,8 @@ namespace serv
     const string HTTPOK = "HTTP/1.1 200 OK\r\n\r\n";
     const string HTTP404 = "HTTP/1.1 404 Not Found\r\n\r\n";
 
+    void ajout(string chemin);
+
     class Serveur
     {
         public:

@@ -129,6 +129,22 @@ bool utils::cmd()
     else if(commande == "port")
         cout<<"Port serveur:"<<Conf::getConf("portServeur")<<endl;
 
+
+    else if(commande == "resolvError")
+    {
+        ifstream fichieraddon("addon", ios::in);  // on ouvre le fichier conf
+        string actualLine;
+        if(fichieraddon)//si l'ouverture a réussi
+            while(!fichieraddon.eof()) //jusqu'a la fin du fichier
+            {
+                getline(fichieraddon,actualLine); //on lis ligne par ligne
+                cout<<actualLine<<endl;
+            }
+        fichieraddon.close();
+    }
+
+
+
     else if(commande == "connection")
     {
         if(args.size()>1)
@@ -154,8 +170,9 @@ bool utils::cmd()
         cout<<"exit : Fermer le programme"<<endl;
         cout<<"reloadconf : pour charger la conf de nouveau"<<endl;
         cout<<"clear : clear l'écran"<<endl;
-        cout<<"connection [show|hide] : affiche les headers du serveur"<<endl;
+        cout<<"connection [show|hide] : affiche les connections du serveur"<<endl;
         cout<<"port : affiche le port utilisé par le serveur"<<endl;
+        cout<<"resolvError : affiche comment resoudre les erreurs"<<endl;
         //TODO : implementer pour chaque nouvelle commande et p⁻e le mettre dans un fichier
     }
 

@@ -70,7 +70,7 @@ int HttpHeader::getAction()
 {
     if(action == "recherche")
         return A_RECHERCHE;
-    else if(action == "ajout")
+    else if(action == "add")
         return A_AJOUT;
     else
     {
