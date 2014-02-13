@@ -107,10 +107,11 @@ void Serveur::envoieReponse()
 
         else if( action == A_AJOUT ) //si il veut ajouter une url
         {
-            thread threadAjout(ajout,header.getChemin());
-
-            threadAjout.join();
+            Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
+           // thread threadAjout(ajout,header.getChemin());
+            //threadAjout.join();
             rep = HTTPOK;
+            rep = nouvelleAjout.getFile().getTextFull();
         }
     }
 
@@ -149,7 +150,7 @@ Serveur::~Serveur()
 void serv::ajout(string chemin)
 {
     if(serv::Serveur::verbose)
-        cout<<"[treadAdd]strat"<<endl;
+        cout<<"[treadAdd]start : "<<chemin<<endl;
 
     Add::Ajout nouvelleAjout = Add::Ajout(chemin);
     nouvelleAjout.getFile();

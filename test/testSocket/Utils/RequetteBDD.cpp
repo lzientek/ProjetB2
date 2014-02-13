@@ -19,8 +19,13 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
     ostringstream query("");
     query <<"SELECT * FROM files WHERE ";
     for(unsigned i = 0; i < words.size(); i++)
-        query<< "url "<<like(words[i])<<" OR motImportant "<<like(words[i])<< " OR txt "<<like(words[i]);
-    query << " LIMIT " << debut <<","<< nombre;
+    {
+        if(i>0)
+            query<<"OR ";
+        query<< "url "<<like(words[i])<<" OR motImportant "<<like(words[i])<< " OR txt "<<like(words[i])<<" ";
+    }
+
+    query << "LIMIT " << debut <<","<< nombre;
 
     sql::ResultSet  *result;
 

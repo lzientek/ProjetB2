@@ -176,7 +176,6 @@ bool utils::cmd()
         //TODO : implementer pour chaque nouvelle commande et p⁻e le mettre dans un fichier
     }
 
-
     else
         cout<<"La commande "<<commande<< " n'éxiste pas. (help pour voir les commandes)"<<endl;
 

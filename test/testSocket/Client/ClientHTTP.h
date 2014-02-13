@@ -11,13 +11,13 @@ namespace client
     {
         public:
             ClientHTTP(utils::Url uri);
-            Files::Fichier getResultFile();
+
             string getResultStr(){return file;}
             virtual ~ClientHTTP();
         protected:
         private:
             utils::Url urlClient;
-            Files::Fichier resultFile;
+
             string file;
             struct sockaddr_in client;
             int sock;

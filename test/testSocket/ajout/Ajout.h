@@ -16,7 +16,7 @@ namespace Add
 
             Ajout(string url);
             virtual ~Ajout();
-            bool getFile();
+            Files::Fichier getFile();
         protected:
             utils::Url url;
             Files::Fichier file;

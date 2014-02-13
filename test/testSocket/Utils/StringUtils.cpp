@@ -29,3 +29,13 @@ int utils::str::calculNote(string text,string motImportant)
 {
     return 2;//TODO: implémenter calcul note
 }
+
+
+/**
+*@return les mots importants séparé par une virgule
+**/
+string utils::str::generateMotImportant(string fullText)
+{
+    //TODO: écrire cette fonction de taré
+    return "lucas,zientek";
+}

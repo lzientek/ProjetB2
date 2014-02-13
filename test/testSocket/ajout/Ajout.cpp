@@ -20,28 +20,42 @@ Files::Fichier Ajout::getFile()
         do
         {
             client::ClientHTTP httpRequest(url);//on créé la requete http
-            client::HTTPclientHeader header(httpRequest.getResultStr()); //on passe le resultat au header
-            code = header.getHttpCode();//recuperre le code http (200 ok 404 etc...)
-
-            if(serv::Serveur::verbose) //si on est en mode verbeux on affiche les code et e=évntuelle redirection
-                cout<<"[ajout] code:"<<code<<" new url: "<<header.getNewUrl()<<endl;
-
-
-
-            if(code==200)
+            if(httpRequest.getResultStr()!="")
             {
-                return Files::Fichier(url.getGet(),
-                                      url.getUri(),
-                                      utils::str::generateMotImportant(httpRequest.getResultStr()),
-                                      header.getTypeInt(),
-                                      0,
-                                      header.getTaille(),
-                                      httpRequest.getResultStr()
-                                      );
+                client::HTTPclientHeader header(httpRequest.getResultStr()); //on passe le resultat au header
+
+                code = header.getHttpCode();//recuperre le code http (200 ok 404 etc...)
+
+                if(serv::Serveur::verbose) //si on est en mode verbeux on affiche les code et e=évntuelle redirection
+                    cout<<"[ajout] code:"<<code<<" new url: "<<header.getNewUrl()<<endl;
+
+
+                if(code==200)
+                {
+                    return Files::Fichier(url.getGet(),
+                                          url.getUri(),
+                                          utils::str::generateMotImportant(header.getTxt()),
+                                          header.getTypeInt(),
+                                          0,
+                                          header.getTaille(),
+                                          header.getTxt()
+                                         );
+
+                }
+                if(url.getUri()!=header.getNewUrl())
+                    url = utils::Url(header.getNewUrl());
+                else
+                {
+                    cerr<<"[ajout]boucle error"<<endl;
+                    break;
+                }
 
             }
+            else
+                break;
 
-            url = utils::Url(header.getNewUrl());
+
+
         }
         while(code!=200 && code!=0);
     }

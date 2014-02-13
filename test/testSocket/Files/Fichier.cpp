@@ -4,7 +4,7 @@ using namespace Files;
 
 
 
-Fichier::Fichier(string nom,string url,string resume,int type,double note,int taile) //ctor
+Fichier::Fichier(string nom,string url,string resume,int type,double note,int taille,string textComplet) //ctor
 {
     this->nom = nom;
     this->url = url;
@@ -12,11 +12,18 @@ Fichier::Fichier(string nom,string url,string resume,int type,double note,int ta
     this->note = note;
     this->taille = taille;
     this->type = type;
+    this->textComplet = textComplet;
 }
+
 
 Fichier::~Fichier()
 {
     //dtor
+}
+
+bool Fichier::isEmpty()
+{
+    return (nom=="" && url=="");
 }
 
 string Fichier::getType()

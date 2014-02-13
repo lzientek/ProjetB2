@@ -14,18 +14,22 @@ namespace Files
     {
         public:
 
-            Fichier(string nom="",string url="",string resume="",int type=F_TEXTE,double note=0,int taile=0);
+            Fichier(string nom="",string url="",string resume="",int type=F_TEXTE,double note=0,int taile=0,string textComplet="");
 
             virtual ~Fichier();
 
-
+            //___________getter
             string getNom(){return nom;}
             string getURL(){return url;}
             string getResume(){return resume;}
+            string getTextFull(){return textComplet;}
             string getExtention(){return extention;}
             double getNote(){return note;}
             string getType();
             int getTaille(){return taille;}
+            //___________fin getter
+            bool isEmpty();
+
         protected:
         private:
             string nom;
@@ -33,6 +37,7 @@ namespace Files
             string txt;
             string extention;
             string resume;
+            string textComplet;
             double note;
             int taille;
             int type;

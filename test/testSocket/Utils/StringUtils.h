@@ -15,6 +15,7 @@ namespace utils
             static vector<string> split(string str, string sep);
             static char* stringToChar(string str);
             static int calculNote(string text,string motImportant);
+            static string generateMotImportant(string fullText);
     };
 }
 
