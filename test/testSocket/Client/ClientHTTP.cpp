@@ -49,20 +49,19 @@ ClientHTTP::ClientHTTP(utils::Url uri)
                 cerr << "[ClientHttp]Error sending request." << endl;
 
 
-            char server_reply[2000];
+            char server_reply[BUFFER_SIZE];
             stringstream page;
-            int n = 0;
-            while ((n = recv(sock , server_reply , 2000 , 0))> 0 )
-            {
-                if(n<2000) //sans ca ca prend trois heures
+
+                int n = 0;
+                while ((n = recv(sock , server_reply , BUFFER_SIZE , 0))> 0 )
                 {
-                    server_reply[n]='\0';
+                    if(n<BUFFER_SIZE) //sans ca ca prend pas trois heures
+                        server_reply[n]='\0';
+
                     page<<server_reply;
-                    break;
+                    memset(server_reply,0,BUFFER_SIZE);
                 }
-                page<< server_reply;
-            }
-            file = page.str();
+                file = page.str();
 
         }
     }

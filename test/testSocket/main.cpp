@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    cout<< "_______________________________" <<endl;
+    cout<< "_______________________________"<<endl;
     cout<< "|                             |"<<endl;
     cout<< "|   [Projet search engine!]   |"<<endl;
     cout<< "|_____________________________|"<<endl;
@@ -15,7 +15,6 @@ int main(int argc, char *argv[])
     //chargement des modules statics
     utils::Conf::load();
     utils::Stats::load();
-
     utils::Processus procs;
 
 

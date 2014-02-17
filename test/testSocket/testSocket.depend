@@ -3485,7 +3485,7 @@
 1392295011 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Files/Fichier.cpp
 	"Fichier.h"
 
-1392303611 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Files/Fichier.h
+1392655472 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Files/Fichier.h
 	<iostream>
 
 1392295058 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Recherche/Resultat.cpp
@@ -3499,7 +3499,7 @@
 	"../Files/Fichier.h"
 	"../Utils/RequetteBDD.h"
 
-1390936925 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
+1392655321 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
 	"Conf.h"
 	<iostream>
 	<vector>
@@ -3512,6 +3512,7 @@
 	<cppconn/exception.h>
 	<cppconn/resultset.h>
 	<cppconn/statement.h>
+	<cppconn/prepared_statement.h>
 
 1390922138 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.h
 	<map>
@@ -3526,7 +3527,7 @@
 	<vector>
 	<string.h>
 
-1392304413 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.cpp
+1392654532 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.cpp
 	"Serveur.h"
 	"Serveur/HttpHeader.h"
 
@@ -3598,16 +3599,16 @@
 1390922123 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.cpp
 	"Conf.h"
 
-1392297600 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+1392655545 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
 	"RequetteBDD.h"
 
 1392294845 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
 	"StringUtils.h"
 
-1392305413 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+1392651513 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
 	"Ajout.h"
 
-1392229324 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
+1392644374 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
 	"defines.h"
 	"Client/ClientHTTP.h"
 
@@ -3617,10 +3618,10 @@
 1390937015 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Stats.cpp
 	"Stats.h"
 
-1392303458 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
+1392651168 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
 	"ClientHTTP.h"
 
-1392306049 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h
+1392646470 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h
 	"../defines.h"
 	"../Files/Fichier.h"
 	"../Utils/Url.h"
@@ -3632,11 +3633,15 @@
 	<iostream>
 	<string>
 
-1392305919 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.cpp
+1392649745 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.cpp
 	"HTTPclientHeader.h"
 
-1392306174 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.h
+1392649094 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.h
 	"../defines.h"
 	"../Utils/StringUtils.h"
 	"../Files/Fichier.h"
+
+1284112067 /usr/include/cppconn/prepared_statement.h
+	<iostream>
+	"statement.h"
 

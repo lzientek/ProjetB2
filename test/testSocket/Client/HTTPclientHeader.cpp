@@ -61,9 +61,12 @@ bool HTTPclientHeader::parse()
 
             if( httpCode >= 200 && httpCode < 300 ) //si pas d'erreur
             {
-                //TODO: virer le header (et je galere vraiment);
+                //on split le header du body
+                int positionFinHeader;
+                if( (positionFinHeader = header.find("\n\r\n")) != string::npos)
+                    txt = header.substr(positionFinHeader, header.size() - positionFinHeader);
 
-                cout<<"txt:"<<txt<<endl;
+
                 return true;
             }
 
@@ -81,6 +84,16 @@ bool HTTPclientHeader::parse()
 
     return false;
 }
+
+
+int HTTPclientHeader::getTaille()
+{
+    if(taille != 0)
+        return taille;
+    else
+        return txt.size();
+}
+
 
 
 /**

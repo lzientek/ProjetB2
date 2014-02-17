@@ -2,7 +2,7 @@
 using namespace std;
 using namespace Add;
 
-//TODO : beaucoup de chose
+
 
 Ajout::Ajout(string url)
 {
@@ -13,7 +13,7 @@ Ajout::Ajout(string url)
 Files::Fichier Ajout::getFile()
 {
 
-    //TODO: pas mal mais commenter + convertir to file puis enregistrer en base
+    //TODO: convertir to file puis enregistrer en base
     if(url.isValid())
     {
         int code = 0;
@@ -30,7 +30,7 @@ Files::Fichier Ajout::getFile()
                     cout<<"[ajout] code:"<<code<<" new url: "<<header.getNewUrl()<<endl;
 
 
-                if(code==200)
+                if(code == 200)
                 {
                     return Files::Fichier(url.getGet(),
                                           url.getUri(),
@@ -42,9 +42,10 @@ Files::Fichier Ajout::getFile()
                                          );
 
                 }
-                if(url.getUri()!=header.getNewUrl())
+
+                if(url.getUri()!=header.getNewUrl()) //on verifie bien qu'on boucle pas
                     url = utils::Url(header.getNewUrl());
-                else
+                else//si on boucle on break
                 {
                     cerr<<"[ajout]boucle error"<<endl;
                     break;

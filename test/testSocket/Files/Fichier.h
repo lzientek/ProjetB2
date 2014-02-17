@@ -26,6 +26,7 @@ namespace Files
             string getExtention(){return extention;}
             double getNote(){return note;}
             string getType();
+            int getTypeInt(){return type;}
             int getTaille(){return taille;}
             //___________fin getter
             bool isEmpty();

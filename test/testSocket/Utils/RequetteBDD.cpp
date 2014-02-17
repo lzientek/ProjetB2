@@ -55,6 +55,27 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
 }
 
 
+void RequetteBDD::add(Files::Fichier file)
+{
+
+    string query = "INSERT INTO files(titre,url,type,txt,motImportant,lastcrawl) VALUES (?,?,?,?,?,?) ";
+
+    sql::PreparedStatement  *prep_stmt;
+
+    prep_stmt = con->prepareStatement(query);
+
+    prep_stmt->setString(1,file.getNom());
+    prep_stmt->setString(2,file.getURL());
+    prep_stmt->setInt(3,file.getTypeInt());
+    prep_stmt->setString(4,file.getTextFull());
+    prep_stmt->setString(5,str::generateMotImportant(file.getTextFull()));
+    prep_stmt->setInt(6,time(NULL));
+
+    prep_stmt->execute();
+    delete prep_stmt;
+
+}
+
 
 string RequetteBDD::like(string word)
 {

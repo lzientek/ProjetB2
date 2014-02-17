@@ -16,6 +16,7 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 
+#include <cppconn/prepared_statement.h>
 
 using namespace std;
 
@@ -29,6 +30,7 @@ namespace utils
             virtual ~RequetteBDD();
             sql::ResultSet* executeSQL(string query);
             vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=20);
+            void add(Files::Fichier file);
         protected:
         private:
             string like(string word);

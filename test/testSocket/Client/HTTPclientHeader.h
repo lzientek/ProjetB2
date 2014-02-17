@@ -23,7 +23,7 @@ namespace client
             string getType() {return type;}
             int getTypeInt();
             int getHttpCode(){return httpCode;}
-            int getTaille(){return taille;}
+            int getTaille();
             string getTxt(){return txt;}
             //______fingetter
 
