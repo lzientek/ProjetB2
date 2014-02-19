@@ -11,6 +11,15 @@ HTTPclientHeader::HTTPclientHeader(string header)
     taille=0;
     newUrl = "";
     txt ="";
+
+    //on split le header du body
+    int positionFinHeader;
+    if( (positionFinHeader = header.find("\n\r\n")) != string::npos)
+    {
+        txt = header.substr(positionFinHeader, header.size() - positionFinHeader);
+        header.erase(positionFinHeader, header.size()-positionFinHeader); //on enleve la fin qui est enregistré dans txt pour manier des chaines moins longue!!
+    }
+
     parse();
 }
 
@@ -31,6 +40,17 @@ int HTTPclientHeader::getTypeInt()
     else
         return F_BINAIRE;
 }
+
+
+int HTTPclientHeader::getTaille()
+{
+    if(taille != 0)
+        return taille;
+    else
+        return txt.size();
+}
+
+
 
 
 
@@ -61,11 +81,9 @@ bool HTTPclientHeader::parse()
 
             if( httpCode >= 200 && httpCode < 300 ) //si pas d'erreur
             {
-                //on split le header du body
-                int positionFinHeader;
-                if( (positionFinHeader = header.find("\n\r\n")) != string::npos)
-                    txt = header.substr(positionFinHeader, header.size() - positionFinHeader);
 
+                if(getTypeInt() == F_BINAIRE)
+                    txt = "";
 
                 return true;
             }
@@ -86,13 +104,6 @@ bool HTTPclientHeader::parse()
 }
 
 
-int HTTPclientHeader::getTaille()
-{
-    if(taille != 0)
-        return taille;
-    else
-        return txt.size();
-}
 
 
 

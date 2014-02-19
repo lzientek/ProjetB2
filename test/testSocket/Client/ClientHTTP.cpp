@@ -53,6 +53,7 @@ ClientHTTP::ClientHTTP(utils::Url uri)
             stringstream page;
 
                 int n = 0;
+                bool premierTourDeBoucle = true;
                 while ((n = recv(sock , server_reply , BUFFER_SIZE , 0))> 0 )
                 {
                     if(n<BUFFER_SIZE) //sans ca ca prend pas trois heures
@@ -60,7 +61,24 @@ ClientHTTP::ClientHTTP(utils::Url uri)
 
                     page<<server_reply;
                     memset(server_reply,0,BUFFER_SIZE);
+
+                    if(premierTourDeBoucle)
+                    {
+                        HTTPclientHeader header(page.str());//on parse pour avoir le type
+                        if(header.getTypeInt() == F_BINAIRE)
+                        {
+                            cout<<header.getType()<<endl;
+                             break;//si c'est un binaire on prend que le header et o break la boucle pour pas tout télécharger
+                        }
+                        premierTourDeBoucle = false ; //pour pas passer a chaque tour
+
+                    }
+
+
+
+
                 }
+
                 file = page.str();
 
         }

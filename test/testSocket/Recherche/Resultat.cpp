@@ -21,7 +21,7 @@ int Resultat::search()
     return 0;
 }
 
-//TODO:   mettre en privé sert juste pour le debogage
+
 void Resultat::add(Files::Fichier file)
 {
     files.insert(files.end(),file);

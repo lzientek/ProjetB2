@@ -13,14 +13,13 @@ Ajout::Ajout(string url)
 Files::Fichier Ajout::getFile()
 {
 
-    //TODO: convertir to file puis enregistrer en base
     if(url.isValid())
     {
         int code = 0;
         do
         {
             client::ClientHTTP httpRequest(url);//on créé la requete http
-            if(httpRequest.getResultStr()!="")
+            if(httpRequest.getResultStr() != "")
             {
                 client::HTTPclientHeader header(httpRequest.getResultStr()); //on passe le resultat au header
 

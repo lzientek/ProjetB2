@@ -20,9 +20,10 @@ namespace Recherche
             void trier();
             string toXml();
             int search();
-            void add(Files::Fichier file);
+
         protected:
         private:
+            void add(Files::Fichier file);
             vector<string> words;
             string wordsStr;
             vector<Files::Fichier> files;
