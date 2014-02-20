@@ -44,7 +44,7 @@ string Resultat::toXml()
         streamToRet<<"</titre>"<<endl;
 
         streamToRet<<"<url>";
-        streamToRet<< files[i].getURL();
+        streamToRet<< files[i].getURL().getUri();
         streamToRet<<"</url>";
 
         streamToRet<<"<note>";

@@ -6,6 +6,8 @@
 #include <vector>
 #include "../Files/Fichier.h"
 #include "../Utils/RequetteBDD.h"
+#include "../Utils/Url.h"
+
 
 using namespace std;
 

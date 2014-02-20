@@ -29,9 +29,13 @@ namespace utils
             RequetteBDD(string query="");
             virtual ~RequetteBDD();
             sql::ResultSet* executeSQL(string query);
-            vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=20);
+
             void add(Files::Fichier file);
-        protected:
+            void update(int id,Files::Fichier file);
+
+            vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=20);
+            utils::Url oldestCrawl(int &id);
+
         private:
             string like(string word);
             sql::mysql::MySQL_Driver *driver;

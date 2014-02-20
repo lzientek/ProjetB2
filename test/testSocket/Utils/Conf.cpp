@@ -3,9 +3,11 @@ using namespace utils;
 using namespace std;
 
 map<string,string> Conf::tab;
-char* Conf::CONFIG_FILE ="findy.conf";
+string Conf::CONFIG_FILE ="findy.conf";
 
 bool* Conf::quitter;
+
+bool Conf::stopCrawl;
 
 void Conf::setQuitter(bool b)
 {
@@ -23,6 +25,7 @@ void Conf::load()
     //on veut pas quitter on met a false
     bool q=false;
     quitter = &q;
+    stopCrawl = false;
     reload();
 }
 

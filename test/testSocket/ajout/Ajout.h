@@ -15,6 +15,7 @@ namespace Add
         public:
 
             Ajout(string url);
+            Ajout(utils::Url url);
             virtual ~Ajout();
             Files::Fichier getFile();
         protected:

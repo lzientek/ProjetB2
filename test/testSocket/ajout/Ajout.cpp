@@ -9,6 +9,10 @@ Ajout::Ajout(string url)
     this->url = utils::Url(url);
 }
 
+Ajout::Ajout(utils::Url url)
+{
+    this->url = url;
+}
 
 Files::Fichier Ajout::getFile()
 {
@@ -30,8 +34,7 @@ Files::Fichier Ajout::getFile()
 
 
                 if(code == 200)
-                {
-                    return Files::Fichier(url.getGet(),
+                    return Files::Fichier("",
                                           url.getUri(),
                                           utils::str::generateMotImportant(header.getTxt()),
                                           header.getTypeInt(),
@@ -40,7 +43,6 @@ Files::Fichier Ajout::getFile()
                                           header.getTxt()
                                          );
 
-                }
 
                 if(url.getUri()!=header.getNewUrl()) //on verifie bien qu'on boucle pas
                     url = utils::Url(header.getNewUrl());
@@ -61,6 +63,7 @@ Files::Fichier Ajout::getFile()
     }
     return Files::Fichier();
 }
+
 
 
 Ajout::~Ajout()

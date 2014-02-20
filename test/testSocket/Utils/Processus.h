@@ -9,6 +9,7 @@
 #include <cstdlib>
 
 #include "../Serveur.h"
+#include "../Serveur/Crawl.h"
 #include "Conf.h"
 
 namespace utils

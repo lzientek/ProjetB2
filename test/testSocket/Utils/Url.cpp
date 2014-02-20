@@ -7,6 +7,7 @@ using namespace std;
 Url::Url(string uri)
 {
     this->uri = uri;
+    url ="";
     parse();
 }
 
@@ -14,47 +15,47 @@ Url::Url(string uri)
 void Url::parse()
 {
     bool find=false;
-    url ="";
-    int findHttps = uri.find("https:");
+    string urib = uri;
+    unsigned findHttps = uri.find("https:");
     if(findHttps != string::npos)
     {
         //url = "https://";
-        uri.erase(0,8+findHttps);//on enleve la premiere partie
+        urib.erase(0,8+findHttps);//on enleve la premiere partie
         find = true;
     }
     else
     {
-        int findHttp = uri.find("http:");
+        unsigned findHttp = uri.find("http:");
         if(findHttp != string::npos)
         {
             //url = "http://";
-            uri.erase(0,7+findHttp);//on enleve la premiere partie
+            urib.erase(0,7+findHttp);//on enleve la premiere partie
             find = true;
         }
     }
 
-    //si ca commence bien par http
     if(find)
     {
-        int findSlash = uri.find("/");
+
+        unsigned findSlash = urib.find("/");
         if(findSlash != string::npos)
         {
-            url = uri.substr(0,findSlash);
-            get = uri.substr(findSlash,uri.size()-findSlash);
+            url = urib.substr(0,findSlash);
+            get = urib.substr(findSlash,uri.size()-findSlash);
         }
         else
         {
-            url=uri;
+            url=urib;
             get="/";
         }
-
 
     }
     else
     {
-        url = "";
-        get = "";
+        url="";
+        get="";
     }
+
 }
 
 

@@ -3,6 +3,11 @@
 #include <string>
 #include <vector>
 #include <string.h>
+#include <iostream>
+#include <fstream>
+#include <stdio.h>
+#include "../Files/Fichier.h"
+
 
 using namespace std;
 
@@ -15,7 +20,8 @@ namespace utils
             static vector<string> split(string str, string sep);
             static char* stringToChar(string str);
             static int calculNote(string text,string motImportant);
-            static string generateMotImportant(string fullText);
+            static string generateMotImportant(Files::Fichier file);
+            static void showFile(string path);
     };
 }
 

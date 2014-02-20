@@ -11,6 +11,9 @@ bool Serveur::verbose;
 Serveur::Serveur()
 {
     Serveur(8080);
+    sockfd = 0;
+    newsockfd = 0;
+    portno = 0;
 }
 
 

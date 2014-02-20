@@ -29,9 +29,6 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
 
     sql::ResultSet  *result;
 
-    cout<<query.str()<<endl;
-
-
     result = executeSQL(query.str());
 
     vector<Files::Fichier> resultTab;
@@ -41,18 +38,42 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
 
         resultTab.insert(resultTab.end(), Files::Fichier( result->getString("titre"),
                          result->getString("url"),
-                         result->getString("motImportant").substr(0,200),
+                         result->getString("motImportant"),
                          result->getInt("type"),
                          utils::str::calculNote(result->getString("txt"),
                                                 result->getString("motImportant"))
-                                                        ) );
+                                                        )
+                        );
     }
-    cout<<"rowsCoutn"<<result->rowsCount()<<endl;
+
     result->close();
 
     delete result;
     return resultTab;
 }
+
+
+
+utils::Url RequetteBDD::oldestCrawl(int &id) //crawl le plus ancien
+{
+
+    string query("SELECT id,url FROM files ORDER BY lastcrawl ASC LIMIT 1 ");
+
+    sql::ResultSet  *result;
+
+    result = executeSQL(query);
+
+
+    result->next();
+
+    utils::Url urlToReturn("http://" + result->getString("url"));
+    id = result->getInt("id");
+    result->close();
+
+    delete result;
+    return urlToReturn;
+}
+
 
 
 void RequetteBDD::add(Files::Fichier file)
@@ -64,17 +85,46 @@ void RequetteBDD::add(Files::Fichier file)
 
     prep_stmt = con->prepareStatement(query);
 
-    prep_stmt->setString(1,file.getNom());
-    prep_stmt->setString(2,file.getURL());
-    prep_stmt->setInt(3,file.getTypeInt());
-    prep_stmt->setString(4,file.getTextFull());
-    prep_stmt->setString(5,str::generateMotImportant(file.getTextFull()));
-    prep_stmt->setInt(6,time(NULL));
+    prep_stmt->setString(1,file.getNom()); //titre
+    prep_stmt->setString(2,file.getURL().getUri()); //url
+    prep_stmt->setInt(3,file.getTypeInt()); //type
+    prep_stmt->setString(4,file.getTextFull()); //txt
+    prep_stmt->setString(5,str::generateMotImportant(file.getTextFull())); //mot important
+    prep_stmt->setInt(6,time(NULL)); //timstamp
 
     prep_stmt->execute();
     delete prep_stmt;
 
 }
+
+
+
+
+void RequetteBDD::update(int id,Files::Fichier file)
+{
+    if(id>=0 && !file.isEmpty())
+    {
+
+        string query = "UPDATE files SET titre=?,url=?,type=?,txt=?,motImportant=?,lastcrawl=? WHERE id=? ";
+
+        sql::PreparedStatement  *prep_stmt;
+
+        prep_stmt = con->prepareStatement(query);
+
+        prep_stmt->setString(1,file.getNom()); //titre
+        prep_stmt->setString(2,file.getURL().getUri()); //url
+        prep_stmt->setInt(3,file.getTypeInt()); //type
+        prep_stmt->setString(4,file.getTextFull()); //txt
+        prep_stmt->setString(5,str::generateMotImportant(file.getTextFull())); //mot important
+        prep_stmt->setInt(6,time(NULL)); //timstamp
+        prep_stmt->setInt(7,id); //where ID
+
+        prep_stmt->execute();
+        delete prep_stmt;
+    }
+
+}
+
 
 
 string RequetteBDD::like(string word)

@@ -56,9 +56,6 @@ ClientHTTP::ClientHTTP(utils::Url uri)
                 bool premierTourDeBoucle = true;
                 while ((n = recv(sock , server_reply , BUFFER_SIZE , 0))> 0 )
                 {
-                    if(n<BUFFER_SIZE) //sans ca ca prend pas trois heures
-                        server_reply[n]='\0';
-
                     page<<server_reply;
                     memset(server_reply,0,BUFFER_SIZE);
 
@@ -73,8 +70,6 @@ ClientHTTP::ClientHTTP(utils::Url uri)
                         premierTourDeBoucle = false ; //pour pas passer a chaque tour
 
                     }
-
-
 
 
                 }

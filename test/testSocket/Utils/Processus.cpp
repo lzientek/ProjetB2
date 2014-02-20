@@ -53,12 +53,9 @@ void utils::runServeur()
         Conf::setQuitter(true);
     }
 
-
     bool boucle = !Conf::getQuitter();
     while(boucle) //on ecoute tant ue c'est vrai
-    {
         boucle = serv.ecoute() && !Conf::getQuitter();
-    }
 
     serv.closeSocket(); //on quite proprement
     cout<<"[serv]serveur arreté!"<<endl;
@@ -70,7 +67,15 @@ void utils::runServeur()
 void utils::runCrawl()
 {
     cout<<"[crawl]lancement du crawl"<<endl;
-//TODO : creation du crawl
+    serv::Crawl c;
+    bool boucleCrawl = true;
+    while(boucleCrawl)
+    {
+        boucleCrawl = (!Conf::getQuitter() && !Conf::stopCrawl);
+        if(boucleCrawl)
+            c.next();
+    }
+
     cout<<"[crawl]arret du crawl"<<endl;
 }
 
@@ -83,10 +88,9 @@ void utils::runCommande()
     cout<<"[cmd]systeme de commande lancé.(help pour plus d'aide)"<<endl;
 
     bool boucle =true;
-    while(boucle && !Conf::getQuitter())
-    {
-        boucle = cmd();
-    }
+    while(boucle)
+        boucle = cmd() && !Conf::getQuitter();
+
     Conf::setQuitter(true);
     cout<<"[cmd]arret cmd"<<endl;
 }
@@ -108,11 +112,11 @@ bool utils::cmd()
         commande = args[0];
 
 
-    //gros if tout moche car pas de switch pour les string
+    //gros if tout moche car pas de switch pour les string :(
 
     if(commande == "exit")
     {
-        cout<<"[prog]Le programme va quitter."<<endl;
+        cout<<"[prog]Le programme va quitter..."<<endl;
         boucle = false;
     }
 
@@ -120,6 +124,9 @@ bool utils::cmd()
     else if(commande == "reloadconf")
         utils::Conf::reload();
 
+
+    else if(commande == "stopCrawl")
+        utils::Conf::stopCrawl = true;
 
 
     else if(commande == "clear")
@@ -130,20 +137,16 @@ bool utils::cmd()
         cout<<"Port serveur:"<<Conf::getConf("portServeur")<<endl;
 
 
+    else if(commande == "version")
+        cout<<"Version Logiciel: "<<Conf::getConf("version")<<endl;
+
+
     else if(commande == "resolvError")
-    {
-        ifstream fichieraddon("addon", ios::in);  // on ouvre le fichier conf
-        string actualLine;
-        if(fichieraddon)//si l'ouverture a réussi
-            while(!fichieraddon.eof()) //jusqu'a la fin du fichier
-            {
-                getline(fichieraddon,actualLine); //on lis ligne par ligne
-                cout<<actualLine<<endl;
-            }
-        fichieraddon.close();
-    }
+        str::showFile("addon");
 
 
+    else if(commande == "showHeader")
+        str::showFile(Conf::getConf("demarageHeader"));
 
     else if(commande == "connection")
     {
@@ -165,17 +168,23 @@ bool utils::cmd()
 
     else if(commande == "help" || commande == "?")
     {
+        system("clear");
+
         cout<<"Commande utilisable:"<<endl;
         cout<<"help | ? : Cette page"<<endl;
-        cout<<"exit : Fermer le programme"<<endl;
+        cout<<"exit : Fermer le programme"<<endl<<endl;
         cout<<"reloadconf : pour charger la conf de nouveau"<<endl;
         cout<<"clear : clear l'écran"<<endl;
         cout<<"connection [show|hide] : affiche les connections du serveur"<<endl;
+        cout<<"stopCrawl : desactive le crawl"<<endl<<endl<<endl;
         cout<<"port : affiche le port utilisé par le serveur"<<endl;
         cout<<"resolvError : affiche comment resoudre les erreurs"<<endl;
+        cout<<"showHeader : affiche le header du logiciel"<<endl;
+        cout<<"version : affiche la version du logiciel"<<endl<<endl;
         //TODO : implementer pour chaque nouvelle commande et p⁻e le mettre dans un fichier
     }
 
+    //en cas de non existence
     else
         cout<<"La commande "<<commande<< " n'éxiste pas. (help pour voir les commandes)"<<endl;
 

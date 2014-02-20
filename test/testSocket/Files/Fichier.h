@@ -4,6 +4,8 @@
 #define F_BINAIRE 1
 #define F_HTML 2
 #include <iostream>
+#include "../Utils/Url.h"
+
 
 using namespace std;
 
@@ -20,7 +22,7 @@ namespace Files
 
             //___________getter
             string getNom(){return nom;}
-            string getURL(){return url;}
+            utils::Url getURL(){return url;}
             string getResume(){return resume;}
             string getTextFull(){return textComplet;}
             string getExtention(){return extention;}
@@ -33,9 +35,9 @@ namespace Files
 
         protected:
         private:
+            string getTitre();
             string nom;
-            string url;
-            string txt;
+            utils::Url url;
             string extention;
             string resume;
             string textComplet;

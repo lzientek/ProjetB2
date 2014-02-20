@@ -13,7 +13,7 @@ HTTPclientHeader::HTTPclientHeader(string header)
     txt ="";
 
     //on split le header du body
-    int positionFinHeader;
+    unsigned positionFinHeader;
     if( (positionFinHeader = header.find("\n\r\n")) != string::npos)
     {
         txt = header.substr(positionFinHeader, header.size() - positionFinHeader);
