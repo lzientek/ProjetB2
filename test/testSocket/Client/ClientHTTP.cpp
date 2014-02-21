@@ -9,11 +9,24 @@ ClientHTTP::ClientHTTP(utils::Url uri)
     file = "";
     if(urlClient.isValid())
     {
-        //recherche dns
+        execute();
+    }
+    else
+        cerr<<"[clientHttp]error url"<<endl<<urlClient.getUri()<<endl;
+}
+
+
+
+int ClientHTTP::execute()
+{
+    //recherche dns
         struct hostent * host = gethostbyname(utils::str::stringToChar(urlClient.getUrl()));
 
         if ( (host == NULL) || (host->h_addr == NULL) )
+        {
             cerr << "[ClientHttp]Error retrieving DNS information."<<endl<<urlClient.getUrl() << endl;
+            return -1;
+        }
         else
         {
             bzero(&client, sizeof(client));
@@ -25,14 +38,18 @@ ClientHTTP::ClientHTTP(utils::Url uri)
             //creation du socket
             sock = socket(AF_INET, SOCK_STREAM, 0);
             if (sock < 0)
-                cerr << "[ClientHttp]Error creating socket." << endl;
+            {
 
+                cerr << "[ClientHttp]Error creating socket." << endl;
+                return -1;
+            }
 
             //connection au serveur distant
             if ( connect(sock, (struct sockaddr *)&client, sizeof(client)) < 0 )
             {
                 close(sock);
                 cerr << "[ClientHttp]Could not connect" << endl;
+                 return -1;
             }
 
 
@@ -46,7 +63,11 @@ ClientHTTP::ClientHTTP(utils::Url uri)
 
 
             if (send(sock, request.c_str(), request.length(), 0) != (int)request.length())
+            {
                 cerr << "[ClientHttp]Error sending request." << endl;
+                return -1;
+            }
+
 
 
             char server_reply[BUFFER_SIZE];
@@ -63,10 +84,8 @@ ClientHTTP::ClientHTTP(utils::Url uri)
                     {
                         HTTPclientHeader header(page.str());//on parse pour avoir le type
                         if(header.getTypeInt() == F_BINAIRE)
-                        {
-                            cout<<header.getType()<<endl;
                              break;//si c'est un binaire on prend que le header et o break la boucle pour pas tout télécharger
-                        }
+
                         premierTourDeBoucle = false ; //pour pas passer a chaque tour
 
                     }
@@ -77,14 +96,8 @@ ClientHTTP::ClientHTTP(utils::Url uri)
                 file = page.str();
 
         }
-    }
-    else
-        cerr<<"[clientHttp]error url"<<endl<<urlClient.getUri()<<endl;
+        return 0;
 }
-
-
-
-
 
 
 

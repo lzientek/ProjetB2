@@ -18,7 +18,7 @@ namespace client
         protected:
         private:
             utils::Url urlClient;
-
+            int execute();
             string file;
             struct sockaddr_in client;
             int sock;

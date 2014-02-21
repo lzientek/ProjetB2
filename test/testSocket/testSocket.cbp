@@ -20,12 +20,6 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-O2" />
-				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
@@ -35,6 +29,12 @@
 			<Add directory="/usr/include" />
 			<Add directory="/home/dev1/Documents/projet/test/testSocket/" />
 		</Compiler>
+		<Linker>
+			<Add library="/usr/lib/libmysqlcppconn-static.a" />
+			<Add library="/usr/lib/i386-linux-gnu/libmysqlclient.a" />
+			<Add library="/usr/lib/libmysqlcppconn.so" />
+			<Add library="/usr/lib/i386-linux-gnu/libmysqlclient.so" />
+		</Linker>
 		<Unit filename="Client/ClientHTTP.cpp" />
 		<Unit filename="Client/ClientHTTP.h" />
 		<Unit filename="Client/HTTPclientHeader.cpp" />
@@ -45,6 +45,8 @@
 		<Unit filename="Recherche/Resultat.h" />
 		<Unit filename="Serveur.cpp" />
 		<Unit filename="Serveur.h" />
+		<Unit filename="Serveur/Crawl.cpp" />
+		<Unit filename="Serveur/Crawl.h" />
 		<Unit filename="Serveur/HttpHeader.cpp" />
 		<Unit filename="Serveur/HttpHeader.h" />
 		<Unit filename="Utils/Conf.cpp" />

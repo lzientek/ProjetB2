@@ -38,7 +38,7 @@ bool HttpHeader::parse()
             parseChemin();
 
             if(serv::Serveur::verbose)
-                cout<<"chemin requete: "<<endl
+                cout<<"[serHeader]chemin requete: "<<endl
                     <<lineGET<<endl
                     <<"action: "<<action<<endl;
         }

@@ -77,7 +77,7 @@ bool Serveur::ecoute()
     else
     {
         if(verbose)
-            cout<<"envoie rep"<<endl;
+            cout<<"[serv]envoie rep"<<endl;
         envoieReponse();
     }
 
@@ -97,7 +97,7 @@ void Serveur::envoieReponse()
     string rep = HTTP404;
 
     if(verbose) //si le mode verbose est activé
-        cout<<"action:"<<endl<<action<<endl;
+        cout<<"[serv]action:"<<endl<<action<<endl;
 
     if(action !=A_404ERROR)
     {
@@ -123,7 +123,7 @@ void Serveur::envoieReponse()
         cerr<<"ERROR writing to socket"<<endl;
     }
     else if(verbose)
-        cout<<"réponse:"<<endl<<rep<<endl;
+        cout<<"[serv]réponse:"<<endl<<rep<<endl;
     utils::Stats::incRequeteServ(action,header.getChemin());
 }
 

@@ -61,7 +61,6 @@ string Fichier::getTitre()
             int debutTitre = positionTitre + titre.size();
             positionTitreFin = textComplet.find(titreFin);
             string realTitre = textComplet.substr(debutTitre,positionTitreFin-debutTitre);
-            cout<<realTitre<<endl;
             return realTitre;
         }
     }
@@ -72,5 +71,5 @@ string Fichier::getTitre()
         return url.getGet().substr(nomFichierPosition+1); //renvoie le nom du fichier
     }
 
-    return "test";
+    return "";
 }

@@ -54,7 +54,7 @@ void Conf::reload()
     else
         cerr << "Impossible d'ouvrir le fichier !" << endl;
 
-    cout<<"lecture du fichier de conf effectué"<<endl;
+    cout<<"[conf]lecture du fichier de conf effectué"<<endl;
 }
 
 

@@ -16,9 +16,16 @@ void Crawl::next()
     {
         Add::Ajout nouvelleActu(urlArequeter);
         Files::Fichier file = nouvelleActu.getFile();
-        bdd.update(actualId,file);
-        if(Serveur::verbose)
-            cout<<"[crawl] crawl effectuer sur :"<<urlArequeter.getUri()<<endl;
+        if(!file.isEmpty())
+        {
+            bdd.update(actualId,file);
+            if(Serveur::verbose)
+                cout<<"[crawl] crawl effectuer sur :"<<urlArequeter.getUri()<<endl;
+        }
+        else
+            cerr<<"[crawl] non effectuer erreur file!"<<endl;
+
+
     }
 
 }
