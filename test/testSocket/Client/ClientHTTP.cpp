@@ -83,7 +83,7 @@ int ClientHTTP::execute()
                     if(premierTourDeBoucle)
                     {
                         HTTPclientHeader header(page.str());//on parse pour avoir le type
-                        if(header.getTypeInt() == F_BINAIRE)
+                        if(header.getTypeInt() == F_BINAIRE || header.getHttpCode() > 299 && header.getNewUrl()!="")
                              break;//si c'est un binaire on prend que le header et o break la boucle pour pas tout télécharger
 
                         premierTourDeBoucle = false ; //pour pas passer a chaque tour

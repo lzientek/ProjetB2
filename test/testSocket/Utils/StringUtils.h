@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
+#include <algorithm>
 #include "../Files/Fichier.h"
 
 
@@ -22,6 +23,9 @@ namespace utils
             static int calculNote(string text,string motImportant);
             static string generateMotImportant(Files::Fichier file);
             static void showFile(string path);
+            static void supprimerTousLesCharacteres(string &chaine, char c);
+            static void replaceAll(std::string& str, const std::string& from, const std::string& to);
+            static string validXmlstring(string xml);
     };
 }
 

@@ -54,10 +54,13 @@ bool HttpHeader::parseChemin()
 {
     if(cheminRequete != ERROR404)
     {
-        vector<string> vectStr = str::split(cheminRequete,"?");
-        action = vectStr[0];
+        unsigned vectStr = cheminRequete.find("?");
+        if(vectStr != string::npos)
+        {
+            action = cheminRequete.substr(0,vectStr);
+            keys = cheminRequete.substr(vectStr +1 ); //+1pour pas prendre le ?
+        }
 
-        keys = vectStr[1];
     }
     return true;
 }

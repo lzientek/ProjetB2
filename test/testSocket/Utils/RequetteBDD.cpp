@@ -129,6 +129,7 @@ void RequetteBDD::update(int id,Files::Fichier file)
 
 string RequetteBDD::like(string word)
 {
+    utils::str::supprimerTousLesCharacteres(word,' ');
     return "LIKE '%"+word+"%'";
 }
 

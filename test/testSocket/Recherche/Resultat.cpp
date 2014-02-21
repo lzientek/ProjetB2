@@ -2,6 +2,7 @@
 
 using namespace Recherche;
 using namespace std;
+using namespace utils;
 
 Resultat::Resultat() {}
 
@@ -40,11 +41,11 @@ string Resultat::toXml()
         streamToRet<<"<file type=\""<< files[i].getType() <<"\">";
 
         streamToRet<<"<titre>";
-        streamToRet<< files[i].getNom();
+        streamToRet<< str::validXmlstring( files[i].getNom());
         streamToRet<<"</titre>"<<endl;
 
         streamToRet<<"<url>";
-        streamToRet<< files[i].getURL().getUri();
+        streamToRet<< str::validXmlstring( files[i].getURL().getUri());
         streamToRet<<"</url>";
 
         streamToRet<<"<note>";
@@ -52,7 +53,7 @@ string Resultat::toXml()
         streamToRet<<"</note>";
 
         streamToRet<<"<resume>";
-        streamToRet<< files[i].getResume();
+        streamToRet<< str::validXmlstring( files[i].getResume());
         streamToRet<<"</resume>";
 
         streamToRet<<"</file>";

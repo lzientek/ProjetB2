@@ -7,6 +7,7 @@
 #include "../Files/Fichier.h"
 #include "../Utils/RequetteBDD.h"
 #include "../Utils/Url.h"
+#include "../Utils/StringUtils.h"
 
 
 using namespace std;

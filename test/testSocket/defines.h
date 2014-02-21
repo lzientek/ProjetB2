@@ -9,7 +9,7 @@
 #include <string>
 #include <stdio.h>
 #include <vector>
-
+#include <sys/wait.h>
 
 #include "Utils/Conf.h"
 #include "Utils/Processus.h"

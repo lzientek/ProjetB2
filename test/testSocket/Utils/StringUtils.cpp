@@ -26,6 +26,37 @@ char* utils::str::stringToChar(string str)
 }
 
 
+void utils::str::supprimerTousLesCharacteres(string &chaine, char c)
+{
+    chaine.erase(remove(chaine.begin(),chaine.end(),c)
+                 ,chaine.end());
+}
+
+void utils::str::replaceAll(std::string& str, const std::string& from, const std::string& to)
+{
+    if(from.empty())
+        return;
+    size_t start_pos = 0;
+    while((start_pos = str.find(from, start_pos)) != std::string::npos)
+    {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length();
+    }
+}
+
+
+string utils::str::validXmlstring(string xml)
+{
+    string toRet=xml;
+    replaceAll(toRet,"&","&amp;");
+    replaceAll(toRet,"\"","&quot;");
+    replaceAll(toRet,"'","&apos;");
+    replaceAll(toRet,"<","&lt;");
+    replaceAll(toRet,">","&gt;");
+    return toRet;
+}
+
+
 int utils::str::calculNote(string text,string motImportant)
 {
     return 2;//TODO (lucas): implémenter calcul note

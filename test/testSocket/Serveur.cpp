@@ -25,6 +25,9 @@ Serveur::Serveur(int port)
     portno = port;
     verbose = false;
 
+
+
+
     sockfd = socket(AF_INET, SOCK_STREAM, 0); //on crée le socket
 
     if (sockfd < 0)
@@ -67,21 +70,57 @@ bool Serveur::ecoute()
 
     bzero(buffer,BUFFER_SYZE);
     clilen = sizeof(cli_addr);
+    pid_t  pid;
+
 
     newsockfd = accept(sockfd,(struct sockaddr *) &cli_addr, &clilen);
 
     if (read(newsockfd, buffer, BUFFER_SYZE) == -1) //si aucune connection
     {
-        sleep(1);
+        usleep(50);
     }
     else
     {
+
+	/*  Fork child process to service connection  */
+
+	if ( (pid = fork()) == 0 ) {
+
+	    /*  This is now the forked child process, so
+		close listening socket and service request   */
+
+	    if ( close(sockfd) < 0 )
+            cerr<<"Error closing listening socket in child."<<endl;
+
+
         if(verbose)
             cout<<"[serv]envoie rep"<<endl;
         envoieReponse();
+
+
+	    /*  Close connected socket and exit  */
+
+	    if ( close(newsockfd) < 0 )
+            cerr<<"Error closing connection socket."<<endl;
+	    exit(EXIT_SUCCESS);
+	}
+
+
+	/*  If we get here, we are still in the parent process,
+	    so close the connected socket, clean up child processes,
+	    and go back to accept a new connection.                   */
+
+	if ( close(newsockfd) < 0 )
+	    cerr<<"Error closing connection socket in parent."<<endl;
+
+	waitpid(-1, NULL, WNOHANG);
+
+
+
+
     }
 
-    close(newsockfd);
+
 
     //si aucune erreur on continue l'écoute
     return !error; //TODO : better (exeption)
@@ -110,10 +149,13 @@ void Serveur::envoieReponse()
 
         else if( action == A_AJOUT ) //si il veut ajouter une url
         {
-
-            thread threadAjout(ajout,header.getChemin());
+            if(verbose)
+                cout<<"[serv-add]ajout "<<header.getChemin()<<"thread pourri"<<endl;
+            thread threadAjout(ajout,header.getChemin());//TODO (lucas):tres mauvais le thread ne fait rien gagner en temps et bloque quand meme
             threadAjout.join();
             rep = HTTPOK;
+            if(verbose)
+                cout<<"[serv-add]thread bloquant"<<endl;
 
         }
     }
@@ -157,8 +199,12 @@ void serv::ajout(string chemin)
 
     Add::Ajout nouvelleAjout = Add::Ajout(chemin);
     Files::Fichier fichierResultat = nouvelleAjout.getFile();
-    utils::RequetteBDD reqSQL;
-    reqSQL.add(fichierResultat);
+    if(!fichierResultat.isEmpty())
+    {
+        utils::RequetteBDD reqSQL;
+        reqSQL.add(fichierResultat);
+    }
+
 
     if(serv::Serveur::verbose)
         cout<<"[treadAdd]end"<<endl;

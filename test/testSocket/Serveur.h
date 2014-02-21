@@ -34,10 +34,12 @@ namespace serv
         protected:
         private:
             bool error;
-            int sockfd, newsockfd, portno;
+            int sockfd, newsockfd, portno,fdmax;
             struct sockaddr_in serv_addr, cli_addr;
             char buffer[BUFFER_SYZE];
             socklen_t clilen;
+            fd_set master;    // master file descriptor list
+            fd_set read_fds;
     };
 
 }

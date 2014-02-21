@@ -16,7 +16,7 @@ void Url::parse()
 {
     bool find=false;
     string urib = uri;
-    unsigned findHttps = uri.find("https:");
+    unsigned findHttps = urib.find("https:");
     if(findHttps != string::npos)
     {
         //url = "https://";
@@ -25,7 +25,7 @@ void Url::parse()
     }
     else
     {
-        unsigned findHttp = uri.find("http:");
+        unsigned findHttp = urib.find("http:");
         if(findHttp != string::npos)
         {
             //url = "http://";
@@ -41,7 +41,7 @@ void Url::parse()
         if(findSlash != string::npos)
         {
             url = urib.substr(0,findSlash);
-            get = urib.substr(findSlash,uri.size()-findSlash);
+            get = urib.substr(findSlash,urib.size()-findSlash);
         }
         else
         {
