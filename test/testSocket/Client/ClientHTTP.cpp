@@ -3,6 +3,7 @@ using namespace std;
 using namespace client;
 
 
+
 ClientHTTP::ClientHTTP(utils::Url uri)
 {
     urlClient = uri;
@@ -92,7 +93,6 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
             //temps écoulé en seconde
             timediff = (now.tv_sec - begin.tv_sec) + 1e-6 * (now.tv_usec - begin.tv_usec);
-
             //sion a u des donner on attend le timeout pour break
             if( totalsize > 0 && timediff > TIMEOUT )
             {
@@ -109,16 +109,16 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
             if( (n = recv(sock , server_reply , BUFFER_SIZE , 0))> 0)
             {
-
-                file.append(string(server_reply));
+                cout<<n<<endl;
+                file+=string(server_reply);
                 totalsize+=n;
 
                 if(premierTourDeBoucle)
                 {
-                    string head =file;
+                    string head = file;
                     unsigned pos;
                     if((pos = head.find("Content-Type: ")) != string::npos )
-                        if(head.substr(pos,4)!="text")
+                        if(head.substr(pos,10).find("text")!=string::npos )
                             break; //si c'est un binaire
 
                     premierTourDeBoucle = false ; //pour pas passer a chaque tour
@@ -136,7 +136,6 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
 
         }
-
     }
     return 0;
 }

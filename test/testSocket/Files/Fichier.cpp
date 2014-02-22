@@ -3,7 +3,6 @@
 using namespace Files;
 
 
-
 Fichier::Fichier(string nom,string url,string resume,int type,double note,int taille,string textComplet) //ctor
 {
 

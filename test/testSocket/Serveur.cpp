@@ -176,7 +176,7 @@ void Serveur::envoieReponse()
         cerr<<"ERROR writing to socket"<<endl;
     }
     else if(verbose)
-        cout<<"[serv]réponse:"<<endl<<rep<<endl;
+        cout<<"[serv]réponse ebvoye; taille:"<<rep.size()<<endl;
     utils::Stats::incRequeteServ(action,header.getChemin());
 }
 

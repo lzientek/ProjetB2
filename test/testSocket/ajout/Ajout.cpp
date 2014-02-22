@@ -3,7 +3,6 @@ using namespace std;
 using namespace Add;
 
 
-
 Ajout::Ajout(string url)
 {
     this->url = utils::Url(url);
@@ -23,6 +22,9 @@ Files::Fichier Ajout::getFile()
         do
         {
             client::ClientHTTP httpRequest(url);//on créé la requete http
+
+
+
             if(httpRequest.getResultStr() != "")
             {
                 client::HTTPclientHeader header(httpRequest.getResultStr()); //on passe le resultat au header
@@ -34,6 +36,8 @@ Files::Fichier Ajout::getFile()
 
 
                 if(code == 200)
+                {
+
                     return Files::Fichier("",
                                           url.getUri(),
                                           utils::str::generateMotImportant(header.getTxt()),
@@ -42,6 +46,8 @@ Files::Fichier Ajout::getFile()
                                           header.getTaille(),
                                           header.getTxt()
                                          );
+                }
+
 
                 if(header.getNewUrl().find("/")==0)
                 {

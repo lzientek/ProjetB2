@@ -2,6 +2,11 @@
 using namespace utils;
 using namespace std;
 
+
+
+
+
+
 RequetteBDD::RequetteBDD(string query)
 {
     driver = sql::mysql::get_mysql_driver_instance();
@@ -88,6 +93,7 @@ void RequetteBDD::add(Files::Fichier file)
     prep_stmt->setString(1,file.getNom()); //titre
     prep_stmt->setString(2,file.getURL().getUri()); //url
     prep_stmt->setInt(3,file.getTypeInt()); //type
+//TODO (lucas) : pourquoi ca enregistrepas la chaine complte???
     prep_stmt->setString(4,file.getTextFull()); //txt
     prep_stmt->setString(5,str::generateMotImportant(file.getTextFull())); //mot important
     prep_stmt->setInt(6,time(NULL)); //timstamp
@@ -96,7 +102,6 @@ void RequetteBDD::add(Files::Fichier file)
     delete prep_stmt;
 
 }
-
 
 
 
@@ -133,10 +138,12 @@ string RequetteBDD::like(string word)
     return "LIKE '%"+word+"%'";
 }
 
+
 sql::ResultSet* RequetteBDD::executeSQL(string query)
 {
     return stmt->executeQuery(query);
 }
+
 
 RequetteBDD::~RequetteBDD()
 {

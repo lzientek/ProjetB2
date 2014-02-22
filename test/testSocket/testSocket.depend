@@ -3482,7 +3482,7 @@
 	<stdexcept>
 	<ctime>
 
-1392974537 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Files/Fichier.cpp
+1393090010 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Files/Fichier.cpp
 	"Fichier.h"
 
 1392904019 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Files/Fichier.h
@@ -3535,7 +3535,7 @@
 	<algorithm>
 	"../Files/Fichier.h"
 
-1393086571 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.cpp
+1393087339 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.cpp
 	"Serveur.h"
 	"Serveur/HttpHeader.h"
 
@@ -3611,13 +3611,13 @@
 1392974963 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.cpp
 	"Conf.h"
 
-1392979556 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+1393087852 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
 	"RequetteBDD.h"
 
 1392981832 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
 	"StringUtils.h"
 
-1393086483 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+1393089226 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
 	"Ajout.h"
 
 1393080524 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
@@ -3630,10 +3630,10 @@
 1390937015 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Stats.cpp
 	"Stats.h"
 
-1393086331 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
+1393089864 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
 	"ClientHTTP.h"
 
-1393081656 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h
+1393089810 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h
 	"../defines.h"
 	"../Files/Fichier.h"
 	"../Utils/Url.h"
@@ -3645,7 +3645,7 @@
 	<iostream>
 	<string>
 
-1393085358 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.cpp
+1393088655 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.cpp
 	"HTTPclientHeader.h"
 
 1393085062 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.h

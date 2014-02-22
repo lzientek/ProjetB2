@@ -1,5 +1,7 @@
 #include "HTTPclientHeader.h"
 
+
+
 using namespace std;
 
 using namespace client;
@@ -16,7 +18,7 @@ HTTPclientHeader::HTTPclientHeader(string header)
     unsigned positionFinHeader;
     if( (positionFinHeader = header.find("\n\r\n")) != string::npos)
     {
-        txt = header.substr(positionFinHeader, header.size() - positionFinHeader);
+        txt = header.substr(positionFinHeader);
         header.erase(positionFinHeader, header.size()-positionFinHeader); //on enleve la fin qui est enregistré dans txt pour manier des chaines moins longue!!
     }
 
