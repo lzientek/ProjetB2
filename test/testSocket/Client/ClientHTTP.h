@@ -1,6 +1,7 @@
 #ifndef CLIENTHTTP_H
 #define CLIENTHTTP_H
 #define BUFFER_SIZE 3000
+#define TIMEOUT 2
 #include "../defines.h"
 #include "../Files/Fichier.h"
 #include "../Utils/Url.h"

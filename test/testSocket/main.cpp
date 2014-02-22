@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     utils::Conf::load();
     utils::Stats::load();
     utils::Conf::stopCrawl = true;//probleme de crawl
+
     utils::Processus procs;
 
 

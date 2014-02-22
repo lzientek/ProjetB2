@@ -12,91 +12,133 @@ ClientHTTP::ClientHTTP(utils::Url uri)
         execute();
     }
     else
-        cerr<<"[clientHttp]error url"<<endl<<urlClient.getUri()<<endl;
+        cerr<<"[clientHttp]error url :"<<uri.getUri()<<endl;
 }
 
 
 
-int ClientHTTP::execute()
+int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de l'execution du prog
 {
     //recherche dns
-        struct hostent * host = gethostbyname(utils::str::stringToChar(urlClient.getUrl()));
+    struct hostent * host = gethostbyname(utils::str::stringToChar(urlClient.getUrl()));
 
-        if ( (host == NULL) || (host->h_addr == NULL) )
+    if ( (host == NULL) || (host->h_addr == NULL) )
+    {
+        cerr << "[ClientHttp]Error retrieving DNS information."<<endl<<urlClient.getUrl() << endl;
+        return -1;
+    }
+    else
+    {
+        bzero(&client, sizeof(client));
+        client.sin_family = AF_INET;
+        client.sin_port = htons( 80 );
+        memcpy(&client.sin_addr, host->h_addr, host->h_length);
+
+
+        //creation du socket
+        sock = socket(AF_INET, SOCK_STREAM, 0);
+        if (sock < 0)
         {
-            cerr << "[ClientHttp]Error retrieving DNS information."<<endl<<urlClient.getUrl() << endl;
+
+            cerr << "[ClientHttp]Error creating socket." << endl;
             return -1;
         }
-        else
+
+        //connection au serveur distant
+        if ( connect(sock, (struct sockaddr *)&client, sizeof(client)) < 0 )
         {
-            bzero(&client, sizeof(client));
-            client.sin_family = AF_INET;
-            client.sin_port = htons( 80 );
-            memcpy(&client.sin_addr, host->h_addr, host->h_length);
+            close(sock);
+            cerr << "[ClientHttp]Could not connect" << endl;
+            return -1;
+        }
 
 
-            //creation du socket
-            sock = socket(AF_INET, SOCK_STREAM, 0);
-            if (sock < 0)
+        //creation du header
+        stringstream ss;
+        ss << "GET " << urlClient.getGet() << " HTTP/1.1\r\n"
+        << "Host: "<< urlClient.getUrl() <<"\r\n"
+        << "Accept: text/html,text/xml, */*\r\n"
+        << "\r\n\r\n";
+        string request = ss.str();
+
+
+        if (send(sock, request.c_str(), request.length(), 0) != (int)request.length())
+        {
+            cerr << "[ClientHttp]Error sending request." << endl;
+            return -1;
+        }
+
+
+
+        char server_reply[BUFFER_SIZE];
+
+        int n = 0,totalsize=0;
+        bool premierTourDeBoucle = true;
+
+
+        struct timeval begin , now;
+        double timediff;
+
+        //make socket non blocking
+        fcntl(sock, F_SETFL, O_NONBLOCK);
+
+        //beginning time
+        gettimeofday(&begin , NULL);
+
+
+        while ( 1 )
+        {
+            gettimeofday(&now , NULL);
+
+            //temps écoulé en seconde
+            timediff = (now.tv_sec - begin.tv_sec) + 1e-6 * (now.tv_usec - begin.tv_usec);
+
+            //sion a u des donner on attend le timeout pour break
+            if( totalsize > 0 && timediff > TIMEOUT )
             {
-
-                cerr << "[ClientHttp]Error creating socket." << endl;
-                return -1;
+                break;
+            }
+            //si on a rien recu on atten un peu plus longtemps
+            else if( timediff > TIMEOUT*2)
+            {
+                break;
             }
 
-            //connection au serveur distant
-            if ( connect(sock, (struct sockaddr *)&client, sizeof(client)) < 0 )
+            memset(server_reply,0,BUFFER_SIZE);
+
+
+            if( (n = recv(sock , server_reply , BUFFER_SIZE , 0))> 0)
             {
-                close(sock);
-                cerr << "[ClientHttp]Could not connect" << endl;
-                 return -1;
-            }
 
+                file.append(string(server_reply));
+                totalsize+=n;
 
-            //creation du header
-            stringstream ss;
-            ss << "GET " << urlClient.getGet() << " HTTP/1.1\r\n"
-            << "Host: "<< urlClient.getUrl() <<"\r\n"
-            << "Accept: text/html,text/xml, */*\r\n"
-            << "\r\n\r\n";
-            string request = ss.str();
-
-
-            if (send(sock, request.c_str(), request.length(), 0) != (int)request.length())
-            {
-                cerr << "[ClientHttp]Error sending request." << endl;
-                return -1;
-            }
-
-
-
-            char server_reply[BUFFER_SIZE];
-            stringstream page;
-
-                int n = 0;
-                bool premierTourDeBoucle = true;
-                while ((n = recv(sock , server_reply , BUFFER_SIZE , 0))> 0 )
+                if(premierTourDeBoucle)
                 {
-                    page<<server_reply;
-                    memset(server_reply,0,BUFFER_SIZE);
+                    string head =file;
+                    unsigned pos;
+                    if((pos = head.find("Content-Type: ")) != string::npos )
+                        if(head.substr(pos,4)!="text")
+                            break; //si c'est un binaire
 
-                    if(premierTourDeBoucle)
-                    {
-                        HTTPclientHeader header(page.str());//on parse pour avoir le type
-                        if(header.getTypeInt() == F_BINAIRE || header.getHttpCode() > 299 && header.getNewUrl()!="")
-                             break;//si c'est un binaire on prend que le header et o break la boucle pour pas tout télécharger
-
-                        premierTourDeBoucle = false ; //pour pas passer a chaque tour
-
-                    }
-
+                    premierTourDeBoucle = false ; //pour pas passer a chaque tour
 
                 }
 
-                file = page.str();
+                //reset du temps
+                gettimeofday(&begin , NULL);
+            }
+            else
+            {
+                //si rien n'est arrivé on attend 0.05sec
+                usleep(50000);
+            }
+
 
         }
-        return 0;
+
+    }
+    return 0;
 }
 
 

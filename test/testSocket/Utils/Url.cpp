@@ -14,14 +14,12 @@ Url::Url(string uri)
 
 void Url::parse()
 {
-    bool find=false;
     string urib = uri;
+
     unsigned findHttps = urib.find("https:");
     if(findHttps != string::npos)
     {
-        //url = "https://";
         urib.erase(0,8+findHttps);//on enleve la premiere partie
-        find = true;
     }
     else
     {
@@ -30,31 +28,22 @@ void Url::parse()
         {
             //url = "http://";
             urib.erase(0,7+findHttp);//on enleve la premiere partie
-            find = true;
         }
+
     }
 
-    if(find)
+    unsigned findSlash = urib.find("/");
+    if(findSlash != string::npos)
     {
-
-        unsigned findSlash = urib.find("/");
-        if(findSlash != string::npos)
-        {
-            url = urib.substr(0,findSlash);
-            get = urib.substr(findSlash,urib.size()-findSlash);
-        }
-        else
-        {
-            url=urib;
-            get="/";
-        }
-
+        url = urib.substr(0,findSlash);
+        get = urib.substr(findSlash,urib.size()-findSlash);
     }
     else
     {
-        url="";
-        get="";
+        url=urib;
+        get="/";
     }
+
 
 }
 

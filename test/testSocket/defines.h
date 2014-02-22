@@ -10,7 +10,8 @@
 #include <stdio.h>
 #include <vector>
 #include <sys/wait.h>
-
+#include <fcntl.h>
+#include <sys/time.h>
 #include "Utils/Conf.h"
 #include "Utils/Processus.h"
 #include "Utils/Stats.h"

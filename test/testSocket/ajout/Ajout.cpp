@@ -43,9 +43,21 @@ Files::Fichier Ajout::getFile()
                                           header.getTxt()
                                          );
 
+                if(header.getNewUrl().find("/")==0)
+                {
+                    if(header.getNewUrl()!=url.getGet())
+                        url = utils::Url(url.getUrl()+header.getNewUrl());
 
-                if(url.getUri()!=header.getNewUrl()) //on verifie bien qu'on boucle pas
+                    else
+                    {
+                        cerr<<"[ajout]erreur boucle get"<<endl;
+                        break;
+                    }
+
+                }
+                else if(url.getUri()!=header.getNewUrl()) //on verifie bien qu'on boucle pas
                     url = utils::Url(header.getNewUrl());
+
                 else//si on boucle on break
                 {
                     cerr<<"[ajout]boucle error"<<endl;
@@ -61,6 +73,8 @@ Files::Fichier Ajout::getFile()
         }
         while(code!=200 && code!=0);
     }
+    else
+        cerr<<"[ajout]url non valid"<<endl;
     return Files::Fichier();
 }
 

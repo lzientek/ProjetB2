@@ -60,14 +60,13 @@ bool HTTPclientHeader::parse()
 {
 
     vector<string> lignes = utils::str::split(header,"\r\n"); //pour faire du ligne par ligne
-
     if( lignes.size() > 0 ) //si on a des lignes
     {
         string ligne  = lignes[0]; //premiere ligne du header avec les reponses
         if(ligne.find(HTTP_PROTOCOLE) == 0)
         {
-            ligne.erase(0, HTTP_PROTOCOLE.size()); // on supprimmele protocole
-            httpCode = stoi(ligne.substr(0, 3)); //on recupère le code
+            string ligneProto = ligne.substr(HTTP_PROTOCOLE.size()); // on supprimmele protocole
+            httpCode = stoi(ligneProto.substr(0, 3)); //on recupère le code
 
             type = getContentFromHeader(HTTP_TYPE,lignes);//on recupere le type
 
@@ -79,7 +78,7 @@ bool HTTPclientHeader::parse()
                 taille = stoi(provTaille);
 
 
-            if( httpCode >= 200 && httpCode < 300 ) //si pas d'erreur
+            if( httpCode >= 200 && httpCode < 250 ) //si pas d'erreur
             {
 
                 if(getTypeInt() == F_BINAIRE)
@@ -119,7 +118,8 @@ string HTTPclientHeader::getContentFromHeader(string mot,vector<string> lignes)
         if(( pos = lignes[i].find(mot)) != string::npos) //si on trouve la vrai position du fichier on redirige
         {
             result = lignes[i].substr(pos+mot.size(),lignes[i].size()-(pos+mot.size())); // on supprimme le location: pour avoir le nouveau lien
-            return result;
+             utils::str::supprimerTousLesCharacteres(result,'\r');
+             return result;
         }
     }
     return "";

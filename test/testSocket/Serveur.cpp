@@ -77,43 +77,45 @@ bool Serveur::ecoute()
 
     if (read(newsockfd, buffer, BUFFER_SYZE) == -1) //si aucune connection
     {
-        usleep(50);
+        //si rien n'est arrivé on attend 0.05sec
+        usleep(50000);
     }
     else
     {
 
-	/*  Fork child process to service connection  */
+        /*  Fork child process to service connection  */
 
-	if ( (pid = fork()) == 0 ) {
+        if ( (pid = fork()) == 0 )
+        {
 
-	    /*  This is now the forked child process, so
-		close listening socket and service request   */
+            /*  This is now the forked child process, so
+            close listening socket and service request   */
 
-	    if ( close(sockfd) < 0 )
-            cerr<<"Error closing listening socket in child."<<endl;
-
-
-        if(verbose)
-            cout<<"[serv]envoie rep"<<endl;
-        envoieReponse();
+            if ( close(sockfd) < 0 )
+                cerr<<"Error closing listening socket in child."<<endl;
 
 
-	    /*  Close connected socket and exit  */
-
-	    if ( close(newsockfd) < 0 )
-            cerr<<"Error closing connection socket."<<endl;
-	    exit(EXIT_SUCCESS);
-	}
+            if(verbose)
+                cout<<"[serv]envoie rep"<<endl;
+            envoieReponse();
 
 
-	/*  If we get here, we are still in the parent process,
-	    so close the connected socket, clean up child processes,
-	    and go back to accept a new connection.                   */
+            /*  Close connected socket and exit  */
 
-	if ( close(newsockfd) < 0 )
-	    cerr<<"Error closing connection socket in parent."<<endl;
+            if ( close(newsockfd) < 0 )
+                cerr<<"Error closing connection socket."<<endl;
+            exit(EXIT_SUCCESS);
+        }
 
-	waitpid(-1, NULL, WNOHANG);
+
+        /*  If we get here, we are still in the parent process,
+            so close the connected socket, clean up child processes,
+            and go back to accept a new connection.                   */
+
+        if ( close(newsockfd) < 0 )
+            cerr<<"Error closing connection socket in parent."<<endl;
+
+        waitpid(-1, NULL, WNOHANG);
 
 
 
@@ -150,12 +152,21 @@ void Serveur::envoieReponse()
         else if( action == A_AJOUT ) //si il veut ajouter une url
         {
             if(verbose)
-                cout<<"[serv-add]ajout "<<header.getChemin()<<"thread pourri"<<endl;
-            thread threadAjout(ajout,header.getChemin());//TODO (lucas):tres mauvais le thread ne fait rien gagner en temps et bloque quand meme
-            threadAjout.join();
+                cout<<"[serv-add]ajout "<<header.getChemin()<<endl;
+
+            Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
+
+            Files::Fichier fichierResultat = nouvelleAjout.getFile();
+            if(!fichierResultat.isEmpty())
+            {
+                utils::RequetteBDD reqSQL;
+                reqSQL.add(fichierResultat);
+                if(verbose)
+                    cout<<"[serv-add]enregistrement en bdd"<<endl;
+            }
             rep = HTTPOK;
             if(verbose)
-                cout<<"[serv-add]thread bloquant"<<endl;
+                cout<<"[serv-add]ajout terminé"<<endl;
 
         }
     }
@@ -188,24 +199,4 @@ void Serveur::closeSocket()
 Serveur::~Serveur()
 {
 
-}
-
-//----------------------------------------foction de thread pour ajout()
-
-void serv::ajout(string chemin)
-{
-    if(serv::Serveur::verbose)
-        cout<<"[treadAdd]start : "<<chemin<<endl;
-
-    Add::Ajout nouvelleAjout = Add::Ajout(chemin);
-    Files::Fichier fichierResultat = nouvelleAjout.getFile();
-    if(!fichierResultat.isEmpty())
-    {
-        utils::RequetteBDD reqSQL;
-        reqSQL.add(fichierResultat);
-    }
-
-
-    if(serv::Serveur::verbose)
-        cout<<"[treadAdd]end"<<endl;
 }
