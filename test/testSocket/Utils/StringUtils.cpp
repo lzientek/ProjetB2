@@ -32,12 +32,12 @@ void utils::str::supprimerTousLesCharacteres(string &chaine, char c)
                  ,chaine.end());
 }
 
-void utils::str::replaceAll(std::string& str, const std::string& from, const std::string& to)
+void utils::str::replaceAll(string& str, const string& from, const string& to)
 {
     if(from.empty())
         return;
     size_t start_pos = 0;
-    while((start_pos = str.find(from, start_pos)) != std::string::npos)
+    while((start_pos = str.find(from, start_pos)) != string::npos)
     {
         str.replace(start_pos, from.length(), to);
         start_pos += to.length();
@@ -57,10 +57,28 @@ string utils::str::validXmlstring(string xml)
 }
 
 
-int utils::str::calculNote(string text,string motImportant)
+int utils::str::calculNote(vector<string> motsRecherche,string text,string motImportant)
 {
-    return 2;//TODO (lucas): implémenter calcul note
+    int note = 0;
+    for(int i=0; i<motsRecherche.size(); i++)
+    {
+        string mot = motsRecherche[i];
+        supprimerTousLesCharacteres(mot,' ');//on supprime l'espace inutile
+        if(mot.length()>2)
+        {
+            int nbDsText = countOcurence(mot,text);
+            int nbDsMotImportant = countOcurence(mot,motImportant);
+
+            int noteProvisoir = (nbDsMotImportant * COEF_IMPORTANCE_MOT_IMPORTANT) + nbDsText;
+            if(mot.length()<=4) //si le mot est petit un divise par deux les points
+                noteProvisoir = noteProvisoir / 2;
+            note += noteProvisoir;
+        }
+    }
+
+    return note;//TODO (lucas): approfondir calcul note
 }
+
 
 
 /**
@@ -85,4 +103,19 @@ void utils::str::showFile(string path)
             cout<<actualLine<<endl;
         }
     fichier.close();
+}
+
+
+int utils::str::countOcurence(string mot, string dans)
+{
+    int nombre = 0;
+    unsigned pos = 0;
+
+    while((pos = dans.find(mot,pos)) != string::npos)
+    {
+        nombre++;
+        pos += mot.size();
+    }
+
+    return nombre;
 }

@@ -45,7 +45,7 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
                          result->getString("url"),
                          result->getString("motImportant"),
                          result->getInt("type"),
-                         utils::str::calculNote(result->getString("txt"),
+                         utils::str::calculNote( words,result->getString("txt"),
                                                 result->getString("motImportant"))
                                                         )
                         );
