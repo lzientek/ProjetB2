@@ -13,8 +13,9 @@ Ajout::Ajout(utils::Url url)
     this->url = url;
 }
 
-Files::Fichier Ajout::getFile()
+void Ajout::saveFiles()
 {
+
 
     if(url.isValid())
     {
@@ -38,14 +39,30 @@ Files::Fichier Ajout::getFile()
                 if(code == 200)
                 {
 
-                    return Files::Fichier("",
-                                          url.getUri(),
-                                          utils::str::generateMotImportant(header.getTxt()),
-                                          header.getTypeInt(),
-                                          0,
-                                          header.getTaille(),
-                                          header.getTxt()
-                                         );
+                    vector<string> urls = utils::str::getUrls(header.getTxt());
+
+                    if(urls.size() > 0)
+                    {
+                        for(int i =0;i<urls.size();i++)
+                        {
+                            cout<<urls[i]<<endl;
+                        }
+                    }
+
+
+                    Files::Fichier fichierResultat("",
+                                   url.getUri(),
+                                   utils::str::generateMotImportant(header.getTxt()),
+                                   header.getTypeInt(),
+                                   0,
+                                   header.getTaille(),
+                                   header.getTxt()
+                                  );
+                    utils::RequetteBDD reqSQL;
+                    reqSQL.add(fichierResultat);
+                    if(serv::Serveur::verbose)
+                        cout<<"[serv-add]enregistrement en bdd"<<endl;
+                    break;
                 }
 
 
@@ -81,7 +98,7 @@ Files::Fichier Ajout::getFile()
     }
     else
         cerr<<"[ajout]url non valid"<<endl;
-    return Files::Fichier();
+
 }
 
 

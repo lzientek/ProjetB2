@@ -93,16 +93,16 @@
 	<cppconn/resultset.h>
 	<cppconn/statement.h>
 
-1356885532 /usr/include/arpa/inet.h
+1387821739 /usr/include/arpa/inet.h
 	<features.h>
 	<netinet/in.h>
 
-1356885485 /usr/include/features.h
+1387821659 /usr/include/features.h
 	<bits/predefs.h>
 	<sys/cdefs.h>
 	<gnu/stubs.h>
 
-1356885532 /usr/include/netinet/in.h
+1387821739 /usr/include/netinet/in.h
 	<features.h>
 	<stdint.h>
 	<sys/socket.h>
@@ -111,17 +111,17 @@
 	<endian.h>
 	<bits/byteswap.h>
 
-1356885506 /usr/include/stdint.h
+1387821695 /usr/include/stdint.h
 	<features.h>
 	<bits/wchar.h>
 	<bits/wordsize.h>
 
-1356885510 /usr/include/endian.h
+1387821702 /usr/include/endian.h
 	<features.h>
 	<bits/endian.h>
 	<bits/byteswap.h>
 
-1356885527 /usr/include/netdb.h
+1387821731 /usr/include/netdb.h
 	<features.h>
 	<netinet/in.h>
 	<stdint.h>
@@ -130,11 +130,11 @@
 	<time.h>
 	<bits/netdb.h>
 
-1356885533 /usr/include/rpc/netdb.h
+1387821741 /usr/include/rpc/netdb.h
 	<features.h>
 	<stddef.h>
 
-1356885513 /usr/include/time.h
+1387821706 /usr/include/time.h
 	<features.h>
 	<stddef.h>
 	<bits/time.h>
@@ -145,9 +145,9 @@
 	<bits/types.h>
 	<xlocale.h>
 
-1356885486 /usr/include/xlocale.h
+1387821662 /usr/include/xlocale.h
 
-1356885515 /usr/include/unistd.h
+1387821710 /usr/include/unistd.h
 	<features.h>
 	<bits/posix_opt.h>
 	<bits/environments.h>
@@ -157,16 +157,16 @@
 	<getopt.h>
 	<bits/unistd.h>
 
-1356885515 /usr/include/getopt.h
+1387821710 /usr/include/getopt.h
 	<ctype.h>
 
-1356885501 /usr/include/ctype.h
+1387821686 /usr/include/ctype.h
 	<features.h>
 	<bits/types.h>
 	<endian.h>
 	<xlocale.h>
 
-1356885506 /usr/include/stdlib.h
+1387821695 /usr/include/stdlib.h
 	<features.h>
 	<stddef.h>
 	<bits/waitflags.h>
@@ -177,11 +177,11 @@
 	<bits/stdlib.h>
 	<bits/stdlib-ldbl.h>
 
-1356885506 /usr/include/alloca.h
+1387821695 /usr/include/alloca.h
 	<features.h>
 	<stddef.h>
 
-1356885508 /usr/include/stdio.h
+1387821698 /usr/include/stdio.h
 	<features.h>
 	<stddef.h>
 	<bits/types.h>
@@ -194,7 +194,7 @@
 	<bits/stdio2.h>
 	<bits/stdio-ldbl.h>
 
-1356885508 /usr/include/libio.h
+1387821698 /usr/include/libio.h
 	<_G_config.h>
 	<stdarg.h>
 	<sys/cdefs.h>
@@ -202,13 +202,13 @@
 	<shlib-compat.h>
 	<bits/libio-ldbl.h>
 
-1356885508 /usr/include/_G_config.h
+1387821698 /usr/include/_G_config.h
 	<bits/types.h>
 	<stddef.h>
 	<wchar.h>
 	<gconv.h>
 
-1356885511 /usr/include/wchar.h
+1387821703 /usr/include/wchar.h
 	<features.h>
 	<stdio.h>
 	<stdarg.h>
@@ -222,19 +222,19 @@
 	<bits/wchar2.h>
 	<bits/wchar-ldbl.h>
 
-1356885521 /usr/include/wctype.h
+1387821719 /usr/include/wctype.h
 	<features.h>
 	<bits/types.h>
 	<wchar.h>
 	<endian.h>
 	<xlocale.h>
 
-1356885486 /usr/include/gconv.h
+1387821661 /usr/include/gconv.h
 	<features.h>
 	<wchar.h>
 	<stddef.h>
 
-1356885510 /usr/include/string.h
+1387821702 /usr/include/string.h
 	<features.h>
 	<stddef.h>
 	<xlocale.h>
@@ -374,7 +374,7 @@
 	"boost/non_type.hpp"
 	<typeinfo>
 
-1356885485 /usr/include/limits.h
+1387821659 /usr/include/limits.h
 	<features.h>
 	<bits/wordsize.h>
 	<bits/posix1_lim.h>
@@ -1620,7 +1620,7 @@
 
 1359951428 /usr/include/boost/current_function.hpp
 
-1356885501 /usr/include/assert.h
+1387821686 /usr/include/assert.h
 	<features.h>
 
 1359951435 /usr/include/boost/variant/detail/enable_recursive_fwd.hpp
@@ -2503,7 +2503,7 @@
 	<limits.h>
 	<limits.h>
 
-1356885506 /usr/include/inttypes.h
+1387821695 /usr/include/inttypes.h
 	<features.h>
 	<stdint.h>
 	<stddef.h>
@@ -3193,7 +3193,7 @@
 1359951432 /usr/include/boost/smart_ptr/detail/atomic_count_pthreads.hpp
 	<pthread.h>
 
-1356885526 /usr/include/pthread.h
+1387821728 /usr/include/pthread.h
 	<features.h>
 	<endian.h>
 	<sched.h>
@@ -3202,7 +3202,7 @@
 	<bits/setjmp.h>
 	<bits/wordsize.h>
 
-1356885515 /usr/include/sched.h
+1387821710 /usr/include/sched.h
 	<features.h>
 	<bits/types.h>
 	<stddef.h>
@@ -3464,7 +3464,7 @@
 	"../Serveur.h"
 	"Conf.h"
 
-1356885506 /usr/include/errno.h
+1387821695 /usr/include/errno.h
 	<features.h>
 	<bits/errno.h>
 
@@ -3502,7 +3502,7 @@
 	"../Utils/Url.h"
 	"../Utils/StringUtils.h"
 
-1392895328 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
+1393255324 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
 	"Conf.h"
 	<iostream>
 	<vector>
@@ -3525,7 +3525,7 @@
 	<stdexcept>
 	"StringUtils.h"
 
-1393181428 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
+1393532986 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
 	<string>
 	<vector>
 	<string.h>
@@ -3535,7 +3535,7 @@
 	<algorithm>
 	"../Files/Fichier.h"
 
-1393087339 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.cpp
+1393533893 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.cpp
 	"Serveur.h"
 	"Serveur/HttpHeader.h"
 
@@ -3596,9 +3596,10 @@
 	"../Utils/StringUtils.h"
 	"../Serveur.h"
 
-1392895043 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.h
+1393533882 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.h
 	<iostream>
 	<string>
+	<vector>
 	"../Files/Fichier.h"
 	"../Client/ClientHTTP.h"
 	"../Utils/Url.h"
@@ -3611,16 +3612,16 @@
 1392974963 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.cpp
 	"Conf.h"
 
-1393180865 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+1393535670 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
 	"RequetteBDD.h"
 
-1393183091 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
+1393534905 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
 	"StringUtils.h"
 
-1393090130 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+1393533856 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
 	"Ajout.h"
 
-1393080524 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
+1393535769 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
 	"defines.h"
 	"Client/ClientHTTP.h"
 
@@ -3630,7 +3631,7 @@
 1390937015 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Stats.cpp
 	"Stats.h"
 
-1393089864 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
+1393531338 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
 	"ClientHTTP.h"
 
 1393089810 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h
@@ -3657,7 +3658,7 @@
 	<iostream>
 	"statement.h"
 
-1392973735 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur/Crawl.cpp
+1393533902 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur/Crawl.cpp
 	"Crawl.h"
 
 1392895777 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur/Crawl.h
@@ -3667,7 +3668,7 @@
 	"../ajout/Ajout.h"
 	"../Utils/Conf.h"
 
-1356885516 /usr/include/fcntl.h
+1387821711 /usr/include/fcntl.h
 	<features.h>
 	<bits/fcntl.h>
 	<bits/types.h>

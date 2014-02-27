@@ -2,6 +2,7 @@
 #define AJOUT_H
 #include <iostream>
 #include <string>
+#include <vector>
 #include "../Files/Fichier.h"
 #include "../Client/ClientHTTP.h"
 #include "../Utils/Url.h"
@@ -17,7 +18,7 @@ namespace Add
             Ajout(string url);
             Ajout(utils::Url url);
             virtual ~Ajout();
-            Files::Fichier getFile();
+            void saveFiles();
         protected:
             utils::Url url;
             Files::Fichier file;

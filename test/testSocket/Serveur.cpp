@@ -156,14 +156,8 @@ void Serveur::envoieReponse()
 
             Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
 
-            Files::Fichier fichierResultat = nouvelleAjout.getFile();
-            if(!fichierResultat.isEmpty())
-            {
-                utils::RequetteBDD reqSQL;
-                reqSQL.add(fichierResultat);
-                if(verbose)
-                    cout<<"[serv-add]enregistrement en bdd"<<endl;
-            }
+            nouvelleAjout.saveFiles();
+
             rep = HTTPOK;
             if(verbose)
                 cout<<"[serv-add]ajout terminé"<<endl;

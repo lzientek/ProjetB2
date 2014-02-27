@@ -42,5 +42,15 @@ namespace utils
             sql::Connection *con;
             sql::Statement *stmt;
     };
+
+
+    class DataBuf : public streambuf
+    {
+        public:
+            DataBuf(char * d, size_t s)
+            {
+                setg(d, d, d + s);
+            }
+    };
 }
 #endif // REQUETTEBDD_H

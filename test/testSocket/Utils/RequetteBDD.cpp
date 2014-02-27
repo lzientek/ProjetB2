@@ -30,8 +30,8 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
         query<< "url "<<like(words[i])<<" OR motImportant "<<like(words[i])<< " OR txt "<<like(words[i])<<" ";
     }
 
-    query << "LIMIT " << debut <<","<< nombre;
-
+    //query << "LIMIT " << debut <<","<< nombre;
+query << " ORDER BY id DESC LIMIT 1 " ;//
     sql::ResultSet  *result;
 
     result = executeSQL(query.str());
@@ -46,9 +46,10 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
                          result->getString("motImportant"),
                          result->getInt("type"),
                          utils::str::calculNote( words,result->getString("txt"),
-                                                result->getString("motImportant"))
+                                 result->getString("motImportant"))
                                                         )
                         );
+        cout<<"avant"<<result->getString("txt").length()<<endl;
     }
 
     result->close();
@@ -94,11 +95,17 @@ void RequetteBDD::add(Files::Fichier file)
     prep_stmt->setString(2,file.getURL().getUri()); //url
     prep_stmt->setInt(3,file.getTypeInt()); //type
 //TODO (lucas) : pourquoi ca enregistrepas la chaine complte???
-    prep_stmt->setString(4,file.getTextFull()); //txt
+
+
+    istringstream stream(file.getTextFull());
+    cout<<file.getTextFull().substr(file.getTextFull().size()-100)<<endl<<file.getTextFull().length();
+    cout<<endl;
+    prep_stmt->setBlob(4,&stream); //txt
     prep_stmt->setString(5,str::generateMotImportant(file.getTextFull())); //mot important
     prep_stmt->setInt(6,time(NULL)); //timstamp
 
     prep_stmt->execute();
+
     delete prep_stmt;
 
 }
@@ -141,6 +148,7 @@ string RequetteBDD::like(string word)
 
 sql::ResultSet* RequetteBDD::executeSQL(string query)
 {
+    cout<<query<<endl;
     return stmt->executeQuery(query);
 }
 

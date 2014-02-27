@@ -80,6 +80,27 @@ int utils::str::calculNote(vector<string> motsRecherche,string text,string motIm
 }
 
 
+vector<string> utils::str::getUrls(string text)
+{
+    vector<string> urlAretourner;
+
+    unsigned pos = 0;
+
+    while((pos = text.find("http://",pos)) != string::npos || (pos = text.find("https://",pos)) != string::npos)
+    {
+
+        unsigned fin = text.find_first_of(" \"\'\\" ,pos);
+        if( (fin-pos) > 12)//taille minimal d'une url
+            urlAretourner.push_back(text.substr(pos,fin-pos));
+
+        pos =fin;
+    }
+
+
+
+    return urlAretourner;
+}
+
 
 /**
 *@return les mots importants séparé par une virgule

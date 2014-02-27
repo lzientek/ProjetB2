@@ -10,7 +10,8 @@ ClientHTTP::ClientHTTP(utils::Url uri)
     file = "";
     if(urlClient.isValid())
     {
-        execute();
+        if(execute()<0)
+            file= "";
     }
     else
         cerr<<"[clientHttp]error url :"<<uri.getUri()<<endl;
@@ -58,7 +59,7 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
         stringstream ss;
         ss << "GET " << urlClient.getGet() << " HTTP/1.1\r\n"
         << "Host: "<< urlClient.getUrl() <<"\r\n"
-        << "Accept: text/html,text/xml, */*\r\n"
+        << "Accept: text/html,text/xml, text/*\r\n"
         << "\r\n\r\n";
         string request = ss.str();
 
@@ -109,7 +110,6 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
             if( (n = recv(sock , server_reply , BUFFER_SIZE , 0))> 0)
             {
-                cout<<n<<endl;
                 file+=string(server_reply);
                 totalsize+=n;
 
@@ -119,7 +119,7 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
                     unsigned pos;
                     if((pos = head.find("Content-Type: ")) != string::npos )
                         if(head.substr(pos,10).find("text")!=string::npos )
-                            break; //si c'est un binaire
+                            return -2; //si c'est un binaire
 
                     premierTourDeBoucle = false ; //pour pas passer a chaque tour
 
