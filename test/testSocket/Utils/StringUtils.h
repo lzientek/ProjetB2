@@ -29,6 +29,7 @@ namespace utils
             static string validXmlstring(string xml);
             static int countOcurence(string mot, string dans);
             static vector<string> getUrls(string text);
+            static wstring toWstring(string s);
     };
 }
 

@@ -95,6 +95,7 @@ void RequetteBDD::add(Files::Fichier file)
     sql::PreparedStatement  *prep_stmt;
 
     prep_stmt = con->prepareStatement(query);
+sql::SQLString sqlStr(file.getTextFull());
 
     prep_stmt->setString(1,file.getNom()); //titre
     prep_stmt->setString(2,file.getURL().getUri()); //url
@@ -102,10 +103,9 @@ void RequetteBDD::add(Files::Fichier file)
 //TODO (lucas) : pourquoi ca enregistrepas la chaine complte???
 
 
-    istringstream stream(file.getTextFull());
-    cout<<file.getTextFull().substr(file.getTextFull().size()-100)<<endl<<file.getTextFull().length();
-    cout<<endl;
-    prep_stmt->setBlob(4,&stream); //txt
+    istringstream stream(sqlStr.asStdString());
+    prep_stmt->setString(4,sqlStr);
+    //prep_stmt->setBlob(4,&stream); //txt
     prep_stmt->setString(5,str::generateMotImportant(file.getTextFull())); //mot important
     prep_stmt->setInt(6,time(NULL)); //timstamp
 

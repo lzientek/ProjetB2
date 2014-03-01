@@ -1,6 +1,6 @@
 #include "defines.h"
 #include "Client/ClientHTTP.h"
-
+#include "Files/Fichier.h"
 using namespace std;
 
 
@@ -14,9 +14,10 @@ int main(int argc, char *argv[])
     utils::Conf::load();
     utils::Stats::load();
     utils::Conf::stopCrawl = true;//probleme de crawl
-utils::RequetteBDD req;
-req.executeSQL("INSERT INTO files (txt) VALUES ('éèéèéèéèéèèé');");
-return 0;
+
+
+    //string s = "à";
+    //cout<<utils::str::stringToChar(s)[0]<<(int) utils::str::stringToChar(s)[1]<<endl;
     utils::Processus procs;
 
 

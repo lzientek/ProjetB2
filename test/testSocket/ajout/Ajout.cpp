@@ -41,23 +41,25 @@ void Ajout::saveFiles()
 
                     vector<string> urls = utils::str::getUrls(header.getTxt());
 
-                    if(urls.size() > 0)
-                    {
-                        for(int i =0;i<urls.size();i++)
-                        {
-                            cout<<urls[i]<<endl;
-                        }
-                    }
+
 
 
                     Files::Fichier fichierResultat("",
-                                   url.getUri(),
-                                   utils::str::generateMotImportant(header.getTxt()),
-                                   header.getTypeInt(),
-                                   0,
-                                   header.getTaille(),
-                                   header.getTxt()
-                                  );
+                                                   url.getUri(),
+                                                   utils::str::generateMotImportant(header.getTxt()),
+                                                   header.getTypeInt(),
+                                                   0,
+                                                   header.getTaille(),
+                                                   string(utils::str::stringToChar(header.getTxt()))
+                                                  );
+
+                    cout<<fichierResultat.getNom() <<endl;
+
+                    unsigned char c = utils::str::stringToChar( fichierResultat.getNom())[0];
+                    unsigned char c1 = 'é';
+
+
+
                     utils::RequetteBDD reqSQL;
                     reqSQL.add(fichierResultat);
                     if(serv::Serveur::verbose)

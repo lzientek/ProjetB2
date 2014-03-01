@@ -3525,7 +3525,7 @@
 	<stdexcept>
 	"StringUtils.h"
 
-1393532986 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
+1393694284 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
 	<string>
 	<vector>
 	<string.h>
@@ -3612,18 +3612,19 @@
 1392974963 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.cpp
 	"Conf.h"
 
-1393624298 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+1393703556 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
 	"RequetteBDD.h"
 
-1393619286 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
+1393694730 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
 	"StringUtils.h"
 
-1393533856 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+1393697056 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
 	"Ajout.h"
 
-1393535862 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
+1393700791 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
 	"defines.h"
 	"Client/ClientHTTP.h"
+	"Files/Fichier.h"
 
 1392898403 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Processus.cpp
 	"Processus.h"
@@ -3631,7 +3632,7 @@
 1390937015 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Stats.cpp
 	"Stats.h"
 
-1393531338 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
+1393700985 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
 	"ClientHTTP.h"
 
 1393089810 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h

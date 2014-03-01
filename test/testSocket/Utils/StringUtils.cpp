@@ -19,6 +19,13 @@ vector<string> utils::str::split(string str, string sep)
     return arr;
 }
 
+wstring utils::str::toWstring(string s)
+{
+    wstring ws;
+    ws.assign(s.begin(), s.end());
+    return ws;
+
+}
 
 char* utils::str::stringToChar(string str)
 {
