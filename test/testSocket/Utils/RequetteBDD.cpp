@@ -11,8 +11,13 @@ RequetteBDD::RequetteBDD(string query)
 {
     driver = sql::mysql::get_mysql_driver_instance();
     con = driver->connect(Conf::getConf("adresseMysql"), Conf::getConf("userMysql"), Conf::getConf("mdpMysql"));//connection au serveur
+
+    con->setSchema( Conf::getConf("BDDname")); //selection de la bdd
     stmt = con->createStatement();
-    stmt->execute("USE "+ Conf::getConf("BDDname")); //selection de la bdd
+
+    stmt->execute("SET NAMES 'utf8';");
+
+
     if(query!="")
     {
         executeSQL(query);
@@ -31,7 +36,7 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
     }
 
     //query << "LIMIT " << debut <<","<< nombre;
-query << " ORDER BY id DESC LIMIT 1 " ;//
+    query << " ORDER BY id DESC LIMIT 1 " ;//
     sql::ResultSet  *result;
 
     result = executeSQL(query.str());
@@ -49,7 +54,7 @@ query << " ORDER BY id DESC LIMIT 1 " ;//
                                  result->getString("motImportant"))
                                                         )
                         );
-        cout<<"avant"<<result->getString("txt").length()<<endl;
+
     }
 
     result->close();
@@ -106,7 +111,7 @@ void RequetteBDD::add(Files::Fichier file)
 
     prep_stmt->execute();
 
-    delete prep_stmt;
+    //delete prep_stmt;
 
 }
 

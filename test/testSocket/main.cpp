@@ -14,8 +14,9 @@ int main(int argc, char *argv[])
     utils::Conf::load();
     utils::Stats::load();
     utils::Conf::stopCrawl = true;//probleme de crawl
-
-
+utils::RequetteBDD req;
+req.executeSQL("INSERT INTO files (txt) VALUES ('éèéèéèéèéèèé');");
+return 0;
     utils::Processus procs;
 
 

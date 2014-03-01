@@ -1,5 +1,6 @@
 #include "StringUtils.h"
 
+
 using namespace std;
 
 vector<string> utils::str::split(string str, string sep)
@@ -100,6 +101,8 @@ vector<string> utils::str::getUrls(string text)
 
     return urlAretourner;
 }
+
+
 
 
 /**

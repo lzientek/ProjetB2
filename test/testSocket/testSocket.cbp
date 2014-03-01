@@ -30,10 +30,7 @@
 			<Add directory="/home/dev1/Documents/projet/test/testSocket/" />
 		</Compiler>
 		<Linker>
-			<Add library="/usr/lib/libmysqlcppconn-static.a" />
-			<Add library="/usr/lib/i386-linux-gnu/libmysqlclient.a" />
 			<Add library="/usr/lib/libmysqlcppconn.so" />
-			<Add library="/usr/lib/i386-linux-gnu/libmysqlclient.so" />
 		</Linker>
 		<Unit filename="Client/ClientHTTP.cpp" />
 		<Unit filename="Client/ClientHTTP.h" />
