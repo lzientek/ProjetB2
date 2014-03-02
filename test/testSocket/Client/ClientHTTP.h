@@ -5,6 +5,7 @@
 #include "../defines.h"
 #include "../Files/Fichier.h"
 #include "../Utils/Url.h"
+#include "boost/locale.hpp"
 
 using namespace std;
 namespace client

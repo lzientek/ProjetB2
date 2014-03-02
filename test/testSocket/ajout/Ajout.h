@@ -16,10 +16,12 @@ namespace Add
         public:
 
             Ajout(string url);
+            Ajout(string url,vector<string> oldUrls);
             Ajout(utils::Url url);
             virtual ~Ajout();
             void saveFiles();
         protected:
+            vector<std::string> oldUrls;
             utils::Url url;
             Files::Fichier file;
         private:

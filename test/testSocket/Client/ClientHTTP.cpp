@@ -88,7 +88,7 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
         gettimeofday(&begin , NULL);
 
 
-        while ( 1 )
+        while ( true )
         {
             gettimeofday(&now , NULL);
 
@@ -110,7 +110,9 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
             if( (n = recv(sock , server_reply , BUFFER_SIZE , 0))> 0)
             {
-                file+=string(server_reply);
+                string s(server_reply);
+
+                file+=s;
                 totalsize+=n;
 
                 if(premierTourDeBoucle)
@@ -136,6 +138,7 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
 
         }
+        file = boost::locale::conv::to_utf<char>(file,"UTF-8");
     }
     return 0;
 }

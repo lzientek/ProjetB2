@@ -29,7 +29,7 @@ namespace utils
             RequetteBDD(string query="");
             virtual ~RequetteBDD();
             sql::ResultSet* executeSQL(string query);
-
+            void add(vector<string> urls);
             void add(Files::Fichier file);
             void update(int id,Files::Fichier file);
 

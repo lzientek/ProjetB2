@@ -19,13 +19,6 @@ vector<string> utils::str::split(string str, string sep)
     return arr;
 }
 
-wstring utils::str::toWstring(string s)
-{
-    wstring ws;
-    ws.assign(s.begin(), s.end());
-    return ws;
-
-}
 
 char* utils::str::stringToChar(string str)
 {
@@ -88,29 +81,57 @@ int utils::str::calculNote(vector<string> motsRecherche,string text,string motIm
 }
 
 
-vector<string> utils::str::getUrls(string text)
+vector<string> utils::str::getUrls(string text,string baseUrl)
 {
     vector<string> urlAretourner;
 
     unsigned pos = 0;
 
-    while((pos = text.find("http://",pos)) != string::npos || (pos = text.find("https://",pos)) != string::npos)
+    while((pos = text.find("href=\"",pos)) != string::npos)
     {
-
-        unsigned fin = text.find_first_of(" \"\'\\" ,pos);
+        pos+=string("href=\"").length();
+        unsigned fin = text.find_first_of(" \"" ,pos);
         if( (fin-pos) > 12)//taille minimal d'une url
-            urlAretourner.push_back(text.substr(pos,fin-pos));
+        {
+            string urlToSave =text.substr(pos,fin-pos);
 
-        pos =fin;
+            if(urlToSave.find("/")==0) //si c'est un chemain relatif
+                urlToSave = baseUrl + urlToSave;
+
+            if(urlToSave.find("http")==0) //si on a bien une addresse valide
+                urlAretourner.push_back(urlToSave);
+
+        }
+
+        pos = fin;
     }
-
-
 
     return urlAretourner;
 }
 
 
 
+void utils::str::removeDuplicate(vector<string> &tab)
+{
+    sort(tab.begin(), tab.end());
+    tab.erase( unique (tab.begin(), tab.end()),tab.end());
+}
+
+
+void utils::str::removeFrom(vector<string> &into,vector<string> from)
+{
+    for(int i = 0; i <from.size(); i++)
+    {
+        vector<string>::iterator it;
+
+            if( (it = find(into.begin(),into.end(),from[i])) != from.end())
+            {
+                into.erase(it);
+            }
+
+
+    }
+}
 
 /**
 *@return les mots importants séparé par une virgule

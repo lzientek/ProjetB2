@@ -65,6 +65,8 @@ bool HTTPclientHeader::parse()
     if( lignes.size() > 0 ) //si on a des lignes
     {
         string ligne  = lignes[0]; //premiere ligne du header avec les reponses
+        if(serv::Serveur::verbose)
+            cout<<"header line 1: "<<ligne<<endl;
         if(ligne.find(HTTP_PROTOCOLE) == 0)
         {
             string ligneProto = ligne.substr(HTTP_PROTOCOLE.size()); // on supprimmele protocole

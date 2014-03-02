@@ -28,8 +28,10 @@ namespace utils
             static void replaceAll(std::string& str, const std::string& from, const std::string& to);
             static string validXmlstring(string xml);
             static int countOcurence(string mot, string dans);
-            static vector<string> getUrls(string text);
-            static wstring toWstring(string s);
+            static vector<string> getUrls(string text,string baseUrl);
+            static void removeDuplicate(vector<string> &tab);
+            static void removeFrom(vector<string> &into,vector<string> from);
+
     };
 }
 

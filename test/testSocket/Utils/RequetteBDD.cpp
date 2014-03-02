@@ -1,4 +1,5 @@
 #include "RequetteBDD.h"
+
 using namespace utils;
 using namespace std;
 
@@ -7,8 +8,10 @@ using namespace std;
 
 
 
+
 RequetteBDD::RequetteBDD(string query)
 {
+
     driver = sql::mysql::get_mysql_driver_instance();
     con = driver->connect(Conf::getConf("adresseMysql"), Conf::getConf("userMysql"), Conf::getConf("mdpMysql"));//connection au serveur
 
@@ -95,26 +98,44 @@ void RequetteBDD::add(Files::Fichier file)
     sql::PreparedStatement  *prep_stmt;
 
     prep_stmt = con->prepareStatement(query);
-sql::SQLString sqlStr(file.getTextFull());
 
     prep_stmt->setString(1,file.getNom()); //titre
     prep_stmt->setString(2,file.getURL().getUri()); //url
     prep_stmt->setInt(3,file.getTypeInt()); //type
-//TODO (lucas) : pourquoi ca enregistrepas la chaine complte???
-
-
-    istringstream stream(sqlStr.asStdString());
-    prep_stmt->setString(4,sqlStr);
-    //prep_stmt->setBlob(4,&stream); //txt
+    istringstream stream(file.getTextFull());
+    prep_stmt->setBlob(4,&stream); //txt
     prep_stmt->setString(5,str::generateMotImportant(file.getTextFull())); //mot important
     prep_stmt->setInt(6,time(NULL)); //timstamp
 
     prep_stmt->execute();
 
-    //delete prep_stmt;
+    delete prep_stmt;
 
 }
 
+
+void RequetteBDD::add(vector<string> urls)
+{
+
+    string query = "INSERT INTO files(url,lastcrawl) VALUES (?,?) ";
+
+    sql::PreparedStatement  *prep_stmt;
+
+    prep_stmt = con->prepareStatement(query);
+
+    for(int i=0; i<urls.size(); i++)
+    {
+        prep_stmt->setString(1,urls[i]); //url
+
+        prep_stmt->setInt(6,0); //timstamp
+
+        prep_stmt->executeUpdate();
+    }
+
+
+    delete prep_stmt;
+
+}
 
 
 void RequetteBDD::update(int id,Files::Fichier file)

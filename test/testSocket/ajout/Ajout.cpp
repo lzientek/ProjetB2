@@ -7,7 +7,11 @@ Ajout::Ajout(string url)
 {
     this->url = utils::Url(url);
 }
-
+Ajout::Ajout(string url,vector<string> oldUrls)
+{
+    this->url = utils::Url(url);
+    this->oldUrls = oldUrls;
+}
 Ajout::Ajout(utils::Url url)
 {
     this->url = url;
@@ -39,7 +43,7 @@ void Ajout::saveFiles()
                 if(code == 200)
                 {
 
-                    vector<string> urls = utils::str::getUrls(header.getTxt());
+                    vector<string> urls = utils::str::getUrls(header.getTxt(),url.getUrl());
 
 
 
@@ -53,17 +57,28 @@ void Ajout::saveFiles()
                                                    string(utils::str::stringToChar(header.getTxt()))
                                                   );
 
-                    cout<<fichierResultat.getNom() <<endl;
-
-                    unsigned char c = utils::str::stringToChar( fichierResultat.getNom())[0];
-                    unsigned char c1 = 'é';
-
 
 
                     utils::RequetteBDD reqSQL;
                     reqSQL.add(fichierResultat);
+
                     if(serv::Serveur::verbose)
+                    {
                         cout<<"[serv-add]enregistrement en bdd"<<endl;
+                        cout<<"[serv-add] nombre de lien suivi:"<<urls.size()<<endl;
+                    }
+
+                    utils::str::removeDuplicate(urls);
+                    utils::str::removeFrom(urls,oldUrls);
+                    oldUrls.insert(oldUrls.end(),urls.cbegin(),urls.cend());
+
+                    for(uint i = 0; i<urls.size(); i++)
+                    {
+                        Ajout a(urls[i],oldUrls);
+                        a.saveFiles();
+                    }
+
+                    urls.clear();
                     break;
                 }
 
