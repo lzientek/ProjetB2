@@ -10,8 +10,8 @@ Crawl::Crawl()
 void Crawl::next()
 {
     utils::RequetteBDD bdd;
-    utils::Url urlArequeter = bdd.oldestCrawl(actualId);
-
+    utils::Url urlArequeter = bdd.oldestCrawl();
+    actualId++;
     if(urlArequeter.isValid())
     {
         Add::Ajout nouvelleActu(urlArequeter);

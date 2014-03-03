@@ -7,7 +7,7 @@ Ajout::Ajout(string url)
 {
     this->url = utils::Url(url);
 }
-Ajout::Ajout(string url,vector<string> oldUrls)
+Ajout::Ajout(string url,vector<string> &oldUrls)
 {
     this->url = utils::Url(url);
     this->oldUrls = oldUrls;
@@ -59,8 +59,12 @@ void Ajout::saveFiles()
 
 
 
-                    utils::RequetteBDD reqSQL;
-                    reqSQL.add(fichierResultat);
+                    utils::RequetteBDD reqSQLPage,reqSQLurls;
+                    reqSQLPage.add(fichierResultat);
+
+                    utils::str::removeDuplicate(urls); //on supprime les doublons
+
+                    reqSQLurls.add(urls);
 
                     if(serv::Serveur::verbose)
                     {
@@ -68,17 +72,6 @@ void Ajout::saveFiles()
                         cout<<"[serv-add] nombre de lien suivi:"<<urls.size()<<endl;
                     }
 
-                    utils::str::removeDuplicate(urls);
-                    utils::str::removeFrom(urls,oldUrls);
-                    oldUrls.insert(oldUrls.end(),urls.cbegin(),urls.cend());
-
-                    for(uint i = 0; i<urls.size(); i++)
-                    {
-                        Ajout a(urls[i],oldUrls);
-                        a.saveFiles();
-                    }
-
-                    urls.clear();
                     break;
                 }
 

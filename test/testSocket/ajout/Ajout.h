@@ -16,7 +16,7 @@ namespace Add
         public:
 
             Ajout(string url);
-            Ajout(string url,vector<string> oldUrls);
+            Ajout(string url,vector<string> &oldUrls);
             Ajout(utils::Url url);
             virtual ~Ajout();
             void saveFiles();

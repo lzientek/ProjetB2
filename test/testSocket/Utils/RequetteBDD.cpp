@@ -68,10 +68,10 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
 
 
 
-utils::Url RequetteBDD::oldestCrawl(int &id) //crawl le plus ancien
+utils::Url RequetteBDD::oldestCrawl() //crawl le plus ancien
 {
 
-    string query("SELECT id,url FROM files ORDER BY lastcrawl ASC LIMIT 1 ");
+    string query("SELECT url FROM files ORDER BY lastcrawl ASC LIMIT 1 ");
 
     sql::ResultSet  *result;
 
@@ -80,8 +80,7 @@ utils::Url RequetteBDD::oldestCrawl(int &id) //crawl le plus ancien
 
     result->next();
 
-    utils::Url urlToReturn("http://" + result->getString("url"));
-    id = result->getInt("id");
+    utils::Url urlToReturn(result->getString("url"));
     result->close();
 
     delete result;
@@ -127,7 +126,7 @@ void RequetteBDD::add(vector<string> urls)
     {
         prep_stmt->setString(1,urls[i]); //url
 
-        prep_stmt->setInt(6,0); //timstamp
+        prep_stmt->setInt(2,0); //timstamp
 
         prep_stmt->executeUpdate();
     }

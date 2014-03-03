@@ -28,9 +28,11 @@
 			<Add directory="/usr/local/include" />
 			<Add directory="/usr/include" />
 			<Add directory="/home/dev1/Documents/projet/test/testSocket/" />
+			<Add directory="/usr/include/boost/archive" />
 		</Compiler>
 		<Linker>
 			<Add library="/usr/lib/libmysqlcppconn.so" />
+			<Add library="/usr/lib/libboost_locale.so" />
 		</Linker>
 		<Unit filename="Client/ClientHTTP.cpp" />
 		<Unit filename="Client/ClientHTTP.h" />

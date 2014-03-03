@@ -34,7 +34,7 @@ namespace utils
             void update(int id,Files::Fichier file);
 
             vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=20);
-            utils::Url oldestCrawl(int &id);
+            utils::Url oldestCrawl();
 
         private:
             string like(string word);
