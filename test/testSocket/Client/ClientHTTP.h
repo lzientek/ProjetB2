@@ -13,7 +13,7 @@ namespace client
     class ClientHTTP
     {
         public:
-            ClientHTTP(utils::Url uri);
+            ClientHTTP(utils::Url &uri,string cookies ="");
 
             string getResultStr(){return file;}
             virtual ~ClientHTTP();
@@ -22,6 +22,7 @@ namespace client
             utils::Url urlClient;
             int execute();
             string file;
+            string cookies;
             struct sockaddr_in client;
             int sock;
     };

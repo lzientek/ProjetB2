@@ -11,7 +11,7 @@ Processus::Processus()
     thread threadServeur(runServeur);
     thread threadCrawl(runCrawl );
     thread threadCmd(runCommande );
-    threadServeur.join();
+    //threadServeur.join();
     threadCrawl.join();
     threadCmd.join();
 
@@ -71,10 +71,13 @@ void utils::runCrawl()
     bool boucleCrawl = true;
     while(boucleCrawl)
     {
-        boucleCrawl = (!Conf::getQuitter() && !Conf::stopCrawl);
+        boucleCrawl = !(Conf::getQuitter() || Conf::stopCrawl);
 
         if(boucleCrawl)
+        {
             c.next();
+            sleep(stoi(utils::Conf::getConf("tempsEntreCrawl")) );
+        }
         else
             break;
     }
@@ -93,7 +96,7 @@ void utils::runCommande()
     bool boucle =true;
     while(boucle)
         boucle = cmd() && !Conf::getQuitter();
-
+    Conf::stopCrawl = true;
     Conf::setQuitter(true);
     cout<<"[cmd]arret cmd"<<endl;
 }

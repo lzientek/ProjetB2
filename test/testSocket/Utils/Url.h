@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 
@@ -17,6 +18,7 @@ namespace utils
             string getUri(){return uri;}
             bool isValid(){return (url!="");}
             virtual ~Url();
+            static bool verifUrl(string url);
         protected:
         private:
             void parse();

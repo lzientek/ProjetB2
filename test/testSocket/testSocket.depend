@@ -3502,7 +3502,7 @@
 	"../Utils/Url.h"
 	"../Utils/StringUtils.h"
 
-1393955442 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
+1393965646 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
 	"Conf.h"
 	<iostream>
 	<vector>
@@ -3525,7 +3525,8 @@
 	<stdexcept>
 	"StringUtils.h"
 
-1393800465 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
+1393973507 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
+	"../Files/Fichier.h"
 	<string>
 	<vector>
 	<string.h>
@@ -3533,7 +3534,6 @@
 	<fstream>
 	<stdio.h>
 	<algorithm>
-	"../Files/Fichier.h"
 
 1393533893 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur.cpp
 	"Serveur.h"
@@ -3596,7 +3596,7 @@
 	"../Utils/StringUtils.h"
 	"../Serveur.h"
 
-1393949482 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.h
+1393971027 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.h
 	<iostream>
 	<string>
 	<vector>
@@ -3612,13 +3612,13 @@
 1392974963 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.cpp
 	"Conf.h"
 
-1393956083 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+1393971834 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
 	"RequetteBDD.h"
 
-1393800592 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
+1393973451 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
 	"StringUtils.h"
 
-1393953717 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+1393972378 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
 	"Ajout.h"
 
 1393847689 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
@@ -3626,16 +3626,16 @@
 	"Client/ClientHTTP.h"
 	"Files/Fichier.h"
 
-1392898403 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Processus.cpp
+1393960968 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Processus.cpp
 	"Processus.h"
 
 1390937015 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Stats.cpp
 	"Stats.h"
 
-1393798895 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
+1393965238 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
 	"ClientHTTP.h"
 
-1393798437 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h
+1393964244 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h
 	"../defines.h"
 	"../Files/Fichier.h"
 	"../Utils/Url.h"
@@ -3644,14 +3644,14 @@
 1393086753 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Url.cpp
 	"Url.h"
 
-1392304810 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Url.h
+1393973515 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Url.h
 	<iostream>
 	<string>
 
-1393801762 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.cpp
+1393968993 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.cpp
 	"HTTPclientHeader.h"
 
-1393085062 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.h
+1393964021 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.h
 	"../defines.h"
 	"../Utils/StringUtils.h"
 	"../Files/Fichier.h"
@@ -3660,7 +3660,7 @@
 	<iostream>
 	"statement.h"
 
-1393956147 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur/Crawl.cpp
+1393961064 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur/Crawl.cpp
 	"Crawl.h"
 
 1392895777 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Serveur/Crawl.h
@@ -4245,4 +4245,7 @@
 	<boost/locale/generator.hpp>
 	<boost/assert.hpp>
 	<vector>
+
+1390936462 /home/dev1/Documents/projet/test/testSocket//Files/Fichier.h
+	<iostream>
 

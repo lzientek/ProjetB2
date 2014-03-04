@@ -61,7 +61,7 @@ string utils::str::validXmlstring(string xml)
 int utils::str::calculNote(vector<string> motsRecherche,string text,string motImportant)
 {
     int note = 0;
-    for(int i=0; i<motsRecherche.size(); i++)
+    for(uint i=0; i<motsRecherche.size(); i++)
     {
         string mot = motsRecherche[i];
         supprimerTousLesCharacteres(mot,' ');//on supprime l'espace inutile
@@ -81,7 +81,8 @@ int utils::str::calculNote(vector<string> motsRecherche,string text,string motIm
 }
 
 
-vector<string> utils::str::getUrls(string text,string baseUrl)
+
+vector<string> utils::str::getUrls(string text)
 {
     vector<string> urlAretourner;
 
@@ -95,9 +96,6 @@ vector<string> utils::str::getUrls(string text,string baseUrl)
         {
             string urlToSave =text.substr(pos,fin-pos);
 
-            if(urlToSave.find("/")==0) //si c'est un chemain relatif
-                urlToSave = baseUrl + urlToSave;
-
             if(urlToSave.find("http")==0) //si on a bien une addresse valide
                 urlAretourner.push_back(urlToSave);
 
@@ -110,7 +108,6 @@ vector<string> utils::str::getUrls(string text,string baseUrl)
 }
 
 
-
 void utils::str::removeDuplicate(vector<string> &tab)
 {
     sort(tab.begin(), tab.end());
@@ -120,7 +117,7 @@ void utils::str::removeDuplicate(vector<string> &tab)
 
 void utils::str::removeFrom(vector<string> &into,vector<string> from)
 {
-    for(int i = 0; i <from.size(); i++)
+    for(uint i = 0; i <from.size(); i++)
     {
         vector<string>::iterator it;
 
@@ -141,7 +138,6 @@ string utils::str::generateMotImportant(Files::Fichier file)
     //TODO (olivier): écrire cette fonction de taré
     return "lucas,zientek";
 }
-
 
 
 void utils::str::showFile(string path)

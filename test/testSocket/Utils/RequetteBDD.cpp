@@ -81,6 +81,7 @@ string RequetteBDD::oldestCrawl() //crawl le plus ancien
     if(result->next())
     {
         string urlToReturn(result->getString("url"));
+        delete result;
         return urlToReturn;
     }
 
@@ -94,7 +95,6 @@ string RequetteBDD::oldestCrawl() //crawl le plus ancien
 
 void RequetteBDD::add(Files::Fichier file)
 {
-
     string query = "INSERT INTO files(titre,url,type,txt,motImportant,lastcrawl) VALUES (?,?,?,?,?,?) ";
 
     sql::PreparedStatement  *prep_stmt;
@@ -118,6 +118,7 @@ void RequetteBDD::add(Files::Fichier file)
 
 void RequetteBDD::add(vector<string> urls)
 {
+
     string query = "INSERT INTO files(url,lastcrawl) VALUES (?,?) ";
     sql::PreparedStatement  *prep_stmt;
     prep_stmt = con->prepareStatement(query);
@@ -125,7 +126,6 @@ void RequetteBDD::add(vector<string> urls)
 
     for(uint i=0; i<urls.size(); i++)
     {
-        cout<<urls[i]<<endl;
         RequetteBDD reqVerif;
         if(reqVerif.verifUrl(urls[i]))
         {
@@ -140,51 +140,66 @@ void RequetteBDD::add(vector<string> urls)
 
 bool RequetteBDD::verifUrl(string url)
 {
+
     ostringstream query("");
-    query <<"SELECT COUNT(url) as cnt FROM files WHERE url='"<<url<<"'";
-    cout<<query<<endl;
+    query <<"SELECT url FROM files WHERE url='"<<url<<"' LIMIT 1";
+
     sql::ResultSet  *result;
 
     result = executeSQL(query.str());
 
     if(result->next())
     {
-        int nb = result->getInt(1);
         delete result;
-        if(nb > 0)
-            return false;
-        else
-            return true;
+        return false;
     }
-
     delete result;
     return true;
 }
 
-void RequetteBDD::update(Files::Fichier file)
+void RequetteBDD::update(Files::Fichier file,string url,int temps)
 {
     if(!file.isEmpty())
     {
+        int tps=0;
+        string urlAsave="";
+        string query = "UPDATE files SET titre=?,url=?,type=?,txt=?,motImportant=?,lastcrawl=? WHERE url=? ";
 
-        string query = "UPDATE files SET titre=?,type=?,txt=?,motImportant=?,lastcrawl=? WHERE url=? ";
+        if(url!=file.getURL().getUri() && verifUrl(file.getURL().getUri()))
+        {
+            urlAsave = file.getURL().getUri();
+            if(temps==0)
+                tps =time(NULL); //timstamp
+            else
+                tps = temps;
+        }
+        else
+        {
+            urlAsave = url;
+            tps = (time(NULL)+3600*24*365);
+        }
 
         sql::PreparedStatement  *prep_stmt;
 
         prep_stmt = con->prepareStatement(query);
         int i=1;
         prep_stmt->setString(i++,file.getNom()); //titre
+        prep_stmt->setString(i++,urlAsave); //url
         prep_stmt->setInt(i++,file.getTypeInt()); //type
         prep_stmt->setString(i++,file.getTextFull()); //txt
         prep_stmt->setString(i++,str::generateMotImportant(file.getTextFull())); //mot important
-        prep_stmt->setInt(i++,time(NULL)); //timstamp
-        prep_stmt->setString(i++,file.getURL().getUri()); //where url
+
+
+        prep_stmt->setInt(i++,tps);//temps imposé
+
+        prep_stmt->setString(i++,url); //where url
 
         prep_stmt->execute();
         delete prep_stmt;
+
     }
 
 }
-
 
 
 string RequetteBDD::like(string word)
@@ -196,7 +211,6 @@ string RequetteBDD::like(string word)
 
 sql::ResultSet* RequetteBDD::executeSQL(string query)
 {
-    cout<<query<<endl;
     return stmt->executeQuery(query);
 }
 

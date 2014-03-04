@@ -31,7 +31,7 @@ namespace utils
             sql::ResultSet* executeSQL(string query);
             void add(vector<string> urls);
             void add(Files::Fichier file);
-            void update(Files::Fichier file);
+            void update(Files::Fichier file,string url,int temps=0);
             bool verifUrl(string url);
             vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=20);
             string oldestCrawl();

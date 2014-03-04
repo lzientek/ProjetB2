@@ -14,6 +14,7 @@ namespace client
             const string HTTP_LOCATION = "Location: ";
             const string HTTP_TYPE = "Content-Type: ";
             const string HTTP_TAILLE = "Content-Length: ";
+            const string HTTP_SET_COOKIES = "Set-Cookie: ";
 
         public:
             HTTPclientHeader(string header);
@@ -24,6 +25,7 @@ namespace client
             int getTypeInt();
             int getHttpCode(){return httpCode;}
             int getTaille();
+            string getCookies(){return cookies;}
             string getTxt(){return txt;}
             //______fingetter
 
@@ -37,6 +39,7 @@ namespace client
             string url;
             string newUrl;
             string txt;
+            string cookies;
             string type;
             int taille;
     };

@@ -4,13 +4,14 @@ using namespace client;
 
 
 
-ClientHTTP::ClientHTTP(utils::Url uri)
+ClientHTTP::ClientHTTP(utils::Url &uri,string cookies)
 {
     urlClient = uri;
     file = "";
+    this->cookies = cookies;
     if(urlClient.isValid())
     {
-        if(execute()<0)
+        if(execute() < 0)
             file= "";
     }
     else
@@ -26,7 +27,7 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
     if ( (host == NULL) || (host->h_addr == NULL) )
     {
-        cerr << "[ClientHttp]Error retrieving DNS information."<<endl<<urlClient.getUrl() << endl;
+        cerr << "[ClientHttp]Error retrieving DNS information."<<endl<<urlClient.getUrl() << "/"<<urlClient.getUri()<< endl;
         return -1;
     }
     else
@@ -59,10 +60,15 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
         stringstream ss;
         ss << "GET " << urlClient.getGet() << " HTTP/1.1\r\n"
         << "Host: "<< urlClient.getUrl() <<"\r\n"
-        << "Accept: text/html,text/xml, text/*\r\n"
-        << "\r\n\r\n";
+        << "Accept: text/html,text/xml, */*\r\n";
+        if(cookies!="")
+            ss<< "Cookie: "<<cookies<<"\r\n";
+        ss<< "\r\n\r\n";
         string request = ss.str();
 
+
+        if(serv::Serveur::verbose)
+            cout<<"[clientHttp] req:"<<endl<<request<<endl;
 
         if (send(sock, request.c_str(), request.length(), 0) != (int)request.length())
         {
@@ -138,7 +144,7 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
 
         }
-        file = boost::locale::conv::to_utf<char>(file,"UTF-8");
+        file = boost::locale::conv::to_utf<char>(file,"UTF-8");//on converti pour la bdd
     }
     return 0;
 }

@@ -1,5 +1,6 @@
 #ifndef AJOUT_H
 #define AJOUT_H
+#define MAX_REDIRECTION 4
 #include <iostream>
 #include <string>
 #include <vector>
@@ -19,12 +20,14 @@ namespace Add
 
             Ajout(utils::Url url,bool crawl = false);
             virtual ~Ajout();
-            void saveFiles();
+            int saveFiles();
         protected:
             utils::Url url;
             Files::Fichier file;
             bool isCrawl;
         private:
+            std::string urlToSave;
+            void cleanBoucle();
     };
 }
 #endif // AJOUT_H

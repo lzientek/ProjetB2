@@ -1,6 +1,7 @@
 #ifndef STRINGUTILS_H_INCLUDED
 #define STRINGUTILS_H_INCLUDED
 #define COEF_IMPORTANCE_MOT_IMPORTANT 100
+#include "../Files/Fichier.h"
 #include <string>
 #include <vector>
 #include <string.h>
@@ -8,7 +9,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <algorithm>
-#include "../Files/Fichier.h"
+
 
 
 using namespace std;
@@ -28,9 +29,10 @@ namespace utils
             static void replaceAll(std::string& str, const std::string& from, const std::string& to);
             static string validXmlstring(string xml);
             static int countOcurence(string mot, string dans);
-            static vector<string> getUrls(string text,string baseUrl);
+            static vector<string> getUrls(string text);
             static void removeDuplicate(vector<string> &tab);
             static void removeFrom(vector<string> &into,vector<string> from);
+
 
     };
 }

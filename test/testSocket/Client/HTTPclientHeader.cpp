@@ -13,6 +13,7 @@ HTTPclientHeader::HTTPclientHeader(string header)
     taille=0;
     newUrl = "";
     txt ="";
+    cookies="";
 
     //on split le header du body
     unsigned positionFinHeader;
@@ -92,8 +93,13 @@ bool HTTPclientHeader::parse()
             }
 
             else if( httpCode > 300 && httpCode < 400 && httpCode != 304 && httpCode != 305 ) //redirection
+            {
                 newUrl = getContentFromHeader(HTTP_LOCATION,lignes); //on recupere la nouvelle url en cas de rediretion
+                vector<string> tabCookie = utils::str::split(getContentFromHeader(HTTP_SET_COOKIES,lignes),";");
+                if(tabCookie.size() > 0)
+                    cookies = tabCookie[0];
 
+            }
             else
                 cerr<<"[clientHttpHeader] erreur "<<httpCode<<endl;
         }
