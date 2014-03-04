@@ -31,10 +31,10 @@ namespace utils
             sql::ResultSet* executeSQL(string query);
             void add(vector<string> urls);
             void add(Files::Fichier file);
-            void update(int id,Files::Fichier file);
-
+            void update(Files::Fichier file);
+            bool verifUrl(string url);
             vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=20);
-            utils::Url oldestCrawl();
+            string oldestCrawl();
 
         private:
             string like(string word);

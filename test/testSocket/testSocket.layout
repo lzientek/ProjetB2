@@ -2,13 +2,13 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="Client/ClientHTTP.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="3667" topLine="123" />
+		<Cursor position="668" topLine="0" />
 	</File>
 	<File name="Client/ClientHTTP.h" open="0" top="0" tabpos="2">
 		<Cursor position="192" topLine="0" />
 	</File>
-	<File name="Client/HTTPclientHeader.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="1487" topLine="55" />
+	<File name="Client/HTTPclientHeader.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="1076" topLine="67" />
 	</File>
 	<File name="Client/HTTPclientHeader.h" open="0" top="0" tabpos="5">
 		<Cursor position="365" topLine="2" />
@@ -23,16 +23,16 @@
 		<Cursor position="966" topLine="22" />
 	</File>
 	<File name="Recherche/Resultat.h" open="0" top="0" tabpos="1">
-		<Cursor position="204" topLine="0" />
+		<Cursor position="542" topLine="0" />
 	</File>
-	<File name="Serveur.cpp" open="1" top="1" tabpos="7">
-		<Cursor position="3678" topLine="160" />
+	<File name="Serveur.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="1529" topLine="116" />
 	</File>
 	<File name="Serveur.h" open="0" top="0" tabpos="14">
 		<Cursor position="843" topLine="0" />
 	</File>
-	<File name="Serveur/Crawl.cpp" open="0" top="0" tabpos="8">
-		<Cursor position="385" topLine="5" />
+	<File name="Serveur/Crawl.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="282" topLine="0" />
 	</File>
 	<File name="Serveur/Crawl.h" open="0" top="0" tabpos="4">
 		<Cursor position="154" topLine="0" />
@@ -43,23 +43,23 @@
 	<File name="Serveur/HttpHeader.h" open="0" top="0" tabpos="8">
 		<Cursor position="805" topLine="16" />
 	</File>
-	<File name="Utils/Conf.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="394" topLine="23" />
+	<File name="Utils/Conf.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="1583" topLine="45" />
 	</File>
 	<File name="Utils/Conf.h" open="0" top="0" tabpos="6">
 		<Cursor position="538" topLine="0" />
 	</File>
-	<File name="Utils/Processus.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="273" topLine="13" />
+	<File name="Utils/Processus.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="1499" topLine="12" />
 	</File>
 	<File name="Utils/Processus.h" open="0" top="0" tabpos="12">
 		<Cursor position="216" topLine="0" />
 	</File>
-	<File name="Utils/RequetteBDD.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="70" topLine="0" />
+	<File name="Utils/RequetteBDD.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="2056" topLine="72" />
 	</File>
-	<File name="Utils/RequetteBDD.h" open="0" top="0" tabpos="8">
-		<Cursor position="618" topLine="21" />
+	<File name="Utils/RequetteBDD.h" open="1" top="0" tabpos="7">
+		<Cursor position="886" topLine="18" />
 	</File>
 	<File name="Utils/Stats.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="65" topLine="0" />
@@ -67,28 +67,28 @@
 	<File name="Utils/Stats.h" open="0" top="0" tabpos="0">
 		<Cursor position="431" topLine="5" />
 	</File>
-	<File name="Utils/StringUtils.cpp" open="1" top="0" tabpos="4">
+	<File name="Utils/StringUtils.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="3176" topLine="108" />
 	</File>
-	<File name="Utils/StringUtils.h" open="1" top="0" tabpos="5">
+	<File name="Utils/StringUtils.h" open="0" top="0" tabpos="5">
 		<Cursor position="1195" topLine="11" />
 	</File>
-	<File name="Utils/Url.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="658" topLine="0" />
+	<File name="Utils/Url.cpp" open="1" top="0" tabpos="16">
+		<Cursor position="134" topLine="11" />
 	</File>
 	<File name="Utils/Url.h" open="0" top="0" tabpos="21">
 		<Cursor position="534" topLine="0" />
 	</File>
-	<File name="ajout/Ajout.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="2113" topLine="59" />
+	<File name="ajout/Ajout.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="160" topLine="0" />
 	</File>
-	<File name="ajout/Ajout.h" open="0" top="0" tabpos="9">
-		<Cursor position="380" topLine="0" />
+	<File name="ajout/Ajout.h" open="1" top="0" tabpos="6">
+		<Cursor position="567" topLine="0" />
 	</File>
 	<File name="defines.h" open="0" top="0" tabpos="0">
 		<Cursor position="152" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="436" topLine="5" />
+		<Cursor position="266" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

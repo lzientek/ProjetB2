@@ -68,7 +68,7 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
 
 
 
-utils::Url RequetteBDD::oldestCrawl() //crawl le plus ancien
+string RequetteBDD::oldestCrawl() //crawl le plus ancien
 {
 
     string query("SELECT url FROM files ORDER BY lastcrawl ASC LIMIT 1 ");
@@ -78,13 +78,16 @@ utils::Url RequetteBDD::oldestCrawl() //crawl le plus ancien
     result = executeSQL(query);
 
 
-    result->next();
+    if(result->next())
+    {
+        string urlToReturn(result->getString("url"));
+        return urlToReturn;
+    }
 
-    utils::Url urlToReturn(result->getString("url"));
     result->close();
 
     delete result;
-    return urlToReturn;
+    return "";
 }
 
 
@@ -115,46 +118,66 @@ void RequetteBDD::add(Files::Fichier file)
 
 void RequetteBDD::add(vector<string> urls)
 {
-
     string query = "INSERT INTO files(url,lastcrawl) VALUES (?,?) ";
-
     sql::PreparedStatement  *prep_stmt;
-
     prep_stmt = con->prepareStatement(query);
 
-    for(int i=0; i<urls.size(); i++)
+
+    for(uint i=0; i<urls.size(); i++)
     {
-        prep_stmt->setString(1,urls[i]); //url
-
-        prep_stmt->setInt(2,0); //timstamp
-
-        prep_stmt->executeUpdate();
+        cout<<urls[i]<<endl;
+        RequetteBDD reqVerif;
+        if(reqVerif.verifUrl(urls[i]))
+        {
+            prep_stmt->setString(1,urls[i]); //url
+            prep_stmt->setInt(2,0); //timstamp
+            prep_stmt->executeUpdate();
+        }
     }
 
-
     delete prep_stmt;
-
 }
 
-
-void RequetteBDD::update(int id,Files::Fichier file)
+bool RequetteBDD::verifUrl(string url)
 {
-    if(id>=0 && !file.isEmpty())
+    ostringstream query("");
+    query <<"SELECT COUNT(url) as cnt FROM files WHERE url='"<<url<<"'";
+    cout<<query<<endl;
+    sql::ResultSet  *result;
+
+    result = executeSQL(query.str());
+
+    if(result->next())
+    {
+        int nb = result->getInt(1);
+        delete result;
+        if(nb > 0)
+            return false;
+        else
+            return true;
+    }
+
+    delete result;
+    return true;
+}
+
+void RequetteBDD::update(Files::Fichier file)
+{
+    if(!file.isEmpty())
     {
 
-        string query = "UPDATE files SET titre=?,url=?,type=?,txt=?,motImportant=?,lastcrawl=? WHERE id=? ";
+        string query = "UPDATE files SET titre=?,type=?,txt=?,motImportant=?,lastcrawl=? WHERE url=? ";
 
         sql::PreparedStatement  *prep_stmt;
 
         prep_stmt = con->prepareStatement(query);
-
-        prep_stmt->setString(1,file.getNom()); //titre
-        prep_stmt->setString(2,file.getURL().getUri()); //url
-        prep_stmt->setInt(3,file.getTypeInt()); //type
-        prep_stmt->setString(4,file.getTextFull()); //txt
-        prep_stmt->setString(5,str::generateMotImportant(file.getTextFull())); //mot important
-        prep_stmt->setInt(6,time(NULL)); //timstamp
-        prep_stmt->setInt(7,id); //where ID
+        int i=1;
+        prep_stmt->setString(i++,file.getNom()); //titre
+        prep_stmt->setInt(i++,file.getTypeInt()); //type
+        prep_stmt->setString(i++,file.getTextFull()); //txt
+        prep_stmt->setString(i++,str::generateMotImportant(file.getTextFull())); //mot important
+        prep_stmt->setInt(i++,time(NULL)); //timstamp
+        prep_stmt->setString(i++,file.getURL().getUri()); //where url
 
         prep_stmt->execute();
         delete prep_stmt;

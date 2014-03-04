@@ -15,15 +15,15 @@ namespace Add
     {
         public:
 
-            Ajout(string url);
-            Ajout(string url,vector<string> &oldUrls);
-            Ajout(utils::Url url);
+            Ajout(string url,bool crawl = false);
+
+            Ajout(utils::Url url,bool crawl = false);
             virtual ~Ajout();
             void saveFiles();
         protected:
-            vector<std::string> oldUrls;
             utils::Url url;
             Files::Fichier file;
+            bool isCrawl;
         private:
     };
 }

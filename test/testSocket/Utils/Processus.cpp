@@ -72,8 +72,11 @@ void utils::runCrawl()
     while(boucleCrawl)
     {
         boucleCrawl = (!Conf::getQuitter() && !Conf::stopCrawl);
+
         if(boucleCrawl)
             c.next();
+        else
+            break;
     }
 
     cout<<"[crawl]arret du crawl"<<endl;

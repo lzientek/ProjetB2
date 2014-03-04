@@ -9,19 +9,16 @@ Crawl::Crawl()
 
 void Crawl::next()
 {
+    sleep(stoi(utils::Conf::getConf("tempsEntreCrawl")) );
     utils::RequetteBDD bdd;
-    utils::Url urlArequeter = bdd.oldestCrawl();
+    string urlArequeter = bdd.oldestCrawl();
     actualId++;
-    if(urlArequeter.isValid())
+    if(urlArequeter!="")
     {
-        Add::Ajout nouvelleActu(urlArequeter);
+        Add::Ajout nouvelleActu(urlArequeter,true);
         nouvelleActu.saveFiles();
-
-        //else
-            cerr<<"[crawl] non effectuer erreur file!"<<endl;
-
-
     }
+
 
 }
 

@@ -3,18 +3,17 @@ using namespace std;
 using namespace Add;
 
 
-Ajout::Ajout(string url)
+Ajout::Ajout(string url,bool crawl)
 {
     this->url = utils::Url(url);
+    this->isCrawl = crawl;
 }
-Ajout::Ajout(string url,vector<string> &oldUrls)
-{
-    this->url = utils::Url(url);
-    this->oldUrls = oldUrls;
-}
-Ajout::Ajout(utils::Url url)
+
+
+Ajout::Ajout(utils::Url url,bool crawl)
 {
     this->url = url;
+    this->isCrawl = crawl;
 }
 
 void Ajout::saveFiles()
@@ -27,7 +26,6 @@ void Ajout::saveFiles()
         do
         {
             client::ClientHTTP httpRequest(url);//on créé la requete http
-
 
 
             if(httpRequest.getResultStr() != "")
@@ -46,8 +44,6 @@ void Ajout::saveFiles()
                     vector<string> urls = utils::str::getUrls(header.getTxt(),url.getUrl());
 
 
-
-
                     Files::Fichier fichierResultat("",
                                                    url.getUri(),
                                                    utils::str::generateMotImportant(header.getTxt()),
@@ -60,11 +56,21 @@ void Ajout::saveFiles()
 
 
                     utils::RequetteBDD reqSQLPage,reqSQLurls;
-                    reqSQLPage.add(fichierResultat);
+
+                    if(!isCrawl)
+                    {
+                        reqSQLPage.add(fichierResultat);
+                    }
+                    else
+                    {
+                        reqSQLPage.update(fichierResultat);
+                    }
 
                     utils::str::removeDuplicate(urls); //on supprime les doublons
 
                     reqSQLurls.add(urls);
+
+
 
                     if(serv::Serveur::verbose)
                     {
