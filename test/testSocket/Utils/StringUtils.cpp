@@ -85,7 +85,6 @@ int utils::str::calculNote(vector<string> motsRecherche,string text,string motIm
 vector<string> utils::str::getUrls(string text)
 {
     vector<string> urlAretourner;
-
     unsigned pos = 0;
 
     while((pos = text.find("href=\"",pos)) != string::npos)
@@ -98,7 +97,6 @@ vector<string> utils::str::getUrls(string text)
 
             if(urlToSave.find("http")==0) //si on a bien une addresse valide
                 urlAretourner.push_back(urlToSave);
-
         }
 
         pos = fin;
@@ -112,8 +110,19 @@ void utils::str::removeDuplicate(vector<string> &tab)
 {
     sort(tab.begin(), tab.end());
     tab.erase( unique (tab.begin(), tab.end()),tab.end());
+    VerifUrl(tab);
 }
 
+
+void utils::str::VerifUrl(vector<string> &urls)
+{
+    vector<string>::iterator it;
+    for(it = urls.begin(); it !=urls.end(); ++it)
+    {
+        if(utils::Url::verifUrl(*it))
+            urls.erase(it);
+    }
+}
 
 void utils::str::removeFrom(vector<string> &into,vector<string> from)
 {

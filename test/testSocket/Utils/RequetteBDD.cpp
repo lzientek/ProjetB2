@@ -26,7 +26,7 @@ RequetteBDD::RequetteBDD(string query)
         executeSQL(query);
     }
 }
-
+//TODO : id a virer
 vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int nombre)
 {
     ostringstream query("");

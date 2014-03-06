@@ -44,9 +44,8 @@ void Url::parse()
         get="/";
     }
 
-    if(verifUrl(url))
+    if(!verifUrl(url))
     {
-        cout<<"error url"<<url<<endl;
         url="";
     }
 
@@ -58,8 +57,11 @@ bool Url::verifUrl(string url)
     for(uint i=0;i<url.length();i++)
     {
         int numLettre = (int)url.at(i);
-        if(numLettre<(-127) || numLettre>127)
+        if(numLettre<0|| numLettre>127)
+        {
+            cout<<url<<" :    supprimé"<<endl;
             return false;
+        }
     }
     return true;
 }

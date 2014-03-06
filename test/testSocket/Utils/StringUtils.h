@@ -32,6 +32,7 @@ namespace utils
             static vector<string> getUrls(string text);
             static void removeDuplicate(vector<string> &tab);
             static void removeFrom(vector<string> &into,vector<string> from);
+            static void VerifUrl(vector<string> &urls);
 
 
     };
