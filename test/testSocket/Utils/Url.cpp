@@ -57,9 +57,10 @@ bool Url::verifUrl(string url)
     for(uint i=0;i<url.length();i++)
     {
         int numLettre = (int)url.at(i);
-        if(numLettre<0|| numLettre>127)
+        if(numLettre<34|| numLettre > 123)
         {
-            cout<<url<<" :    supprimé"<<endl;
+            cout<<"lettre number "<<url.at(i)<<" "<<numLettre<<endl;
+            cout<<url<<" : supprimé"<<endl;
             return false;
         }
     }

@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
     //chargement des modules statics
     utils::Conf::load();
     utils::Stats::load();
-
     utils::Processus procs;
 
 

@@ -26,7 +26,7 @@ RequetteBDD::RequetteBDD(string query)
         executeSQL(query);
     }
 }
-//TODO : id a virer
+
 vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int nombre)
 {
     ostringstream query("");
@@ -106,7 +106,7 @@ void RequetteBDD::add(Files::Fichier file)
     prep_stmt->setInt(3,file.getTypeInt()); //type
     istringstream stream(file.getTextFull());
     prep_stmt->setBlob(4,&stream); //txt
-    prep_stmt->setString(5,str::generateMotImportant(file.getTextFull())); //mot important
+    prep_stmt->setString(5,Algo::generateMotImportant(file.getTextFull())); //mot important
     prep_stmt->setInt(6,time(NULL)); //timstamp
 
     prep_stmt->execute();
@@ -187,7 +187,7 @@ void RequetteBDD::update(Files::Fichier file,string url,int temps)
         prep_stmt->setString(i++,urlAsave); //url
         prep_stmt->setInt(i++,file.getTypeInt()); //type
         prep_stmt->setString(i++,file.getTextFull()); //txt
-        prep_stmt->setString(i++,str::generateMotImportant(file.getTextFull())); //mot important
+        prep_stmt->setString(i++,Algo::generateMotImportant(file.getTextFull())); //mot important
 
 
         prep_stmt->setInt(i++,tps);//temps imposé

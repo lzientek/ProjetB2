@@ -130,22 +130,33 @@ void utils::str::removeFrom(vector<string> &into,vector<string> from)
     {
         vector<string>::iterator it;
 
-            if( (it = find(into.begin(),into.end(),from[i])) != from.end())
-            {
-                into.erase(it);
-            }
+        if( (it = find(into.begin(),into.end(),from[i])) != from.end())
+        {
+            into.erase(it);
+        }
 
 
     }
 }
 
-/**
-*@return les mots importants séparé par une virgule
-**/
-string utils::str::generateMotImportant(Files::Fichier file)
+
+bool utils::str::isUpper(string str)
 {
-    //TODO (olivier): écrire cette fonction de taré
-    return "lucas,zientek";
+    std::string str1 = str;
+    std::transform(str1.begin(), str1.end(),str1.begin(), ::toupper);
+    if(str==str1)
+        return true;
+    return false;
+}
+
+
+bool utils::str::checkIsAlphabet(string str)
+{
+    char* tabStr = stringToChar(str);
+    for(int i = 0; i<str.size(); i++)
+        if(tabStr[i] < 'A' && tabStr[i] > 'Z' && tabStr[i] < 'a' && tabStr[i] > 'z')
+            return false;// si on a des char qui ne sont pas des lettres
+    return true;
 }
 
 
@@ -175,4 +186,19 @@ int utils::str::countOcurence(string mot, string dans)
     }
 
     return nombre;
+}
+
+string utils::str::interieurBalise(string str,string nomBalise)
+{
+    string titre = "<"+nomBalise+">",titreFin = "</"+nomBalise+">";
+        unsigned positionTitre = 0 , positionTitreFin =0;
+
+        if((positionTitre = str.find(titre)) != string::npos )
+        {
+            int debutTitre = positionTitre + titre.size();
+            positionTitreFin = str.find(titreFin);
+            string text = str.substr(debutTitre,positionTitreFin - debutTitre);
+            return text;
+        }
+        return "";
 }

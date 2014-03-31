@@ -10,6 +10,7 @@
 #include "mysql_connection.h"
 #include "mysql_driver.h"
 #include "../Files/Fichier.h"
+#include "Algo.h"
 
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>

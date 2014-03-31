@@ -3502,7 +3502,7 @@
 	"../Utils/Url.h"
 	"../Utils/StringUtils.h"
 
-1393965646 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
+1395070766 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
 	"Conf.h"
 	<iostream>
 	<vector>
@@ -3511,6 +3511,7 @@
 	"mysql_connection.h"
 	"mysql_driver.h"
 	"../Files/Fichier.h"
+	"Algo.h"
 	<cppconn/driver.h>
 	<cppconn/exception.h>
 	<cppconn/resultset.h>
@@ -3525,7 +3526,7 @@
 	<stdexcept>
 	"StringUtils.h"
 
-1394128666 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
+1395073314 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
 	"../Files/Fichier.h"
 	<string>
 	<vector>
@@ -3612,13 +3613,13 @@
 1392974963 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Conf.cpp
 	"Conf.h"
 
-1393971834 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+1395070789 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
 	"RequetteBDD.h"
 
-1394128747 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
+1395070923 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
 	"StringUtils.h"
 
-1393972378 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+1395070940 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
 	"Ajout.h"
 
 1393847689 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/main.cpp
@@ -3641,7 +3642,7 @@
 	"../Utils/Url.h"
 	"boost/locale.hpp"
 
-1394129133 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Url.cpp
+1395065165 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Url.cpp
 	"Url.h"
 
 1393973515 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Url.h
@@ -4248,4 +4249,12 @@
 
 1390936462 /home/dev1/Documents/projet/test/testSocket//Files/Fichier.h
 	<iostream>
+
+1395070247 source:/home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Algo.cpp
+	"Algo.h"
+
+1395072050 /home/dev1/Documents/projet/test/ProjetB2/test/testSocket/Utils/Algo.h
+	"StringUtils.h"
+	<string>
+	<sstream>
 

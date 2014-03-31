@@ -57,7 +57,7 @@ int Ajout::saveFiles()
 
                     Files::Fichier fichierResultat("",
                                                    url.getUri(),
-                                                   utils::str::generateMotImportant(header.getTxt()),
+                                                   Algo::generateMotImportant(header.getTxt()),
                                                    header.getTypeInt(),
                                                    0,
                                                    header.getTaille(),
@@ -65,7 +65,7 @@ int Ajout::saveFiles()
                                                   );
 
 
-
+include <sstream>
                     utils::RequetteBDD reqSQLPage,reqSQLurls;
 
                     if(!isCrawl)
