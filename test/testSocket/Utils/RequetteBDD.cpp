@@ -38,8 +38,8 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
         query<< "url "<<like(words[i])<<" OR motImportant "<<like(words[i])<< " OR txt "<<like(words[i])<<" ";
     }
 
-    //query << "LIMIT " << debut <<","<< nombre;
-    query << " ORDER BY id DESC LIMIT 1 " ;//
+    query << "LIMIT " << debut <<","<< nombre;
+    //query << " ORDER BY  DESC LIMIT 1 " ;//
     sql::ResultSet  *result;
 
     result = executeSQL(query.str());
@@ -106,7 +106,7 @@ void RequetteBDD::add(Files::Fichier file)
     prep_stmt->setInt(3,file.getTypeInt()); //type
     istringstream stream(file.getTextFull());
     prep_stmt->setBlob(4,&stream); //txt
-    prep_stmt->setString(5,Algo::generateMotImportant(file.getTextFull())); //mot important
+    prep_stmt->setString(5,Algo::generateMotImportant(file)); //mot important
     prep_stmt->setInt(6,time(NULL)); //timstamp
 
     prep_stmt->execute();
@@ -142,18 +142,27 @@ bool RequetteBDD::verifUrl(string url)
 {
 
     ostringstream query("");
+    //on verifie si l'url n'est pas deja dans la
     query <<"SELECT url FROM files WHERE url='"<<url<<"' LIMIT 1";
 
-    sql::ResultSet  *result;
-
-    result = executeSQL(query.str());
-
-    if(result->next())
+    try
     {
+
+        sql::ResultSet  *result;
+
+        result = executeSQL(query.str());
+
+        if(result->next())
+        {
+            delete result;
+            return false;
+        }
         delete result;
-        return false;
     }
-    delete result;
+    catch(...)
+    {
+        return true;
+    }
     return true;
 }
 
@@ -187,7 +196,7 @@ void RequetteBDD::update(Files::Fichier file,string url,int temps)
         prep_stmt->setString(i++,urlAsave); //url
         prep_stmt->setInt(i++,file.getTypeInt()); //type
         prep_stmt->setString(i++,file.getTextFull()); //txt
-        prep_stmt->setString(i++,Algo::generateMotImportant(file.getTextFull())); //mot important
+        prep_stmt->setString(i++,Algo::generateMotImportant(file)); //mot important
 
 
         prep_stmt->setInt(i++,tps);//temps imposé
@@ -220,3 +229,4 @@ RequetteBDD::~RequetteBDD()
     delete stmt;
     delete con;
 }
+

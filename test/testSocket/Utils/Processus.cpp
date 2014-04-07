@@ -9,10 +9,10 @@ Processus::Processus()
     cout<<"[prog]demarrage des processus"<<endl;
 //TODO:un try catch
     thread threadServeur(runServeur);
-    thread threadCrawl(runCrawl );
+    //thread threadCrawl(runCrawl );
     thread threadCmd(runCommande );
-    //threadServeur.join();
-    threadCrawl.join();
+    threadServeur.join();
+    //threadCrawl.join();
     threadCmd.join();
 
 

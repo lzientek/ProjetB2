@@ -96,7 +96,11 @@ vector<string> utils::str::getUrls(string text)
             string urlToSave =text.substr(pos,fin-pos);
 
             if(urlToSave.find("http")==0) //si on a bien une addresse valide
-                urlAretourner.push_back(urlToSave);
+            {
+                if(utils::Url::verifUrl(urlToSave))
+                    urlAretourner.push_back(urlToSave);
+            }
+
         }
 
         pos = fin;
@@ -110,34 +114,21 @@ void utils::str::removeDuplicate(vector<string> &tab)
 {
     sort(tab.begin(), tab.end());
     tab.erase( unique (tab.begin(), tab.end()),tab.end());
-    VerifUrl(tab);
+    //VerifUrl(tab);
 }
 
 
 void utils::str::VerifUrl(vector<string> &urls)
 {
-    vector<string>::iterator it;
-    for(it = urls.begin(); it !=urls.end(); ++it)
-    {
-        if(utils::Url::verifUrl(*it))
-            urls.erase(it);
-    }
+
+//    for(uint i = 0; i < urls.size(); i++)
+//    {
+//        if()
+//            urls.erase(i));
+//    }
 }
 
-void utils::str::removeFrom(vector<string> &into,vector<string> from)
-{
-    for(uint i = 0; i <from.size(); i++)
-    {
-        vector<string>::iterator it;
 
-        if( (it = find(into.begin(),into.end(),from[i])) != from.end())
-        {
-            into.erase(it);
-        }
-
-
-    }
-}
 
 
 bool utils::str::isUpper(string str)
@@ -153,7 +144,7 @@ bool utils::str::isUpper(string str)
 bool utils::str::checkIsAlphabet(string str)
 {
     char* tabStr = stringToChar(str);
-    for(int i = 0; i<str.size(); i++)
+    for(uint i = 0; i<str.size(); i++)
         if(tabStr[i] < 'A' && tabStr[i] > 'Z' && tabStr[i] < 'a' && tabStr[i] > 'z')
             return false;// si on a des char qui ne sont pas des lettres
     return true;
@@ -191,14 +182,14 @@ int utils::str::countOcurence(string mot, string dans)
 string utils::str::interieurBalise(string str,string nomBalise)
 {
     string titre = "<"+nomBalise+">",titreFin = "</"+nomBalise+">";
-        unsigned positionTitre = 0 , positionTitreFin =0;
+    unsigned positionTitre = 0 , positionTitreFin =0;
 
-        if((positionTitre = str.find(titre)) != string::npos )
-        {
-            int debutTitre = positionTitre + titre.size();
-            positionTitreFin = str.find(titreFin);
-            string text = str.substr(debutTitre,positionTitreFin - debutTitre);
-            return text;
-        }
-        return "";
+    if((positionTitre = str.find(titre)) != string::npos )
+    {
+        int debutTitre = positionTitre + titre.size();
+        positionTitreFin = str.find(titreFin);
+        string text = str.substr(debutTitre,positionTitreFin - debutTitre);
+        return text;
+    }
+    return "";
 }

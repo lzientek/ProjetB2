@@ -1,0 +1,4 @@
+http://www.zeroc.com/doc/Ice-3.4.1/manual/Adv_server.33.24.
+  stmt->execute("set session character_set_connection=utf8;");
+  stmt->execute("set session character_set_results=euckr;");
+  stmt->execute("set session character_set_client=euckr;");

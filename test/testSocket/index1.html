@@ -1,0 +1,1054 @@
+
+1a7e
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="fr"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="fr"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="fr"> <![endif]-->
+<!--[if gt IE 7]> <html class="no-js ie oldie" lang="fr"> <![endif]-->
+<html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><script type="text/javascript">
+            var App = {};
+            App.startTime = (new Date()).getTime();
+
+            var _sf_startpt = App.startTime;
+        </script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="application-name" content="OpenClassrooms"/>
+<meta name="msapplication-TileColor" content="#002D40"/>
+<meta name="msapplication-TileImage" content="/bundles/common/images/928bd40a-9507-4495-977d-ace7d554190b.png"/>
+<!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+<link href="/bundles/common/css/jquery-ui.css?5cf7ca8f4y32b" type="text/css" rel="stylesheet" media="all"/>
+<link href="/bundles/common/css/master.css?5cf7ca8f4y32b" type="text/css" rel="stylesheet" media="all"/>
+<link href="/bundles/common/css/syntaxhl.css?5cf7ca8f4y32b" type="text/css" rel="stylesheet" media="all"/>
+<link href="/bundles/thread/css/main.css?5cf7ca8f4y32b" type="text/css" rel="stylesheet" media="all"/>
+<link href="/bundles/thread/css/certif.css?5cf7ca8f4y32b" type="text/css" rel="stylesheet" media="all"/>
+<script type="text/javascript" src="/js/modernizr.js?5cf7ca8f4y32b"></script>
+<link rel="shortcut icon" href="/favicon.ico?5cf7ca8f4y32b"/>
+<script type='text/javascript'>
+  (function() {
+    var cx = '014616277910456467192:89xygm8tdzq';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<title>[Résolu] [code::blocks] Différences entre Release et Debug</title>
+ 
+<script type="text/javascript">
+
+            
+            App.user = {
+                            }
+
+            App.preferences = {
+                assetVersion:  '5cf7ca8f4y32b' 
+                // TODO: move that in specific course twig
+                            };
+
+            App.preferences.modules = {
+                smiley: {
+                    basePath: '/bundles/common/images/smiley/'
+                }
+            };
+
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            (function() {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+            '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+            })();
+
+
+            googletag.cmd.push(function() {
+                        if (window.innerWidth >= 728)
+    {
+    googletag.defineSlot('/1017495/megabann_forums_footer_728x90px', [728, 90], 'div-gpt-ad-1350977194635-4').addService(googletag.pubads());
+    googletag.defineSlot('/1017495/megabann_forums_header_728x90px', [728, 90], 'div-gpt-ad-1350977194635-5').addService(googletag.pubads());
+    }
+    else
+    {
+    googletag.defineSlot('/1017495/bann_mobile_forums_footer_320x50px', [320, 50], 'div-gpt-ad-1350977284180-4').addService(googletag.pubads());
+    googletag.defineSlot('/1017495/bann_mobile_forums_header_320x50px', [320, 50], 'div-gpt-ad-1350977284180-5').addService(googletag.pubads());
+    }
+
+    googletag.defineSlot('/1017495/pave_message_sujets_forums_300x250px', [300, 250], 'div-gpt-ad-1350977194635-16').addService(googletag.pubads());
+
+
+                                                                    googletag.pubads().setTargeting("userType", "0");
+
+                                                                            googletag.pubads().setTargeting("category", "1");
+                
+                
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+
+                        
+            var _kmq = _kmq || [];
+            var _kmk = _kmk || 'f80934fec2e07756435391cfacdb41128ae1f0fd';
+            function _kms(u){
+                setTimeout(function()
+                        { var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = u; f.parentNode.insertBefore(s, f); }
+                        , 1);
+            }
+            _kms('//i.kissmetrics.com/i.js');
+            _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+            if (App.user.id) {
+                _kmq.push(['identify', App.user.id]);
+            }
+
+        </script>
+ 
+</head>
+<body class="oc-body oldsdz  ">
+<!--[if lt IE 9]>
+        <div class="deprecated-ie">
+            <p>Vous utilisez une ancienne version d'Internet Explorer, veuillez vous <a target="_blank"  href="http://windows.microsoft.com/fr-fr/internet-explorer/download-ie/">mettre à jour</a>.</p>
+        </div>
+        <![endif]-->
+<section id="oc-header" class="no-padding">
+<div class="centered clearfix">
+<a href="/" class="oc-logo" title="OpenClassrooms.com"></a>
+<a id="top-menu-switch" class="menu-open-button">
+<i class="icon-menu"></i>
+</a>
+<div class="header-inner">
+<header>
+<span class="header-topline">
+<a href="http://boutique.fr.openclassrooms.com/boutique-614-1843-programmez-en-actionscript-3.html?utm_source=SiteWeb-OC&amp;%20utm_medium=Phrase-header&amp;utm_campaign=Header-preco-actionscript">Précommandez votre livre Programmez en ActionScript 3</a> dès maintenant !
+</span>
+<div class="language dropdown small">
+<a href="#">Français</a>
+<div class="dropdown-menu">
+<ul class="dropdown-menu-items">
+<li class="dropdown-menu-item"><a href="#">Français</a></li>
+</ul>
+</div>
+</div>
+</header>
+<nav role="navigation">
+<div class="menu-nav">
+<ul class="menu-nav-items primary-nav">
+<li class="menu-nav-item courses">
+<div class="dropdown">
+<a href="/cours">Cours</a>
+<div class="dropdown-menu">
+<ul class="dropdown-menu-items">
+<li class="dropdown-menu-item " data-name="informatique">
+<a href="/informatique/cours">Informatique</a>
+</li>
+<li class="dropdown-menu-item " data-name="sciences">
+<a href="/sciences/cours">Sciences</a>
+</li>
+
+819
+<li class="dropdown-menu-item " data-name="business"><a>Entreprise</a></li>
+<li class="dropdown-menu-item " data-name="write"><a href="#"><i class="icon-write"></i> Créer un cours</a></li>
+<li class="dropdown-menu-item"><a href="/tutoriels/carte-des-connaissances" title="Carte des connaissances"><i class="icon-map"></i>Carte</a></li>
+</ul>
+<div class="dropdown-submenu informatique">
+<div class="courses-list-container clearfix">
+<ul>
+<li>
+<a href="/informatique/2d/cours">
+2D
+<span>(28)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/actionscript/cours">
+ActionScript
+<span>(17)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/ada/cours">
+Ada
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/android/cours">
+Android
+<span>(3)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/blackberry/cours">
+BlackBerry
+<span>(1)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/c/cours">
+C
+<span>(41)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/c-2/cours">
+C#
+<span>(16)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/c-1/cours">
+C++
+<span>(29)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/cao/cours">
+CAO
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/css/cours">
+CSS
+<span>(35)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/django/cours">
+Django
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/graphisme/cours">
+Graphisme
+<span>(47)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/html/cours">
+HTML
+<span>(36)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/java/cours">
+Java
+<span>(13)</span>
+</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="/informatique/java-ee/cours">
+Java EE
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/javascript/cours">
+Javascript
+<span>(31)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/jquery/cours">
+jQuery
+<span>(5)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/latex/cours">
+LaTeX
+<span>(4)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/linux/cours">
+Linux
+<span>(49)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/mac-os/cours">
+Mac OS
+<span>(7)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/mysql/cours">
+MySQL
+<span>(15)</span>
+</a>
+</li>
+76f
+
+<li>
+<a href="/informatique/node-js/cours">
+Node.js
+<span>(1)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/perl/cours">
+Perl
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/photoshop/cours">
+Photoshop
+<span>(12)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/php/cours">
+PHP
+<span>(108)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/poo/cours">
+POO
+<span>(4)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/python/cours">
+Python
+<span>(18)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/reseaux/cours">
+Réseaux
+<span>(14)</span>
+</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="/informatique/seo/cours">
+SEO
+<span>(3)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/symfony/cours">
+Symfony
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/unix/cours">
+Unix
+<span>(1)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/vb-net/cours">
+VB.Net
+<span>(1)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/windows/cours">
+Windows
+<span>(27)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/windows-phone/cours">
+Windows Phone
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/informatique/word/cours">
+Word
+<span>(4)</span>
+</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200346762" target="_blank">Microsoft Virtual Academy</a>
+</li>
+</ul>
+</div>
+<a class="all-courses-link oc-btn orange-alt-btn" href="/informatique/cours">
+Tous les cours
+</a>
+</div>
+<div class="dropdown-submenu sciences">
+<div class="courses-list-container clearfix">
+<ul>
+<li>
+<a href="/sciences/chimie/cours">
+Chimie
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/sciences/electronique/cours">
+Électronique
+<span>(2)</span>
+</a>
+</li>
+<li>
+<a href="/sciences/mathematiques/cours">
+Mathématiques
+<span>(14)</span>
+</a>
+</li>
+<li>
+<a href="/sciences/physique/cours">
+Physique
+<span>(6)</span>
+</a>
+</li>
+</ul>
+</div>
+<a class="all-courses-link oc-btn orange-alt-btn" href="/sciences/cours">
+Tous les cours
+</a>
+
+4c6
+</div>
+<div class="dropdown-submenu business">
+<div class="business-container clearfix">
+<p><i class="icon-briefcase"></i></p>
+<p>
+Vous souhaitez créer des cours pour la future section "Entreprise" ?<br/>
+Contactez-nous à <a class="link-business" href="mailto:editorial@openclassrooms.com">editorial@openclassrooms.com</a>
+</p>
+</div>
+</div>
+<div class="dropdown-submenu write">
+<div class="write-container clearfix">
+<p>Vous souhaitez créer des cours pour une de nos sections ?</p>
+<ul>
+<li>
+<p>Informatique</p>
+<i class="icon-desktop"></i>
+<a class="link-write oc-btn orange-alt-btn" href="mailto:editorial@openclassrooms.com?subject=Nouveaux%20auteurs%20-%20Cat&eacute;gorie%20Informatique">
+Contactez-nous
+</a>
+</li>
+<li>
+<p>Sciences</p>
+<i class="icon-beaker"></i>
+<a class="link-write  oc-btn orange-alt-btn" href="mailto:editorial@openclassrooms.com?subject=Nouveaux%20auteurs%20-%20Cat&eacute;gorie%20Sciences">
+Contactez-nous
+</a>
+</li>
+<li>
+<p>Entreprise</p>
+<i class="icon-briefcase"></i>
+<a class="link-write  oc-btn orange-alt-btn" href="mailto:editorial@openclassrooms.com?subject=Nouveaux%20auteurs%20-%20Cat&eacute;gorie%20Entreprise">
+Contactez-nous
+</a>
+</li>
+</ul>
+<p>Vous souhaitez créer des cours 
+f41
+sur une autre thématique ? <a class="courses-link-create" href="mailto:editorial@openclassrooms.com?subject=Nouveaux%20auteurs%20-%20Catégorie%20Autres">Contactez-nous tout de même !</a></p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="menu-nav-item forums">
+<a href="/forum/">Forums</a>
+</li>
+<li class="menu-nav-item shop">
+<a href="http://boutique.fr.openclassrooms.com/boutique.html">Librairie</a>
+</li>
+<li class="menu-nav-item school">
+<a href="http://fr.openclassrooms.com/etudes/">Études</a>
+</li>
+<li class="menu-nav-item job">
+<a href="http://fr.openclassrooms.com/emploi">Emploi</a>
+</li>
+<li class="menu-nav-item plus">
+<div class="dropdown">
+<a href="#" class="js-more-item"><i class="icon-plus"></i></a>
+<div class="dropdown-menu">
+<ul class="dropdown-menu-items">
+<li class="dropdown-menu-item">
+<a href="http://fr.openclassrooms.com/appli-awards-2013">Appli Awards 2013</a>
+</li>
+<li class="dropdown-menu-item">
+<a href="http://fr.openclassrooms.com/bouygues-telecom">Challenge BboxLab</a>
+</li>
+<li class="dropdown-menu-item">
+<a href="http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200346762" target="_blank">Microsoft Virtual Academy</a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+<div class="icons-container">
+<ul class="menu-nav-items menu-connection">
+<li class="menu-nav-item avatar-item">
+<div class="avatar">
+<img alt="avatar" src="/bundles/common/images/avatar_defaut.png?5cf7ca8f4y32b"/>
+</div>
+</li>
+<li class="menu-nav-item  premium-item">
+<a class="premium  oc-btn nowrap link-btn" href="/premium/"><i class="icon-star"></i> <span>Devenez Premium</span></a>
+</li>
+<li class="menu-nav-item connection">
+<a class="login oc-btn dark-btn smaller" href="/login">
+Connectez-vous
+</a>
+</li>
+</ul>
+</div>
+<div class="menu-nav-widget search-form-container">
+<form class="form search-form js-autocomplete-course-search" action="/recherche/" method="get">
+<div class="input-group flat smaller collapsed">
+<input type="search" autocomplete="off" data-option_source="/components/courses/search?title=<%= term %>" placeholder="Recherche" name="search"/>
+<span class="input-group-button">
+<button type="submit" class="oc-btn orange-alt-btn flat only-icon">
+<i class="main-icon icon-search"></i>
+<i class="indicator icon-spinner icon-spin"></i>
+</button>
+</span>
+</div>
+</form>
+</div>
+<div class="autocomplete-search js-autocomplete-course-search-results"></div>
+</div>
+</nav>
+</div>
+</div>
+</section>
+<header id="mainHeader">
+<div style="clear: both;"></div>
+<section id="headerMiddle">
+<section class="containerSdz">
+<a href="/forum/"><div class="titlePicture forumSdz"></div></a>
+<h1> <a href="/forum/">Forums des <strong>Zéros</strong></a> </h1>
+<p>Une question ? Pas de panique, on va vous aider !</p>
+</section>
+</section>
+<section class="inset no-padding">
+<div class="centered">
+<nav class="breadcrumb">
+<ul class="breadcrumbtrail" role="navigation">
+<li class="home" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="/" itemprop="url">
+<span itemprop="title">Accueil</span>
+</a>
+<div class="arrow-right"></div>
+</li>
+<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="/forum/" itemprop="url">
+<span itemprop="title">Forum</span>
+</a>
+<div class="arrow-right"></div>
+</li>
+<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="/forum/categorie/programmation" itemprop="url">
+<span itemprop="title">Programmation</span>
+</a>
+<div class="arrow-right"></div>
+</li>
+<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="/forum/categorie/langage-c" itemprop="url">
+<span itemprop="title">Langage C</span>
+</a>
+<div class="arrow-right"></div>
+</li>
+<li class="current" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+[code::blocks] Différences entre Release et Debug
+</li>
+</ul>
+</nav>
+</div>
+</section>
+<div class="adBan">
+<section class="advertise">
+<script type='text/javascript'>
+1caa
+
+            if (window.innerWidth >= 728)
+            {
+                document.write('<div id="div-gpt-ad-1350977194635-5" class="megaban"></div>');
+
+                googletag.cmd.push(function() {
+                    googletag.display('div-gpt-ad-1350977194635-5');
+                });
+            }
+                            else
+                {
+                    document.write('<div id="div-gpt-ad-1350977284180-5" class="miniban"></div>');
+                    googletag.cmd.push(function() {
+                        googletag.display('div-gpt-ad-1350977284180-5');
+                    });
+                }
+                    </script>
+</section>
+</div>
+<section id="headerBottom">
+<section class="containerSdz">
+<ul id="secondMenu" class="nav nav-tabs">
+<li><a href="/forum/">Liste des forums</a></li>
+</ul>
+</section>
+</section>
+</header>
+<div id="fixedNav">
+<a href="#">
+<span></span>
+</a>
+</div>
+<section id="mainContent" class='containerSdz' role="main">
+<section id="mainSection" class="container">
+<div class="socials ">
+<span class="shared">Partage</span>
+<ul class="addthis_buttons addthis_share">
+<li>
+<a class="addthis_button_facebook" title="Partager sur Facebook" addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-description="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021"><img src="/bundles/common/images/ico_addthis_facebook.png?5cf7ca8f4y32b" alt="Partager sur Facebook"/></a>
+</li>
+<li>
+<a class="addthis_button_twitter" title="Partager sur Twitter" data-addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021" data-addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms"><img src="/bundles/common/images/ico_addthis_twitter.png?5cf7ca8f4y32b" alt="Partager sur Twitter"/></a>
+</li>
+<li>
+<a class="googleplus" title="Partager via Google +1" href="#" onclick="popUp=window.open('https://plus.google.com/share?url=http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021', 'popupwindow', 'scrollbars=yes,width=800,height=400'); popUp.focus(); return false;">
+<img src="/bundles/common/images/ico_addthis_googleplus.png?5cf7ca8f4y32b" alt="Partager via Google +1"/>
+</a>
+</li>
+</ul>
+</div>
+<h1><a href="/forum/sujet/code-blocks-differences-entre-release-et-debug-87021">[code::blocks] Différences entre Release et Debug</a></h1> <h2 class="subtitle">et une erreur &quot;SIGSEV : segmentation fault&quot;</h2>
+<section class="paginationContent">
+</section>
+<div class='resolved'style="">
+            <div class='iconResolved'></div>
+            <div>Sujet résolu</div>
+        </div>
+    
+    <section class='comments'>
+                            <div class="row
+                                ">
+                <div class="userInfos">
+                    <div class="span1 avatar">
+    <div class="author">
+                    <a href="/membres/sk-p-74204">
+                sk!p
+            </a>
+            </div>
+
+            <a href="/membres/sk-p-74204">
+                        <img src="http://uploads.siteduzero.com/files/221001_222000/221613.jpg" alt='avatar'/>
+        </a>
+    
+</div>                                            
+<ul class="skills">
+    </ul>
+                    
+                                    </div>
+                <div class="span11 comment" id="message-7513808">
+                      <ul class="actions">
+
+      
+                            
+      
+  </ul>
+                    <div class="content">
+                        <span class="markdown hidden">Bonjour,&lt;br&gt;
+j&#039;ai remarqué à plusieurs reprises qu&#039;un code que je compilais en release me donnais un programme qui se fermait tout seul (process terminated with status 3) tandis qu&#039;une fois en debug, pour chercher l&#039;origine du probleme le programme fonctionnait... eh bien exactement comme je le voulais  &lt;img src=&quot;/bundles/tinymce/vendor/tiny_mce/plugins/emotions/img/langue.png&quot; alt=&quot;:p&quot; class=&quot;smilies&quot;&gt; . C&#039;est pourquoi je demande ici&lt;br&gt;
+-ce que signifie la valeur indiquée dans le message &quot;process terminated with status X, ici, 3&lt;br&gt;
+-la différence entre compiler en Release, et en Debug&lt;br&gt;
+-la signification de l&#039;erreur &quot;SIGSEV : segmentation fault&quot; que je rencontre fréquement (un dépassement de mémoire?)&lt;br&gt;&lt;br&gt;
+merci pour tout éclaircissement  &lt;img src=&quot;/bundles/tinymce/vendor/tiny_mce/plugins/emotions/img/heureux.png&quot; alt=&quot;:D&quot; class=&quot;smilies&quot;&gt;</span>
+                <a href="#message-7513808" class="date">Le 1 juillet 2012 à 14:58:28</a>
+<br/>
+<br/>
+<div class="message markdown-body" role="article">
+            Bonjour,<br />
+j'ai remarqué à plusieurs reprises qu'un code que je compilais en release me donnais un programme qui se fermait tout seul (process terminated with status 3) tandis qu'une fois en debug, pour chercher l'origine du probleme le programme fonctionnait... eh bien exactement comme je le voulais  <img src="/bundles/tinymce/vendor/tiny_mce/plugins/emotions/img/langue.png" alt=":p" /> . C'est pourquoi je demande ici<br />
+-ce que signifie la valeur indiquée dans le message "process terminated with status X, ici, 3<br />
+-la différence entre compiler en Release, et en Debug<br />
+-la signification de l'erreur "SIGSEV : segmentation fault" que je rencontre fréquement (un dépassement de mémoire?)<br /><br />
+merci pour tout éclaircissement  <img src="/bundles/tinymce/vendor/tiny_mce/plugins/emotions/img/heureux.png" alt=":D" />
+    
+    </div>
+<span class='commentVote'>
+                </span>
+
+    <ul class="addthis_buttons addthis_share">
+    <li>
+        <a class="addthis_button_facebook" title="Partager sur Facebook" addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-description="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513808" ><img src="/bundles/common/images/ico_addthis_facebook.png?5cf7ca8f4y32b" alt="Partager sur Facebook" /></a>
+    </li>
+    <li>
+        <a class="addthis_button_twitter" title="Partager sur Twitter" data-addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513808" data-addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" ><img src="/bundles/common/images/ico_addthis_twitter.png?5cf7ca8f4y32b" alt="Partager sur Twitter"/></a>
+    </li>
+    <li>
+        <a class="googleplus" title="Partager via Google +1" href="#" onclick="popUp=window.open('https://plus.google.com/share?url=http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513808', 'popupwindow', 'scrollbars=yes,width=800,height=400'); popUp.focus(); return false;">
+            <img src="/bundles/common/images/ico_addthis_googleplus.png?5cf7ca8f4y32b" alt="Partager via Google +1" />
+        </a>
+    </li>
+</ul>                                                    </div>
+            
+2000
+    </div>
+                <div class="span12">
+                                    </div>
+            </div>
+
+                                                                <div class="row">
+                        <div class="forumAd">
+                            Publicité
+                        </div>
+                        <div id="contentPubThread">
+                            <span class="forumAdDate">Le 1 juillet 2012 à 14:58:28</span>
+                                 <section class="advertise">
+        <script type='text/javascript'>
+            if (window.innerWidth >= 728)
+            {
+                document.write('<div id="div-gpt-ad-1350977194635-16" class="pavement"></div>');
+
+                googletag.cmd.push(function() {
+                    googletag.display('div-gpt-ad-1350977194635-16');
+                });
+            }
+                    </script>
+    </section>
+
+                        </div>
+                    </div>
+                                                <div class="row
+                                ">
+                <div class="userInfos">
+                    <div class="span1 avatar">
+    <div class="author">
+                    <a href="/membres/holt-18145">
+                Holt
+            </a>
+            </div>
+
+            <a href="/membres/holt-18145">
+                        <img src="http://img254.imageshack.us/img254/8030/patd2cy2.jpg" alt='avatar'/>
+        </a>
+    
+</div>                                            
+<ul class="skills">
+                    <li class="skill" data-original-title="Confirmé">
+            <img src="http://sdz-upload.s3.amazonaws.com/prod/categories/icons/8.png" alt="Langage C" class="badgeSdz" />
+                <ul class="levels">
+                    <li class="full"></li>
+                    <li class="full"></li>
+                    <li class="full"></li>
+                                        </ul>
+
+        </li>
+    </ul>
+                    
+                                    </div>
+                <div class="span11 comment" id="message-7513855">
+                      <ul class="actions">
+
+      
+                            
+      
+  </ul>
+                    <div class="content">
+                        <span class="markdown hidden">&lt;pre class=&quot;brush: plain;&quot;&gt;Process terminated with status X&lt;/pre&gt;&lt;br&gt;
+Ca signifie simplement que quelque part dans ton code il y a eu un exit() avec la valeur X, ou que ta fonction main a retourné la valeur X (c&#039;est pour cela que lorsque ton programme se finit normalement, tu as la valeur 0).&lt;br&gt;&lt;br&gt;
+Quand tu es en mode DEBUG, ton programme est &quot;chargé&quot; d&#039;information de debbugage, qui le rendent plus lourd et plus lent. (Je ne suis pas un expert là dessus, quelqu&#039;un viendra étayer mes dires :))&lt;br&gt;&lt;br&gt;
+SIGSEV : Segmentation Fault, c&#039;est un problème de mémoire oui : Accès à de la zone non alloué (indice de tableau trop grand, pointeur non alloué, etc... ).</span>
+                <a href="#message-7513855" class="date">Le 1 juillet 2012 à 15:08:04</a>
+<br/>
+<br/>
+<div class="message markdown-body" role="article">
+            <pre class="brush: plain;">Process terminated with status X</pre><br />
+Ca signifie simplement que quelque part dans ton code il y a eu un exit() avec la valeur X, ou que ta fonction main a retourné la valeur X (c'est pour cela que lorsque ton programme se finit normalement, tu as la valeur 0).<br /><br />
+Quand tu es en mode DEBUG, ton programme est "chargé" d'information de debbugage, qui le rendent plus lourd et plus lent. (Je ne suis pas un expert là dessus, quelqu'un viendra étayer mes dires :))<br /><br />
+SIGSEV : Segmentation Fault, c'est un problème de mémoire oui : Accès à de la zone non alloué (indice de tableau trop grand, pointeur non alloué, etc... ).
+    
+    </div>
+<span class='commentVote'>
+                </span>
+
+    <ul class="addthis_buttons addthis_share">
+    <li>
+        <a class="addthis_button_facebook" title="Partager sur Facebook" addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-description="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513855" ><img src="/bundles/common/images/ico_addthis_facebook.png?5cf7ca8f4y32b" alt="Partager sur Facebook" /></a>
+    </li>
+    <li>
+        <a class="addthis_button_twitter" title="Partager sur Twitter" data-addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513855" data-addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" ><img src="/bundles/common/images/ico_addthis_twitter.png?5cf7ca8f4y32b" alt="Partager sur Twitter"/></a>
+    </li>
+    <li>
+        <a class="googleplus" title="Partager via Google +1" href="#" onclick="popUp=window.open('https://plus.google.com/share?url=http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513855', 'popupwindow', 'scrollbars=yes,width=800,height=400'); popUp.focus(); return false;">
+            <img src="/bundles/common/images/ico_addthis_googleplus.png?5cf7ca8f4y32b" alt="Partager via Google +1" />
+        </a>
+    </li>
+</ul>                                                            <div class="signature">
+                                    <a href="http://mikael-capelle.fr/">http://mikael-capelle.fr/</a>
+                                </div>
+                                                    </div>
+                </div>
+                <div class="span12">
+                                    </div>
+            </div>
+
+                                                                            <div class="row
+                                ">
+                <div class="userInfos">
+                    <div class="span1 avatar">
+    <div class="author">
+                    <a href="/membres/koloce-22676">
+                koloce
+            </a>
+            </div>
+
+            <a href="/membres/koloce-22676">
+                        <img src="http://sdz-upload.s3.amazonaws.com/prod/users/avatars/ninja.png" alt='avatar'/>
+        </a>
+    
+</div>                                            
+<ul class="skills">
+                    <li class="skill" data-original-title="Confirmé">
+            <img src="http://sdz-upload.s3.amazonaws.com/prod/categories/icons/8.png" alt="Langage C" class="badgeSdz" />
+                <ul class="levels">
+                    <li class="full"></li>
+                    <li class="full"></li>
+                    <li class="full"></li>
+                                        </ul>
+
+        </li>
+    </ul>
+                    
+                                    </div>
+                <div class="span11 comment" id="message-7513864">
+                      <ul class="actions">
+
+      
+                            
+      
+  </ul>
+                    <div class="content">
+                        <span class="markdown hidden">Dans l&#039;ordre:&lt;br&gt;&lt;br&gt;
+-Le processus a retourné la valeur 3. Quand le programme utilise exit ou encore le retour de la fonction main, il renvoie une valeur. Le plus souvent pour comprendre le type d&#039;erreur.&lt;br&gt;&lt;br&gt;
+-Debug, je crois qu&#039;il utilise l&#039;option -g de GCC qui permet d&#039;utiliser le Debuger. Release, c&#039;est une option pour optimiser ton programme.&lt;br&gt;&lt;br&gt;
+-SIGSEV, est un signal. Le noyau a détecté que ton programme voulait accéder à un bout de mémoire qui est &quot;protégé&quot; ou encore tu as écris sur une zone mémoire au quel tu n&#039;avais pas le droit. Le noyau a envoyer SIGSEV, pour avertir le programme, suivi de SIGKILL pour le &quot;tuer&quot;.</span>
+                <a href="#message-7513864" class="date">Le 1 juillet 2012 à 15:10:41</a>
+<br/>
+<br/>
+<div class="message markdown-body" role="article">
+            Dans l'ordre:<br /><br />
+-Le processus a retourné la valeur 3. Quand le programme utilise exit ou encore le retour de la fonction ma
+2000
+in, il renvoie une valeur. Le plus souvent pour comprendre le type d'erreur.<br /><br />
+-Debug, je crois qu'il utilise l'option -g de GCC qui permet d'utiliser le Debuger. Release, c'est une option pour optimiser ton programme.<br /><br />
+-SIGSEV, est un signal. Le noyau a détecté que ton programme voulait accéder à un bout de mémoire qui est "protégé" ou encore tu as écris sur une zone mémoire au quel tu n'avais pas le droit. Le noyau a envoyer SIGSEV, pour avertir le programme, suivi de SIGKILL pour le "tuer".
+    
+    </div>
+<span class='commentVote'>
+                </span>
+
+    <ul class="addthis_buttons addthis_share">
+    <li>
+        <a class="addthis_button_facebook" title="Partager sur Facebook" addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-description="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513864" ><img src="/bundles/common/images/ico_addthis_facebook.png?5cf7ca8f4y32b" alt="Partager sur Facebook" /></a>
+    </li>
+    <li>
+        <a class="addthis_button_twitter" title="Partager sur Twitter" data-addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513864" data-addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" ><img src="/bundles/common/images/ico_addthis_twitter.png?5cf7ca8f4y32b" alt="Partager sur Twitter"/></a>
+    </li>
+    <li>
+        <a class="googleplus" title="Partager via Google +1" href="#" onclick="popUp=window.open('https://plus.google.com/share?url=http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513864', 'popupwindow', 'scrollbars=yes,width=800,height=400'); popUp.focus(); return false;">
+            <img src="/bundles/common/images/ico_addthis_googleplus.png?5cf7ca8f4y32b" alt="Partager via Google +1" />
+        </a>
+    </li>
+</ul>                                                            <div class="signature">
+                                    -User:"Sais-tu où vont les mails de réclamation ?" -Admin:"/dev/null"
+                                </div>
+                                                    </div>
+                </div>
+                <div class="span12">
+                                    </div>
+            </div>
+
+                                                                            <div class="row
+                                ">
+                <div class="userInfos">
+                    <div class="span1 avatar">
+    <div class="author">
+                    <a href="/membres/sk-p-74204">
+                sk!p
+            </a>
+            </div>
+
+            <a href="/membres/sk-p-74204">
+                        <img src="http://uploads.siteduzero.com/files/221001_222000/221613.jpg" alt='avatar'/>
+        </a>
+    
+</div>                                            
+<ul class="skills">
+    </ul>
+                    
+                                    </div>
+                <div class="span11 comment" id="message-7513895">
+                      <ul class="actions">
+
+      
+                            
+      
+  </ul>
+                    <div class="content">
+                        <span class="markdown hidden">ok! mais à quoi correspond 3? et même 0 et 1 (je suppose que 2 existe aussi?)&lt;br&gt;
+comment mon programme peut-il fonctionner en debug en pas en release?</span>
+                <a href="#message-7513895" class="date">Le 1 juillet 2012 à 15:25:28</a>
+<br/>
+<br/>
+<div class="message markdown-body" role="article">
+            ok! mais à quoi correspond 3? et même 0 et 1 (je suppose que 2 existe aussi?)<br />
+comment mon programme peut-il fonctionner en debug en pas en release?
+    
+    </div>
+<span class='commentVote'>
+                </span>
+
+    <ul class="addthis_buttons addthis_share">
+    <li>
+        <a class="addthis_button_facebook" title="Partager sur Facebook" addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-description="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513895" ><img src="/bundles/common/images/ico_addthis_facebook.png?5cf7ca8f4y32b" alt="Partager sur Facebook" /></a>
+    </li>
+    <li>
+        <a class="addthis_button_twitter" title="Partager sur Twitter" data-addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513895" data-addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" ><img src="/bundles/common/images/ico_addthis_twitter.png?5cf7ca8f4y32b" alt="Partager sur Twitter"/></a>
+    </li>
+    <li>
+        <a class="googleplus" title="Partager via Google +1" href="#" onclick="popUp=window.open('https://plus.google.com/share?url=http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513895', 'popupwindow', 'scrollbars=yes,width=800,height=400'); popUp.focus(); return false;">
+            <img src="/bundles/common/images/ico_addthis_googleplus.png?5cf7ca8f4y32b" alt="Partager via Google +1" />
+        </a>
+    </li>
+</ul>                                                    </div>
+                </div>
+                <div class="span12">
+                                    </div>
+            </div>
+
+                                                                            <div class="row
+                                ">
+                <div class="userInfos">
+                    <div class="span1 avatar">
+    <div class="author">
+                    <a href="/membres/holt-18145">
+                Holt
+            </a>
+            </div>
+
+            <a href="/membres/holt-18145">
+                        <img src="http://img254.imageshack.us/img254/8030/patd2cy2.jpg" alt='avatar'/>
+        </a>
+    
+</div>                                            
+<ul class="skills">
+                    <li class="skill" data-original-title="Confirmé">
+            <img src="http://sdz-upload.s3.amazonaws.com/prod/categories/icons/8.png" alt="Langage C" class="badgeSdz" />
+                <ul class="levels">
+                    <li class="full"></li>
+                    <li class="full"></li>
+                    <li class="full"></li>
+                                        </ul>
+
+        </li>
+    </ul>
+                    
+                                    </div>
+                <div class="span11 comment" id="message-7513903">
+                      <ul class="actions">
+
+      
+                            
+      
+  </ul>
+                    <div class="content">
+                        <span class="markdown hidden">Ca peut vouloir dire beaucoup de chose... Là tu as une erreur de segmentation donc vérifie tes accès mémoires, l&#039;erreur viens probablement de là &lt;img src=&quot;/bundles/tinymce/vendor/tiny_mce/plugins/emotions/img/smile.png&quot; alt=&quot;:)&quot; class=&quot;smilies&quot;&gt;</span>
+                <a href="#message-7513903" class="date">Le 1 juillet 2012 à 15:27:49</a>
+<br/>
+<br/>
+<div class="message markdown-body" role="article">
+            Ca peut vouloir dire beaucoup de chose... Là tu as une erreur de segmentation donc vérifie tes accès mémoires, l'erreur viens probablement de là <img src="/bundles/tinymce/vendor/tiny_mce/plugins/emotions/img/smile.png" alt=":)" />
+    
+    </div>
+<span class='commentVote'>
+                </span>
+
+    <ul class="addthis_buttons addthis_share">
+    <li>
+        <a class="addthis_button_facebook" title="Partager sur Facebook" addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-description="[code::blocks] Différences entre Release et Debug via @openclassrooms" addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513903" ><img src="/bundles/common/images/ico_addthis_facebook.png?5cf7ca8f4y32b" alt="Partager sur Facebook" /></a>
+    </li>
+    <li>
+    
+2000
+    <a class="addthis_button_twitter" title="Partager sur Twitter" data-addthis-url="http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513903" data-addthis-title="[code::blocks] Différences entre Release et Debug via @openclassrooms" ><img src="/bundles/common/images/ico_addthis_twitter.png?5cf7ca8f4y32b" alt="Partager sur Twitter"/></a>
+    </li>
+    <li>
+        <a class="googleplus" title="Partager via Google +1" href="#" onclick="popUp=window.open('https://plus.google.com/share?url=http://fr.openclassrooms.com/forum/sujet/code-blocks-differences-entre-release-et-debug-87021/7513903', 'popupwindow', 'scrollbars=yes,width=800,height=400'); popUp.focus(); return false;">
+            <img src="/bundles/common/images/ico_addthis_googleplus.png?5cf7ca8f4y32b" alt="Partager via Google +1" />
+        </a>
+    </li>
+</ul>                                                            <div class="signature">
+                                    <a href="http://mikael-capelle.fr/">http://mikael-capelle.fr/</a>
+                                </div>
+                                                    </div>
+                </div>
+                <div class="span12">
+                                    </div>
+            </div>
+
+                                                                            <div class="row
+                                ">
+                <div class="userInfos">
+                    <div class="span1 avatar">
+    <div class="author">
+                    <a href="/membres/sk-p-74204">
+                sk!p
+            </a>
+            </div>
+
+            <a href="/membres/sk-p-74204">
+                        <img src="http://uploads.siteduzero.com/files/221001_222000/221613.jpg" alt='avatar'/>
+        </a>
+    
+</div>                                            
+<ul class="skills">
+    </ul>
+                    
+                                    </div>
+                <div class="span11 comment" id="message-7513911">
+                      <ul class="actions">
+
+      
+                            
+      
+  </ul>
+                    <div class="content">
+                        <span class="markdown hidden">Je ne trouve pas comment résoudre l&#039;erreur, mais je l&#039;ai localisée.&lt;br&gt;
+Mon programme fonctionne correctement si je supprime les ligne suivantes : &lt;pre class=&quot;brush: c;&quot;&gt;if(!gagne)
+            SDL_BlitSurface(cadre, NULL, ecran, &amp;amp;positionzero);
+        else
+        {
+            k += 3;
+            SDL_SetAlpha(ecrannoir, SDL_SRCALPHA, k);
+            SDL_BlitSurface(ecrannoir, NULL, ecran, &amp;amp;positionzero);
+        }
+&lt;/pre&gt;&lt;br&gt;
+il se trouve à la fin d&#039;une boucle while(continuer), continuer etant un booleen : tant qu&#039;il est vrai, on joue au jeu, lorsqu&#039;il est faux, la fonction se termine et retour à la fonction main qui gère un menu principal.&lt;br&gt;
+Ce que je ne comprend pas, c&#039;est que l&#039;ordinateur lit les lignes ci-dessus durant le jeu (et il blitte bien le cadre d&#039;ailleur) mais dès que continuer prend la valeur faux... erreur... en supprimant ces lignes il n&#039;y a plus de probleme...&lt;br&gt;
+Comment est-ce possible?&lt;br&gt;
+merci pour toute reponse&lt;br&gt;&lt;br&gt;&lt;br&gt;
+edit : &lt;br&gt;&lt;br&gt;
+encore plus tordu, si je supprime tout le code ci dessus sauf une ligne,&lt;br&gt;&lt;br&gt;
+            SDL_BlitSurface(cadre, NULL, ecran, &amp;amp;positionzero);&lt;br&gt;&lt;br&gt;
+le jeu fonctionne, bli

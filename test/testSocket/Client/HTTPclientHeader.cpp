@@ -128,8 +128,8 @@ string HTTPclientHeader::getContentFromHeader(string mot,vector<string> lignes)
         if(( pos = lignes[i].find(mot)) != string::npos) //si on trouve la vrai position du fichier on redirige
         {
             result = lignes[i].substr(pos+mot.size(),lignes[i].size()-(pos+mot.size())); // on supprimme le location: pour avoir le nouveau lien
-             utils::str::supprimerTousLesCharacteres(result,'\r');
-             return result;
+            utils::str::supprimerTousLesCharacteres(result,'\r');
+            return result;
         }
     }
     return "";

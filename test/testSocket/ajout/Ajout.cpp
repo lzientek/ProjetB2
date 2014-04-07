@@ -1,4 +1,5 @@
 #include "Ajout.h"
+
 using namespace std;
 using namespace Add;
 
@@ -65,7 +66,7 @@ int Ajout::saveFiles()
                                                   );
 
 
-include <sstream>
+
                     utils::RequetteBDD reqSQLPage,reqSQLurls;
 
                     if(!isCrawl)
@@ -140,7 +141,7 @@ include <sstream>
     }
     else
         cerr<<"[ajout]url non valid"<<endl;
-        return -3; //url non valide
+    return -3; //url non valide
 
 }
 

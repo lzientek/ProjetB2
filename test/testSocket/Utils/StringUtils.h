@@ -2,6 +2,7 @@
 #define STRINGUTILS_H_INCLUDED
 #define COEF_IMPORTANCE_MOT_IMPORTANT 100
 #include "../Files/Fichier.h"
+#include "Url.h"
 #include <string>
 #include <vector>
 #include <string.h>

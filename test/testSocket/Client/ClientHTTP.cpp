@@ -60,7 +60,9 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
         stringstream ss;
         ss << "GET " << urlClient.getGet() << " HTTP/1.1\r\n"
         << "Host: "<< urlClient.getUrl() <<"\r\n"
-        << "Accept: text/html,text/xml, */*\r\n";
+        << "Accept: text/html,text/xml, */*\r\n"
+        <<"Accept-Charset: utf-8";
+
         if(cookies!="")
             ss<< "Cookie: "<<cookies<<"\r\n";
         ss<< "\r\n\r\n";
@@ -75,7 +77,6 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
             cerr << "[ClientHttp]Error sending request." << endl;
             return -1;
         }
-
 
 
         char server_reply[BUFFER_SIZE];
@@ -144,7 +145,7 @@ int ClientHTTP::execute() //comme ca on fait des return pour bloquer la suite de
 
 
         }
-        file = boost::locale::conv::to_utf<char>(file,"UTF-8");//on converti pour la bdd
+        file = boost::locale::conv::from_utf<char>(file,"UTF-8");//on converti pour la bdd
     }
     return 0;
 }
