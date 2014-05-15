@@ -6,25 +6,18 @@
 #include "../Files/Fichier.h"
 #include "../Utils/Url.h"
 #include "boost/locale.hpp"
+#include <SFML/Network.hpp>
 
 using namespace std;
+
 namespace client
 {
     class ClientHTTP
     {
         public:
-            ClientHTTP(utils::Url &uri,string cookies ="");
+            ClientHTTP(utils::Url &uri);
 
-            string getResultStr(){return file;}
-            virtual ~ClientHTTP();
-        protected:
-        private:
-            utils::Url urlClient;
-            int execute();
-            string file;
-            string cookies;
-            struct sockaddr_in client;
-            int sock;
+
     };
 }
 #endif // CLIENTHTTP_H

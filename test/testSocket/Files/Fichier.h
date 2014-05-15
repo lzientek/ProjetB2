@@ -21,15 +21,39 @@ namespace Files
             virtual ~Fichier();
 
             //___________getter
-            string getNom(){return nom;}
-            utils::Url getURL(){return url;}
-            string getResume(){return resume;}
-            string getTextFull(){return textComplet;}
-            string getExtention(){return extention;}
-            double getNote(){return note;}
+            string getNom()
+            {
+                return nom;
+            }
+            utils::Url getURL()
+            {
+                return url;
+            }
+            string getResume()
+            {
+                return resume;
+            }
+            string getTextFull()
+            {
+                return textComplet;
+            }
+            string getExtention()
+            {
+                return extention;
+            }
+            double getNote()
+            {
+                return note;
+            }
             string getType();
-            int getTypeInt(){return type;}
-            int getTaille(){return taille;}
+            int getTypeInt()
+            {
+                return type;
+            }
+            int getTaille()
+            {
+                return taille;
+            }
             //___________fin getter
             bool isEmpty();
 

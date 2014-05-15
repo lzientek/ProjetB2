@@ -1,7 +1,7 @@
 #include "defines.h"
 #include "Client/ClientHTTP.h"
 #include "Files/Fichier.h"
-using namespace std;
+#include <SFML/System.hpp>
 
 
 

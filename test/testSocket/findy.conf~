@@ -1,9 +1,9 @@
-adresseMysql=tcp://172.0.0.1:3306
+adresseMysql=tcp://localhost:3306
 userMysql=root
 mdpMysql=root
-BDDname=test
+BDDname=projetb2
 statFile=stats.log
 portServeur=4242
 version=debug-1.1.1
-tempsEntreCrawl=3
+tempsEntreCrawl=10
 demarageHeader=demarage

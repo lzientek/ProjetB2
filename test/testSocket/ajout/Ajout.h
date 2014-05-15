@@ -5,10 +5,12 @@
 #include <string>
 #include <vector>
 #include "../Files/Fichier.h"
-#include "../Client/ClientHTTP.h"
+#include <SFML/Network.hpp>
+
 #include "../Utils/Url.h"
 #include "../Client/HTTPclientHeader.h"
 #include "../Serveur.h"
+
 
 namespace Add
 {
@@ -26,6 +28,8 @@ namespace Add
             Files::Fichier file;
             bool isCrawl;
         private:
+            sf::Http::Request request;
+            sf::Http::Response reponse;
             std::string urlToSave;
             void cleanBoucle();
     };

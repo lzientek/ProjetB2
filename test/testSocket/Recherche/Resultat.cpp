@@ -9,7 +9,7 @@ Resultat::Resultat() {}
 Resultat::Resultat(vector<string> words)
 {
     this->words = words;
-    for(unsigned int i = 0; i<words.size();i++)
+    for(unsigned int i = 0; i<words.size(); i++)
         wordsStr += words[i] + " ";
     search();
 }

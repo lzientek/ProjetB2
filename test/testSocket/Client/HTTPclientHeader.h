@@ -20,13 +20,28 @@ namespace client
             HTTPclientHeader(string header);
 
             //_______getter
-            string getNewUrl() { return newUrl; }
-            string getType() {return type;}
+            string getNewUrl()
+            {
+                return newUrl;
+            }
+            string getType()
+            {
+                return type;
+            }
             int getTypeInt();
-            int getHttpCode(){return httpCode;}
+            int getHttpCode()
+            {
+                return httpCode;
+            }
             int getTaille();
-            string getCookies(){return cookies;}
-            string getTxt(){return txt;}
+            string getCookies()
+            {
+                return cookies;
+            }
+            string getTxt()
+            {
+                return txt;
+            }
             //______fingetter
 
             virtual ~HTTPclientHeader();

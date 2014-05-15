@@ -4259,3 +4259,521 @@
 	<string>
 	<sstream>
 
+1400192096 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+	"Ajout.h"
+
+1400190777 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/ajout/Ajout.h
+	<iostream>
+	<string>
+	<vector>
+	"../Files/Fichier.h"
+	<SFML/Network.hpp>
+	"../Utils/Url.h"
+	"../Client/HTTPclientHeader.h"
+	"../Serveur.h"
+
+1396885772 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Files/Fichier.h
+	<iostream>
+	"../Utils/Url.h"
+
+1396885772 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Url.h
+	<iostream>
+	<string>
+
+1400187700 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.h
+	"../defines.h"
+	"../Files/Fichier.h"
+	"../Utils/Url.h"
+	"boost/locale.hpp"
+	<SFML/Network.hpp>
+
+1393079542 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/defines.h
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<stdio.h>
+	<vector>
+	<sys/wait.h>
+	<fcntl.h>
+	<sys/time.h>
+	"Utils/Conf.h"
+	"Utils/Processus.h"
+	"Utils/Stats.h"
+
+1392897184 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Conf.h
+	<map>
+	<iostream>
+	<string>
+	<fstream>
+	<stdexcept>
+	"StringUtils.h"
+
+1396880350 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
+	"../Files/Fichier.h"
+	"Url.h"
+	<string>
+	<vector>
+	<string.h>
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<algorithm>
+
+1392894458 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Processus.h
+	<iostream>
+	<stdio.h>
+	<unistd.h>
+	<errno.h>
+	<sys/types.h>
+	<thread>
+	<cstdlib>
+	"../Serveur.h"
+	"../Serveur/Crawl.h"
+	"Conf.h"
+
+1392984330 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur.h
+	"defines.h"
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<sys/fcntl.h>
+	<string.h>
+	"Serveur/HttpHeader.h"
+	"Recherche/Resultat.h"
+	"Files/Fichier.h"
+	"Utils/Stats.h"
+	"ajout/Ajout.h"
+
+1392232374 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur/HttpHeader.h
+	<iostream>
+	<string>
+	<vector>
+	"../Utils/StringUtils.h"
+	"../Serveur.h"
+
+1392981894 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Recherche/Resultat.h
+	<iostream>
+	<string>
+	<sstream>
+	<vector>
+	"../Files/Fichier.h"
+	"../Utils/RequetteBDD.h"
+	"../Utils/Url.h"
+	"../Utils/StringUtils.h"
+
+1395070766 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
+	"Conf.h"
+	<iostream>
+	<vector>
+	<sstream>
+	<string>
+	"mysql_connection.h"
+	"mysql_driver.h"
+	"../Files/Fichier.h"
+	"Algo.h"
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	<cppconn/statement.h>
+	<cppconn/prepared_statement.h>
+
+1396885772 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Algo.h
+	"StringUtils.h"
+	<string>
+	<sstream>
+
+1390937045 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Stats.h
+	"Conf.h"
+	<iostream>
+	<string>
+	<fstream>
+	<stdexcept>
+	<sstream>
+	<ctime>
+
+1392895777 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur/Crawl.h
+	<iostream>
+	"../Utils/Conf.h"
+	"../Utils/RequetteBDD.h"
+	"../ajout/Ajout.h"
+	"../Utils/Conf.h"
+
+1396885772 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.h
+	"../defines.h"
+	"../Utils/StringUtils.h"
+	"../Files/Fichier.h"
+
+1396885735 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Client/ClientHTTP.cpp
+	"ClientHTTP.h"
+
+1400192109 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Client/HTTPclientHeader.cpp
+	"HTTPclientHeader.h"
+
+1393090010 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Files/Fichier.cpp
+	"Fichier.h"
+
+1400190313 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/main.cpp
+	"defines.h"
+	"Client/ClientHTTP.h"
+	"Files/Fichier.h"
+	<SFML/System.hpp>
+
+1396885772 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Recherche/Resultat.cpp
+	"Resultat.h"
+
+1393533893 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur.cpp
+	"Serveur.h"
+	"Serveur/HttpHeader.h"
+
+1393961064 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur/Crawl.cpp
+	"Crawl.h"
+
+1392978278 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur/HttpHeader.cpp
+	"HttpHeader.h"
+
+1392974963 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Conf.cpp
+	"Conf.h"
+
+1396886428 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Processus.cpp
+	"Processus.h"
+
+1396885079 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+	"RequetteBDD.h"
+
+1390937015 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Stats.cpp
+	"Stats.h"
+
+1396880292 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
+	"StringUtils.h"
+
+1396885772 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Url.cpp
+	"Url.h"
+
+1396877667 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Algo.cpp
+	"Algo.h"
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network.hpp
+	<SFML/System.hpp>
+	<SFML/Network/Ftp.hpp>
+	<SFML/Network/Http.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/Packet.hpp>
+	<SFML/Network/SocketSelector.hpp>
+	<SFML/Network/TcpListener.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/Network/UdpSocket.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Config.hpp
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Export.hpp
+	<SFML/Config.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Time.hpp
+	<SFML/System/Export.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/InputStream.hpp
+	<SFML/Config.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/NonCopyable.hpp
+	<SFML/System/Export.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/String.hpp
+	<SFML/System/Export.hpp>
+	<locale>
+	<string>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Thread.inl
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/ThreadLocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/ThreadLocalPtr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/ThreadLocalPtr.inl
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Utf.inl
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Vector2.inl
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/System/Vector3.inl
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/Ftp.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/Export.hpp
+	<SFML/Config.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/TcpSocket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/System/Time.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/Socket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/SocketHandle.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<vector>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/SocketHandle.hpp
+	<SFML/Config.hpp>
+	<basetsd.h>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/Http.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<map>
+	<string>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/IpAddress.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/System/Time.hpp>
+	<istream>
+	<ostream>
+	<string>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/Packet.hpp
+	<SFML/Network/Export.hpp>
+	<string>
+	<vector>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/SocketSelector.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/TcpListener.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+
+1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network/UdpSocket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<vector>
+
+1374391808 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libext/SFML-2.1/src/SFML/Main/SFML_Main.cpp
+	<windows.h>
+
+1341868345 /usr/include/SFML/Network.hpp
+	<SFML/System.hpp>
+	<SFML/Network/Ftp.hpp>
+	<SFML/Network/Http.hpp>
+	<SFML/Network/IPAddress.hpp>
+	<SFML/Network/Packet.hpp>
+	<SFML/Network/Selector.hpp>
+	<SFML/Network/SocketTCP.hpp>
+	<SFML/Network/SocketUDP.hpp>
+
+1341868345 /usr/include/SFML/System.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Randomizer.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Unicode.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1341868345 /usr/include/SFML/Config.hpp
+	<climits>
+
+1341868345 /usr/include/SFML/System/Clock.hpp
+	<SFML/Config.hpp>
+
+1341868345 /usr/include/SFML/System/Lock.hpp
+	<SFML/System/NonCopyable.hpp>
+
+1341868345 /usr/include/SFML/System/NonCopyable.hpp
+	<SFML/Config.hpp>
+
+1341868345 /usr/include/SFML/System/Mutex.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Mutex.hpp>
+	<SFML/System/Unix/Mutex.hpp>
+
+1341868345 /usr/include/SFML/System/Win32/Mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1341868345 /usr/include/SFML/System/Unix/Mutex.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1341868345 /usr/include/SFML/System/Randomizer.hpp
+	<SFML/Config.hpp>
+
+1341868345 /usr/include/SFML/System/Sleep.hpp
+	<SFML/Config.hpp>
+
+1341868345 /usr/include/SFML/System/Thread.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Win32/Thread.hpp>
+	<SFML/System/Unix/Thread.hpp>
+
+1341868345 /usr/include/SFML/System/Win32/Thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1341868345 /usr/include/SFML/System/Unix/Thread.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1341868345 /usr/include/SFML/System/Unicode.hpp
+	<SFML/Config.hpp>
+	<iterator>
+	<locale>
+	<string>
+	<stdlib.h>
+	<SFML/System/Unicode.inl>
+
+1341868345 /usr/include/SFML/System/Unicode.inl
+
+1341868345 /usr/include/SFML/System/Vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1341868345 /usr/include/SFML/System/Vector2.inl
+
+1341868345 /usr/include/SFML/System/Vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1341868345 /usr/include/SFML/System/Vector3.inl
+
+1341868345 /usr/include/SFML/Network/Ftp.hpp
+	<SFML/System/NonCopyable.hpp>
+	<SFML/Network/SocketTCP.hpp>
+	<string>
+	<vector>
+
+1341868345 /usr/include/SFML/Network/SocketTCP.hpp
+	<SFML/Network/SocketHelper.hpp>
+	<vector>
+
+1341868345 /usr/include/SFML/Network/SocketHelper.hpp
+	<SFML/Config.hpp>
+	<SFML/Network/Win32/SocketHelper.hpp>
+	<SFML/Network/Unix/SocketHelper.hpp>
+
+1341868345 /usr/include/SFML/Network/Win32/SocketHelper.hpp
+	<winsock2.h>
+
+1341868345 /usr/include/SFML/Network/Unix/SocketHelper.hpp
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<netinet/tcp.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+
+1387821739 /usr/include/netinet/tcp.h
+	<features.h>
+	<sys/types.h>
+	<sys/socket.h>
+
+1341868345 /usr/include/SFML/Network/Http.hpp
+	<SFML/System/NonCopyable.hpp>
+	<SFML/Network/IPAddress.hpp>
+	<SFML/Network/SocketTCP.hpp>
+	<map>
+	<string>
+
+1341868345 /usr/include/SFML/Network/IPAddress.hpp
+	<SFML/Config.hpp>
+	<istream>
+	<ostream>
+	<string>
+
+1341868345 /usr/include/SFML/Network/Packet.hpp
+	<SFML/Config.hpp>
+	<string>
+	<vector>
+
+1341868345 /usr/include/SFML/Network/Selector.hpp
+	<SFML/Network/SocketUDP.hpp>
+	<SFML/Network/SocketTCP.hpp>
+	<SFML/Network/SelectorBase.hpp>
+	<map>
+	<SFML/Network/Selector.inl>
+
+1341868345 /usr/include/SFML/Network/SocketUDP.hpp
+	<SFML/Network/SocketHelper.hpp>
+	<vector>
+
+1341868345 /usr/include/SFML/Network/SelectorBase.hpp
+	<SFML/Config.hpp>
+	<SFML/Network/SocketHelper.hpp>
+	<map>
+
+1341868345 /usr/include/SFML/Network/Selector.inl
+

@@ -54,7 +54,7 @@ void Url::parse()
 
 bool Url::verifUrl(string url)
 {
-    for(uint i=0;i<url.length();i++)
+    for(uint i=0; i<url.length(); i++)
     {
         int numLettre = (int)url.at(i);
         if(numLettre<34|| numLettre > 123)

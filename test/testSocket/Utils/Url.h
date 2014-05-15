@@ -13,10 +13,22 @@ namespace utils
     {
         public:
             Url(string uri="");
-            string getUrl(){return url;}
-            string getGet(){return get;}
-            string getUri(){return uri;}
-            bool isValid(){return (url!="");}
+            string getUrl()
+            {
+                return url;
+            }
+            string getGet()
+            {
+                return get;
+            }
+            string getUri()
+            {
+                return uri;
+            }
+            bool isValid()
+            {
+                return (url!="");
+            }
             virtual ~Url();
             static bool verifUrl(string url);
         protected:
