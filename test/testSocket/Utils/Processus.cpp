@@ -8,16 +8,19 @@ Processus::Processus()
 
     cout<<"[prog]demarrage des processus"<<endl;
 //TODO:un try catch
-    thread threadServeur(runServeur);
-    //thread threadCrawl(runCrawl );
-    thread threadCmd(runCommande );
-    threadServeur.join();
-    //threadCrawl.join();
-    threadCmd.join();
+    startAll();
 
 
 }
-
+void Processus::startAll()
+{
+    thread threadServeur(runServeur);
+    thread threadCrawl(runCrawl );
+    thread threadCmd(runCommande );
+    threadServeur.join();
+    threadCrawl.join();
+    threadCmd.join();
+}
 
 void Processus::stopAll()
 {

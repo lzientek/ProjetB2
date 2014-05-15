@@ -30,8 +30,8 @@ namespace Add
         private:
             sf::Http::Request request;
             sf::Http::Response reponse;
-            std::string urlToSave;
             void cleanBoucle();
+            std::string urlToSave;
     };
 }
 #endif // AJOUT_H

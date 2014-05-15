@@ -26,6 +26,7 @@ namespace utils
             Processus();
             virtual ~Processus();
             void stopAll();
+            void startAll()
         protected:
         private:
 
