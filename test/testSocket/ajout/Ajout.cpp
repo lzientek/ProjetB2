@@ -24,7 +24,6 @@ int Ajout::saveFiles()
 
     if(url.isValid())
     {
-        int code = 0;
         string oldNewUrl = "";
         string cookie="";
         int i=0;

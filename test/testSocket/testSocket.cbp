@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -20,9 +21,14 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Linker>
+					<Add option="-lsfml-network" />
+					<Add option="-lsfml-system" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add directory="/usr/local/include" />
@@ -33,9 +39,9 @@
 		<Linker>
 			<Add library="/usr/lib/libmysqlcppconn.so" />
 			<Add library="/usr/lib/libboost_locale.so" />
+			<Add library="/usr/lib/libsfml-network.so" />
+			<Add library="/usr/lib/libsfml-system.so" />
 		</Linker>
-		<Unit filename="Client/ClientHTTP.cpp" />
-		<Unit filename="Client/ClientHTTP.h" />
 		<Unit filename="Client/HTTPclientHeader.cpp" />
 		<Unit filename="Client/HTTPclientHeader.h" />
 		<Unit filename="Files/Fichier.cpp" />
@@ -48,6 +54,8 @@
 		<Unit filename="Serveur/Crawl.h" />
 		<Unit filename="Serveur/HttpHeader.cpp" />
 		<Unit filename="Serveur/HttpHeader.h" />
+		<Unit filename="Utils/Algo.cpp" />
+		<Unit filename="Utils/Algo.h" />
 		<Unit filename="Utils/Conf.cpp" />
 		<Unit filename="Utils/Conf.h" />
 		<Unit filename="Utils/Processus.cpp" />
@@ -60,13 +68,17 @@
 		<Unit filename="Utils/StringUtils.h" />
 		<Unit filename="Utils/Url.cpp" />
 		<Unit filename="Utils/Url.h" />
+		<Unit filename="addon" />
 		<Unit filename="ajout/Ajout.cpp" />
 		<Unit filename="ajout/Ajout.h" />
 		<Unit filename="defines.h" />
+		<Unit filename="demarage" />
+		<Unit filename="findy.conf" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

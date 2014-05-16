@@ -1,4 +1,5 @@
 #include "RequetteBDD.h"
+#include <regex>
 
 using namespace utils;
 using namespace std;
@@ -29,6 +30,7 @@ RequetteBDD::RequetteBDD(string query)
 
 vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int nombre)
 {
+    //TODO : regex pour catcher le nombre de resultat limit if(std::regex_match (words.at(words.size()-2), std::regex("(sub)(.*)") ))
     ostringstream query("");
     query <<"SELECT * FROM files WHERE ";
     for(unsigned i = 0; i < words.size(); i++)
@@ -37,8 +39,8 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
             query<<"OR ";
         query<< "url "<<like(words[i])<<" OR motImportant "<<like(words[i])<< " OR txt "<<like(words[i])<<" ";
     }
-
-    query << "LIMIT " << debut <<","<< nombre;
+    if(debut < nombre)
+        query << "LIMIT " << debut <<","<< nombre;
     //query << " ORDER BY  DESC LIMIT 1 " ;//
     sql::ResultSet  *result;
 

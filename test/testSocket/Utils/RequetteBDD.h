@@ -34,7 +34,7 @@ namespace utils
             void add(Files::Fichier file);
             void update(Files::Fichier file,string url,int temps=0);
             bool verifUrl(string url);
-            vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=20);
+            vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=0);
             string oldestCrawl();
 
         private:

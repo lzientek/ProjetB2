@@ -17,7 +17,7 @@ string Algo::MIhtml(Files::Fichier file)
     vector<string> provisoire = str::split(file.getTextFull()," ");
     vector<string> important = str::split(file.getNom()," ");
 
-    return "lucas, is ,the ,best";
+
 }
 
 string Algo::MItexte(Files::Fichier file)
