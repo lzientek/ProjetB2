@@ -1,5 +1,5 @@
 #include "StringUtils.h"
-
+#include <boost/regex.hpp>
 
 using namespace std;
 
@@ -80,7 +80,19 @@ int utils::str::calculNote(vector<string> motsRecherche,string text,string motIm
     return note;//TODO (lucas): approfondir calcul note
 }
 
+string utils::str::regex_replace(string reg,string text,string par)
+{
 
+    boost::regex e (reg);   // matches words beginning by "sub"
+
+    std::ostringstream  os;
+
+
+    std::ostream_iterator<char, char> out(os);
+    boost::regex_replace(out, text.begin(), text.end(),
+                         e, par, boost::match_default | boost::format_all);
+    return os.str();
+}
 
 vector<string> utils::str::getUrls(string text)
 {
@@ -97,7 +109,7 @@ vector<string> utils::str::getUrls(string text)
 
             if(urlToSave.find("http")==0) //si on a bien une addresse valide
             {
-                if(utils::Url::verifUrl(urlToSave))
+
                     urlAretourner.push_back(urlToSave);
             }
 

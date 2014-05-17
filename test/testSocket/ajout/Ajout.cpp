@@ -58,11 +58,11 @@ int Ajout::saveFiles()
 
                     Files::Fichier fichierResultat("",
                                                    url.getUri(),
-                                                   Algo::generateMotImportant(reponse.GetBody()),
+                                                   "",
                                                    t,
                                                    0,
                                                    reponse.GetBody().size(),
-                                                   string(reponse.GetBody())
+                                                   reponse.GetBody()
                                                   );
 
 
@@ -90,9 +90,9 @@ int Ajout::saveFiles()
             {
                 string newUrl = reponse.GetField("Location");
 
-                                if(newUrl.find("http")!=0) //si on est en relative
+                if(newUrl.find("http")!=0) //si on est en relative
                 {
-                    if(newUrl!=oldNewUrl)//verif boucle
+                    if(url.getUri()!=newUrl && newUrl!=urlToSave && newUrl!=oldNewUrl)//verif boucle
                     {
                         if(newUrl.find("/")==0 )
                             url = utils::Url(url.getUrl()+newUrl);
@@ -106,7 +106,7 @@ int Ajout::saveFiles()
                         return -1;//error boucle
                     }
                 }
-                else if(url.getUri()!=newUrl) //on verifie bien qu'on boucle pas
+                else if(url.getUri()!=newUrl && newUrl!=urlToSave && newUrl!=oldNewUrl) //on verifie bien qu'on boucle pas
                     url = utils::Url(newUrl);
 
                 else//si on boucle on break
@@ -117,7 +117,7 @@ int Ajout::saveFiles()
                 }
                 oldNewUrl = newUrl;
                 if(serv::Serveur::verbose)
-                    cout<<"[ajout] nouveau uri :"<<url.getUri()<<endl;
+                    cout<<"[ajout] nouveau uri :"<<url.getUri()<<endl<<urlToSave<<endl;
             }
             else
             {
@@ -129,6 +129,7 @@ int Ajout::saveFiles()
             i++;
         }
         while( i < MAX_REDIRECTION);
+        cleanBoucle();
         return -2; //erreur trop de redirection
     }
     else

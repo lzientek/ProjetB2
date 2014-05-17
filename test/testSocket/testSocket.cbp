@@ -42,8 +42,6 @@
 			<Add library="/usr/lib/libsfml-network.so" />
 			<Add library="/usr/lib/libsfml-system.so" />
 		</Linker>
-		<Unit filename="Client/HTTPclientHeader.cpp" />
-		<Unit filename="Client/HTTPclientHeader.h" />
 		<Unit filename="Files/Fichier.cpp" />
 		<Unit filename="Files/Fichier.h" />
 		<Unit filename="Recherche/Resultat.cpp" />

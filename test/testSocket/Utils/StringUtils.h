@@ -41,6 +41,8 @@ namespace utils
             static bool isUpper(string str);
 
             static string interieurBalise(string str,string nomBalise);
+
+            static string regex_replace(string reg,string text,string par);
     };
 }
 

@@ -147,6 +147,7 @@ void Serveur::envoieReponse()
             Recherche::Resultat resultRecherche = Recherche::Resultat(header.getKeys()); // on passe les arguments de recherche du header a a recherche
             rep = HTTPOK;//on met le header
             rep += resultRecherche.toXml();
+            repondre(rep);
         }
 
         else if( action == A_AJOUT ) //si il veut ajouter une url
@@ -155,26 +156,32 @@ void Serveur::envoieReponse()
                 cout<<"[serv-add]ajout "<<header.getChemin()<<endl;
 
             Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
-
+rep = HTTPOK;
+repondre(rep);
             nouvelleAjout.saveFiles();
 
-            rep = HTTPOK;
+
             if(verbose)
                 cout<<"[serv-add]ajout terminé"<<endl;
 
+
         }
     }
+    else
+        repondre(rep);
 
-    if (write(newsockfd, utils::str::stringToChar(rep), rep.size()) < 0)
-    {
-        cerr<<"ERROR writing to socket"<<endl;
-    }
-    else if(verbose)
-        cout<<"[serv]réponse ebvoye; taille:"<<rep.size()<<endl;
+
     utils::Stats::incRequeteServ(action,header.getChemin());
 }
 
+void Serveur::repondre(string rep)
+{
+    if (write(newsockfd, utils::str::stringToChar(rep), rep.size()) < 0)
+        cerr<<"ERROR writing to socket"<<endl;
 
+    else if(verbose)
+        cout<<"[serv]réponse envoye; taille:"<<rep.size()<<endl;
+}
 //-------------------getter setter
 
 bool Serveur::getError()

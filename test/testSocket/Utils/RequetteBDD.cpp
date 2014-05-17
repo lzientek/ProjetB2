@@ -30,7 +30,18 @@ RequetteBDD::RequetteBDD(string query)
 
 vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int nombre)
 {
-    //TODO : regex pour catcher le nombre de resultat limit if(std::regex_match (words.at(words.size()-2), std::regex("(sub)(.*)") ))
+
+    if(words.size()>2)
+        if(words.at(words.size()-2).find("d=")==0
+                && words.at(words.size()-1).find("nb=")==0)
+        {
+            debut = stoi(words.at( words.size()-2).substr(2));
+            nombre = stoi(words.at(words.size()-1).substr(3));
+
+            words.erase(words.end());
+            words.erase(words.end());//on supprime les 2 derniers mots
+        }
+
     ostringstream query("");
     query <<"SELECT * FROM files WHERE ";
     for(unsigned i = 0; i < words.size(); i++)
@@ -39,6 +50,7 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
             query<<"OR ";
         query<< "url "<<like(words[i])<<" OR motImportant "<<like(words[i])<< " OR txt "<<like(words[i])<<" ";
     }
+
     if(debut < nombre)
         query << "LIMIT " << debut <<","<< nombre;
     //query << " ORDER BY  DESC LIMIT 1 " ;//
@@ -51,14 +63,14 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
     while (result->next())
     {
 
-        resultTab.insert(resultTab.end(), Files::Fichier( result->getString("titre"),
-                         result->getString("url"),
-                         result->getString("motImportant"),
-                         result->getInt("type"),
-                         utils::str::calculNote( words,result->getString("txt"),
-                                 result->getString("motImportant"))
-                                                        )
-                        );
+        resultTab.push_back( Files::Fichier( result->getString("titre"),
+                                             result->getString("url"),
+                                             result->getString("motImportant"),
+                                             result->getInt("type"),
+                                             utils::str::calculNote( words,result->getString("txt"),
+                                                     result->getString("motImportant"))
+                                           )
+                           );
 
     }
 
@@ -72,12 +84,13 @@ vector<Files::Fichier> RequetteBDD::search(vector<string> words,int debut,int no
 
 string RequetteBDD::oldestCrawl() //crawl le plus ancien
 {
-
-    string query("SELECT url FROM files ORDER BY lastcrawl ASC LIMIT 1 ");
+    ostringstream query("");
+    query<<"SELECT url FROM files WHERE lastcrawl < '";
+    query <<(time(NULL)-(31*24*3600))<<"' ORDER BY RAND() LIMIT 1";
 
     sql::ResultSet  *result;
 
-    result = executeSQL(query);
+    result = executeSQL(query.str());
 
 
     if(result->next())
@@ -97,24 +110,33 @@ string RequetteBDD::oldestCrawl() //crawl le plus ancien
 
 void RequetteBDD::add(Files::Fichier file)
 {
-    string query = "INSERT INTO files(titre,url,type,txt,motImportant,lastcrawl) VALUES (?,?,?,?,?,?) ";
+    RequetteBDD reqVerif;
+    if(reqVerif.verifUrl(file.getURL().getUri()))
+    {
+        try
+        {
+            string query = "INSERT INTO files(titre,url,type,txt,motImportant,lastcrawl) VALUES (?,?,?,?,?,?) ";
 
-    sql::PreparedStatement  *prep_stmt;
+            sql::PreparedStatement  *prep_stmt;
 
-    prep_stmt = con->prepareStatement(query);
+            prep_stmt = con->prepareStatement(query);
 
-    prep_stmt->setString(1,file.getNom()); //titre
-    prep_stmt->setString(2,file.getURL().getUri()); //url
-    prep_stmt->setInt(3,file.getTypeInt()); //type
-    istringstream stream(file.getTextFull());
-    prep_stmt->setBlob(4,&stream); //txt
-    prep_stmt->setString(5,Algo::generateMotImportant(file)); //mot important
-    prep_stmt->setInt(6,time(NULL)); //timstamp
+            prep_stmt->setString(1,file.getNom()); //titre
+            prep_stmt->setString(2,file.getURL().getUri()); //url
+            prep_stmt->setInt(3,file.getTypeInt()); //type
+            istringstream stream(file.getTextFull());
+            prep_stmt->setBlob(4,&stream); //txt
+            prep_stmt->setString(5,Algo::generateMotImportant(file)); //mot important
+            prep_stmt->setInt(6,time(NULL)); //timstamp
 
-    prep_stmt->execute();
+            prep_stmt->execute();
 
-    delete prep_stmt;
-
+            delete prep_stmt;
+        }
+        catch(...) {}
+    }
+    else
+        update(file,file.getURL().getUri(),0);
 }
 
 
@@ -131,9 +153,13 @@ void RequetteBDD::add(vector<string> urls)
         RequetteBDD reqVerif;
         if(reqVerif.verifUrl(urls[i]))
         {
-            prep_stmt->setString(1,urls[i]); //url
-            prep_stmt->setInt(2,0); //timstamp
-            prep_stmt->executeUpdate();
+            try
+            {
+                prep_stmt->setString(1,urls[i]); //url
+                prep_stmt->setInt(2,0); //timstamp
+                prep_stmt->executeUpdate();
+            }
+            catch(...) {}
         }
     }
 
@@ -158,14 +184,14 @@ bool RequetteBDD::verifUrl(string url)
         {
             delete result;
             return false;
+
         }
+        else
+            return true;
         delete result;
     }
-    catch(...)
-    {
-        return true;
-    }
-    return true;
+    catch(...){}
+return false;
 }
 
 void RequetteBDD::update(Files::Fichier file,string url,int temps)

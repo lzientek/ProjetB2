@@ -43,13 +43,6 @@ void Url::parse()
         url=urib;
         get="/";
     }
-
-    if(!verifUrl(url))
-    {
-        url="";
-    }
-
-
 }
 
 bool Url::verifUrl(string url)

@@ -10,8 +10,9 @@ class Algo
         static string generateMotImportant(Files::Fichier file);
     protected:
     private:
-        static string MItexte(Files::Fichier file);
-        static string MIhtml(Files::Fichier file);
+        static string MItexte(string file);
+        static string MIhtml(string file);
+        static vector<string> important;
 };
 
 #endif // ALGO_H

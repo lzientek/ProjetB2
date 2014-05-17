@@ -2,40 +2,44 @@
 
 using namespace utils;
 
+vector<string> Algo::important;
 /**
 *@return les mots importants séparé par une virgule
 **/
 string Algo::generateMotImportant(Files::Fichier file)
 {
+    important = vector<string>();
     if(file.getTypeInt() == F_HTML)
         return MIhtml(file.getTextFull());
     return MItexte(file.getTextFull());
 }
 
-string Algo::MIhtml(Files::Fichier file)
+string Algo::MIhtml(string file)
 {
-    vector<string> provisoire = str::split(file.getTextFull()," ");
-    vector<string> important = str::split(file.getNom()," ");
 
+    file  = utils::str::regex_replace ("<[^>]*>",file,"");
+    //    std::regex_replace (file,e," ");
+    return MItexte(file);
 
 }
 
-string Algo::MItexte(Files::Fichier file)
+string Algo::MItexte(string file)
 {
-    vector<string> important = str::split(file.getNom()," ");
-    vector<string> provisoire = str::split(file.getTextFull()," ");
+    file  = utils::str::regex_replace ("[^a-ùA-Z ]",file," ");
+
+    vector<string> provisoire = str::split(file," ");
 
     for(uint i = 0; i < provisoire.size() ; i++)
     {
         string strToTest = provisoire[i];
         bool testImportant = (strToTest.size() > 3 && str::checkIsAlphabet(strToTest)) //verif basic
                              && (
-                                 str::isUpper(provisoire[i])                                //verif important
-                                 || str::countOcurence(file.getTextFull(),provisoire[i]) >= 3
+                                 str::isUpper(strToTest)                                //verif important
+                                 || str::countOcurence(strToTest,file) >= 3
                              );
 
         if(testImportant)
-            important.push_back(provisoire[i]);
+            important.push_back(strToTest);
     }
 
     provisoire.clear();

@@ -4259,7 +4259,7 @@
 	<string>
 	<sstream>
 
-1400196009 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+1400350634 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
 	"Ajout.h"
 
 1400195445 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/ajout/Ajout.h
@@ -4311,7 +4311,7 @@
 	<stdexcept>
 	"StringUtils.h"
 
-1396880350 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
+1400345476 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.h
 	"../Files/Fichier.h"
 	"Url.h"
 	<string>
@@ -4334,7 +4334,7 @@
 	"../Serveur/Crawl.h"
 	"Conf.h"
 
-1392984330 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur.h
+1400346825 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur.h
 	"defines.h"
 	<sys/types.h>
 	<sys/socket.h>
@@ -4364,7 +4364,7 @@
 	"../Utils/Url.h"
 	"../Utils/StringUtils.h"
 
-1395070766 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
+1400259385 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.h
 	"Conf.h"
 	<iostream>
 	<vector>
@@ -4380,7 +4380,7 @@
 	<cppconn/statement.h>
 	<cppconn/prepared_statement.h>
 
-1396885772 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Algo.h
+1400339033 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Algo.h
 	"StringUtils.h"
 	<string>
 	<sstream>
@@ -4415,7 +4415,7 @@
 1393090010 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Files/Fichier.cpp
 	"Fichier.h"
 
-1400192180 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/main.cpp
+1400345699 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/main.cpp
 	"defines.h"
 	"Client/ClientHTTP.h"
 	"Files/Fichier.h"
@@ -4424,7 +4424,7 @@
 1396885772 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Recherche/Resultat.cpp
 	"Resultat.h"
 
-1393533893 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur.cpp
+1400347359 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur.cpp
 	"Serveur.h"
 	"Serveur/HttpHeader.h"
 
@@ -4440,19 +4440,21 @@
 1400197607 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Processus.cpp
 	"Processus.h"
 
-1396885079 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+1400347803 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
 	"RequetteBDD.h"
+	<regex>
 
 1390937015 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Stats.cpp
 	"Stats.h"
 
-1396880292 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
+1400348891 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/StringUtils.cpp
 	"StringUtils.h"
+	<boost/regex.hpp>
 
-1396885772 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Url.cpp
+1400348891 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Url.cpp
 	"Url.h"
 
-1396877667 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Algo.cpp
+1400349461 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Algo.cpp
 	"Algo.h"
 
 1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network.hpp
@@ -4776,4 +4778,358 @@
 	<map>
 
 1341868345 /usr/include/SFML/Network/Selector.inl
+
+1335908603 /usr/include/pcrecpp.h
+	<string>
+	<pcre.h>
+	<pcrecpparg.h>
+	<pcre_stringpiece.h>
+
+1335908603 /usr/include/pcre.h
+	<stdlib.h>
+
+1335908603 /usr/include/pcrecpparg.h
+	<stdlib.h>
+	<string>
+	<pcre.h>
+
+1335908603 /usr/include/pcre_stringpiece.h
+	<cstring>
+	<string>
+	<iosfwd>
+	<type_traits.h>
+	<bits/type_traits.h>
+	<pcre.h>
+
+1359951428 /usr/include/boost/regex.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex.hpp>
+
+1359951430 /usr/include/boost/regex/config.hpp
+	<boost/regex/config/borland.hpp>
+	<boost/config.hpp>
+	<stdlib.h>
+	<stddef.h>
+	<wctype.h>
+	<boost/regex/config/cwchar.hpp>
+	<string>
+	<boost/config/auto_link.hpp>
+	<stdexcept>
+	<string>
+	<boost/throw_exception.hpp>
+
+1359951434 /usr/include/boost/regex/config/borland.hpp
+	<cstring>
+
+1359951434 /usr/include/boost/regex/config/cwchar.hpp
+	<cwchar>
+	<cwctype>
+	<boost/config.hpp>
+
+1359951434 /usr/include/boost/regex/v4/regex.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_workaround.hpp>
+	<boost/regex_fwd.hpp>
+	<boost/regex/regex_traits.hpp>
+	<boost/regex/v4/error_type.hpp>
+	<boost/regex/v4/match_flags.hpp>
+	<boost/regex/v4/regex_raw_buffer.hpp>
+	<boost/regex/pattern_except.hpp>
+	<boost/regex/v4/char_regex_traits.hpp>
+	<boost/regex/v4/states.hpp>
+	<boost/regex/v4/regbase.hpp>
+	<boost/regex/v4/iterator_traits.hpp>
+	<boost/regex/v4/basic_regex.hpp>
+	<boost/regex/v4/basic_regex_creator.hpp>
+	<boost/regex/v4/basic_regex_parser.hpp>
+	<boost/regex/v4/sub_match.hpp>
+	<boost/regex/v4/regex_format.hpp>
+	<boost/regex/v4/match_results.hpp>
+	<boost/regex/v4/protected_call.hpp>
+	<boost/regex/v4/perl_matcher.hpp>
+	<boost/regex/v4/instances.hpp>
+	<boost/regex/v4/instances.hpp>
+	<boost/regex/v4/instances.hpp>
+	<boost/regex/v4/regex_match.hpp>
+	<boost/regex/v4/regex_search.hpp>
+	<boost/regex/v4/regex_iterator.hpp>
+	<boost/regex/v4/regex_token_iterator.hpp>
+	<boost/regex/v4/regex_grep.hpp>
+	<boost/regex/v4/regex_replace.hpp>
+	<boost/regex/v4/regex_merge.hpp>
+	<boost/regex/v4/regex_split.hpp>
+
+1359951434 /usr/include/boost/regex/v4/regex_workaround.hpp
+	<new>
+	<cstring>
+	<cstdlib>
+	<cstddef>
+	<cassert>
+	<cstdio>
+	<climits>
+	<string>
+	<stdexcept>
+	<iterator>
+	<algorithm>
+	<iosfwd>
+	<vector>
+	<map>
+	<boost/limits.hpp>
+	<boost/assert.hpp>
+	<boost/cstdint.hpp>
+	<boost/throw_exception.hpp>
+	<boost/scoped_ptr.hpp>
+	<boost/scoped_array.hpp>
+	<boost/shared_ptr.hpp>
+	<boost/mpl/bool_fwd.hpp>
+	<locale>
+
+1359951428 /usr/include/boost/scoped_array.hpp
+	<boost/smart_ptr/scoped_array.hpp>
+
+1359951428 /usr/include/boost/smart_ptr/scoped_array.hpp
+	<boost/assert.hpp>
+	<boost/checked_delete.hpp>
+	<boost/config.hpp>
+	<boost/detail/workaround.hpp>
+	<cstddef>
+	<boost/smart_ptr/detail/operator_bool.hpp>
+
+1359951428 /usr/include/boost/regex_fwd.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_fwd.hpp>
+
+1359951434 /usr/include/boost/regex/v4/regex_fwd.hpp
+	<boost/regex/config.hpp>
+	<boost/regex.hpp>
+
+1359951430 /usr/include/boost/regex/regex_traits.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_traits.hpp>
+
+1359951434 /usr/include/boost/regex/v4/regex_traits.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_workaround.hpp>
+	<boost/regex/v4/syntax_type.hpp>
+	<boost/regex/v4/error_type.hpp>
+	<boost/regex/v4/regex_traits_defaults.hpp>
+	<boost/regex/v4/cpp_regex_traits.hpp>
+	<boost/regex/v4/c_regex_traits.hpp>
+	<boost/regex/v4/w32_regex_traits.hpp>
+	<boost/regex_fwd.hpp>
+	"boost/mpl/has_xxx.hpp"
+	<boost/static_assert.hpp>
+
+1359951434 /usr/include/boost/regex/v4/syntax_type.hpp
+
+1359951434 /usr/include/boost/regex/v4/error_type.hpp
+
+1359951434 /usr/include/boost/regex/v4/regex_traits_defaults.hpp
+	<boost/regex/v4/syntax_type.hpp>
+	<boost/regex/v4/error_type.hpp>
+
+1359951434 /usr/include/boost/regex/v4/cpp_regex_traits.hpp
+	<boost/config.hpp>
+	<boost/regex/pattern_except.hpp>
+	<boost/regex/v4/regex_traits_defaults.hpp>
+	<boost/regex/pending/static_mutex.hpp>
+	<boost/regex/v4/primary_transform.hpp>
+	<boost/regex/pending/object_cache.hpp>
+	<istream>
+	<ios>
+	<climits>
+
+1359951430 /usr/include/boost/regex/pattern_except.hpp
+	<boost/regex/config.hpp>
+	<stdexcept>
+	<cstddef>
+	<boost/regex/v4/error_type.hpp>
+
+1359951434 /usr/include/boost/regex/pending/static_mutex.hpp
+	<boost/config.hpp>
+	<boost/regex/config.hpp>
+	<pthread.h>
+	<boost/cstdint.hpp>
+
+1359951434 /usr/include/boost/regex/v4/primary_transform.hpp
+
+1359951434 /usr/include/boost/regex/pending/object_cache.hpp
+	<map>
+	<list>
+	<stdexcept>
+	<string>
+	<boost/config.hpp>
+	<boost/shared_ptr.hpp>
+	<boost/regex/pending/static_mutex.hpp>
+
+1359951434 /usr/include/boost/regex/v4/c_regex_traits.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_workaround.hpp>
+	<cctype>
+
+1359951434 /usr/include/boost/regex/v4/w32_regex_traits.hpp
+	<boost/regex/pattern_except.hpp>
+	<boost/regex/v4/regex_traits_defaults.hpp>
+	<boost/regex/pending/static_mutex.hpp>
+	<boost/regex/v4/primary_transform.hpp>
+	<boost/regex/pending/object_cache.hpp>
+
+1359951434 /usr/include/boost/regex/v4/match_flags.hpp
+	<boost/cstdint.hpp>
+
+1359951434 /usr/include/boost/regex/v4/regex_raw_buffer.hpp
+	<boost/regex/config.hpp>
+	<algorithm>
+	<cstddef>
+
+1359951434 /usr/include/boost/regex/v4/char_regex_traits.hpp
+
+1359951434 /usr/include/boost/regex/v4/states.hpp
+
+1359951434 /usr/include/boost/regex/v4/regbase.hpp
+
+1359951434 /usr/include/boost/regex/v4/iterator_traits.hpp
+
+1359951434 /usr/include/boost/regex/v4/basic_regex.hpp
+	<boost/type_traits/is_same.hpp>
+	<boost/functional/hash.hpp>
+
+1359951431 /usr/include/boost/functional/hash.hpp
+	<boost/functional/hash/hash.hpp>
+
+1359951435 /usr/include/boost/functional/hash/hash.hpp
+	<boost/functional/hash/hash_fwd.hpp>
+	<functional>
+	<boost/functional/hash/detail/hash_float.hpp>
+	<string>
+	<boost/limits.hpp>
+	<boost/static_assert.hpp>
+	<boost/type_traits/is_pointer.hpp>
+	<typeindex>
+	<boost/functional/hash/extensions.hpp>
+
+1359951435 /usr/include/boost/functional/hash/hash_fwd.hpp
+	<boost/config.hpp>
+	<cstddef>
+	<boost/detail/workaround.hpp>
+
+1359951438 /usr/include/boost/functional/hash/detail/hash_float.hpp
+	<boost/config.hpp>
+	<boost/functional/hash/detail/float_functions.hpp>
+	<boost/functional/hash/detail/limits.hpp>
+	<boost/integer/static_log2.hpp>
+	<boost/cstdint.hpp>
+	<boost/assert.hpp>
+	<boost/functional/hash/detail/hash_float_x86.hpp>
+	<boost/functional/hash/detail/hash_float_generic.hpp>
+	<boost/functional/hash/detail/hash_float_generic.hpp>
+	<boost/config/no_tr1/cmath.hpp>
+
+1359951438 /usr/include/boost/functional/hash/detail/float_functions.hpp
+	<boost/config.hpp>
+	<boost/config/no_tr1/cmath.hpp>
+
+1359951436 /usr/include/boost/config/no_tr1/cmath.hpp
+	<cmath>
+
+1359951438 /usr/include/boost/functional/hash/detail/limits.hpp
+	<boost/limits.hpp>
+	<float.h>
+
+1359951428 /usr/include/boost/integer/static_log2.hpp
+	"boost/integer_fwd.hpp"
+
+1359951438 /usr/include/boost/functional/hash/detail/hash_float_x86.hpp
+	<boost/cstdint.hpp>
+
+1359951438 /usr/include/boost/functional/hash/detail/hash_float_generic.hpp
+	<boost/functional/hash/detail/float_functions.hpp>
+	<boost/integer/static_log2.hpp>
+	<boost/functional/hash/detail/limits.hpp>
+
+1359951435 /usr/include/boost/functional/hash/extensions.hpp
+	<boost/functional/hash/hash.hpp>
+	<boost/detail/container_fwd.hpp>
+	<boost/type_traits/is_array.hpp>
+	<boost/type_traits/is_const.hpp>
+
+1359951428 /usr/include/boost/detail/container_fwd.hpp
+	<boost/config.hpp>
+	<boost/detail/workaround.hpp>
+	<deque>
+	<list>
+	<vector>
+	<map>
+	<set>
+	<bitset>
+	<string>
+	<complex>
+	<cstddef>
+	<deque>
+	<bitset>
+
+1359951434 /usr/include/boost/regex/v4/basic_regex_creator.hpp
+
+1359951434 /usr/include/boost/regex/v4/basic_regex_parser.hpp
+
+1359951434 /usr/include/boost/regex/v4/sub_match.hpp
+
+1359951434 /usr/include/boost/regex/v4/regex_format.hpp
+	<boost/type_traits/is_pointer.hpp>
+	<boost/type_traits/is_function.hpp>
+	<boost/type_traits/is_class.hpp>
+	<boost/type_traits/is_same.hpp>
+	<boost/type_traits/is_convertible.hpp>
+	<boost/type_traits/remove_pointer.hpp>
+	<boost/type_traits/remove_cv.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/and.hpp>
+	<boost/mpl/not.hpp>
+	<boost/mpl/has_xxx.hpp>
+	<boost/ref.hpp>
+
+1359951434 /usr/include/boost/regex/v4/match_results.hpp
+
+1359951434 /usr/include/boost/regex/v4/protected_call.hpp
+
+1359951434 /usr/include/boost/regex/v4/perl_matcher.hpp
+	<boost/regex/v4/iterator_category.hpp>
+	<boost/regex/v4/perl_matcher_recursive.hpp>
+	<boost/regex/v4/perl_matcher_non_recursive.hpp>
+	<boost/regex/v4/perl_matcher_common.hpp>
+
+1359951434 /usr/include/boost/regex/v4/iterator_category.hpp
+	<iterator>
+	<boost/type_traits/is_convertible.hpp>
+	<boost/type_traits/is_pointer.hpp>
+
+1359951434 /usr/include/boost/regex/v4/perl_matcher_recursive.hpp
+
+1359951434 /usr/include/boost/regex/v4/perl_matcher_non_recursive.hpp
+	<new>
+
+1359951434 /usr/include/boost/regex/v4/perl_matcher_common.hpp
+
+1359951434 /usr/include/boost/regex/v4/instances.hpp
+
+1359951434 /usr/include/boost/regex/v4/regex_match.hpp
+
+1359951434 /usr/include/boost/regex/v4/regex_search.hpp
+
+1359951434 /usr/include/boost/regex/v4/regex_iterator.hpp
+	<boost/shared_ptr.hpp>
+
+1359951434 /usr/include/boost/regex/v4/regex_token_iterator.hpp
+	<boost/shared_ptr.hpp>
+	<boost/detail/workaround.hpp>
+	<boost/static_assert.hpp>
+	<boost/type_traits/is_array.hpp>
+
+1359951434 /usr/include/boost/regex/v4/regex_grep.hpp
+
+1359951434 /usr/include/boost/regex/v4/regex_replace.hpp
+
+1359951434 /usr/include/boost/regex/v4/regex_merge.hpp
+
+1359951434 /usr/include/boost/regex/v4/regex_split.hpp
 

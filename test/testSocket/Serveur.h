@@ -33,6 +33,7 @@ namespace serv
             static bool verbose;
         protected:
         private:
+            void repondre(string rep);
             bool error;
             int sockfd, newsockfd, portno,fdmax;
             struct sockaddr_in serv_addr, cli_addr;

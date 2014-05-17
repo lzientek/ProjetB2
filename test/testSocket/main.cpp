@@ -3,10 +3,10 @@
 #include "Files/Fichier.h"
 #include <SFML/System.hpp>
 
-
-
+using namespace std;
 int main(int argc, char *argv[])
 {
+
 
     utils::str::showFile("demarage");
 
