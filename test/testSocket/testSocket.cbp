@@ -21,10 +21,6 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Linker>
-					<Add option="-lsfml-network" />
-					<Add option="-lsfml-system" />
-				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
@@ -41,6 +37,8 @@
 			<Add library="/usr/lib/libboost_locale.so" />
 			<Add library="/usr/lib/libsfml-network.so" />
 			<Add library="/usr/lib/libsfml-system.so" />
+			<Add library="/usr/lib/libboost_regex.so" />
+			<Add directory="/usr/lib" />
 		</Linker>
 		<Unit filename="Files/Fichier.cpp" />
 		<Unit filename="Files/Fichier.h" />

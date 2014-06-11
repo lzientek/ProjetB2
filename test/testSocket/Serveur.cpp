@@ -154,10 +154,10 @@ void Serveur::envoieReponse()
         {
             if(verbose)
                 cout<<"[serv-add]ajout "<<header.getChemin()<<endl;
-
+            rep = HTTPOK;
+            repondre(rep);
             Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
-rep = HTTPOK;
-repondre(rep);
+
             nouvelleAjout.saveFiles();
 
 

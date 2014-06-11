@@ -22,11 +22,11 @@ Ajout::Ajout(utils::Url url,bool crawl)
 int Ajout::saveFiles()
 {
 
-    if(url.isValid())
+    if( url.isValid() )
     {
         string oldNewUrl = "";
-        string cookie="";
-        int i=0;
+        string cookie = "";
+        int i = 0;
         do
         {
             sf::Http req;
@@ -35,6 +35,7 @@ int Ajout::saveFiles()
 
             request.SetURI(url.getGet());
             reponse = req.SendRequest(request);
+cout<< url.getUrl()<<reponse.GetStatus()<<endl;
 
             //si on est bon
             if(reponse.GetStatus() == sf::Http::Response::Ok)
@@ -85,6 +86,15 @@ int Ajout::saveFiles()
                 }
 
             }
+            //si probleme internet on l'ajoute quand meme a la BDD
+            else if(reponse.GetStatus() == sf::Http::Response::ConnectionFailed)
+            {
+                vector<string> urls;utils::RequetteBDD reqSQLurl;
+                urls.push_back(url.getUri());
+                reqSQLurl.add(urls);
+                return -4;//no internet
+            }
+
             else if(reponse.GetStatus() == sf::Http::Response::MovedPermanently
                     || reponse.GetStatus() == sf::Http::Response::MovedTemporarily)
             {

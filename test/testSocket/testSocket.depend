@@ -4259,7 +4259,7 @@
 	<string>
 	<sstream>
 
-1400350634 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
+1402520003 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/ajout/Ajout.cpp
 	"Ajout.h"
 
 1400195445 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/ajout/Ajout.h
@@ -4415,7 +4415,7 @@
 1393090010 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Files/Fichier.cpp
 	"Fichier.h"
 
-1400345699 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/main.cpp
+1402520020 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/main.cpp
 	"defines.h"
 	"Client/ClientHTTP.h"
 	"Files/Fichier.h"
@@ -4424,7 +4424,7 @@
 1396885772 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Recherche/Resultat.cpp
 	"Resultat.h"
 
-1400347359 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur.cpp
+1402508595 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Serveur.cpp
 	"Serveur.h"
 	"Serveur/HttpHeader.h"
 
@@ -4440,7 +4440,7 @@
 1400197607 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Processus.cpp
 	"Processus.h"
 
-1400347803 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
+1400360331 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/RequetteBDD.cpp
 	"RequetteBDD.h"
 	<regex>
 
@@ -4454,7 +4454,7 @@
 1400348891 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Url.cpp
 	"Url.h"
 
-1400349461 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Algo.cpp
+1400360435 source:/home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/Utils/Algo.cpp
 	"Algo.h"
 
 1374846260 /home/dev/Dropbox/projet/test/ProjetB2/test/testSocket/libexterne/include/SFML/Network.hpp

@@ -1,5 +1,5 @@
 #include "Processus.h"
-
+#include "../ajout/Ajout.h"
 using namespace utils;
 using namespace std;
 
@@ -133,6 +133,18 @@ bool utils::cmd()
     else if(commande == "reloadconf")
         utils::Conf::reload();
 
+    else if(commande == "addUrl")
+    {
+        if(args.size()==2)
+        {
+            Add::Ajout a(args[1]);
+            a.saveFiles();
+        }
+
+        else cout<<"Ajouter un url exemple: addUrl findy.com"<<endl;
+    }
+
+
 
     else if(commande == "stopCrawl")
         utils::Conf::stopCrawl = true;
@@ -185,6 +197,7 @@ bool utils::cmd()
         cout<<"reloadconf : pour charger la conf de nouveau"<<endl;
         cout<<"clear : clear l'écran"<<endl;
         cout<<"connection [show|hide] : affiche les connections du serveur"<<endl;
+        cout<<"addUrl url : ajouter une url au serveur a la main"<<endl;
         cout<<"stopCrawl : desactive le crawl"<<endl<<endl<<endl;
         cout<<"port : affiche le port utilisé par le serveur"<<endl;
         cout<<"resolvError : affiche comment resoudre les erreurs"<<endl;
