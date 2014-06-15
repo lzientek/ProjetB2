@@ -2,6 +2,8 @@
 #include "Serveur/HttpHeader.h"
 
 
+
+
 using namespace std;
 
 using namespace serv;
@@ -10,7 +12,7 @@ bool Serveur::verbose;
 
 Serveur::Serveur()
 {
-    Serveur(8080);
+    Serveur(4242);
     sockfd = 0;
     newsockfd = 0;
     portno = 0;
@@ -105,6 +107,7 @@ bool Serveur::ecoute()
             if ( close(newsockfd) < 0 )
                 cerr<<"Error closing connection socket."<<endl;
             exit(EXIT_SUCCESS);
+
         }
 
 
@@ -140,9 +143,9 @@ void Serveur::envoieReponse()
     if(verbose) //si le mode verbose est activé
         cout<<"[serv]action:"<<endl<<action<<endl;
 
-    if(action !=A_404ERROR)
+    if(action != A_404ERROR)
     {
-        if(action ==A_RECHERCHE) //si l'utilisateur fais une recherche
+        if(action == A_RECHERCHE) //si l'utilisateur fais une recherche
         {
             Recherche::Resultat resultRecherche = Recherche::Resultat(header.getKeys()); // on passe les arguments de recherche du header a a recherche
             rep = HTTPOK;//on met le header
@@ -155,11 +158,11 @@ void Serveur::envoieReponse()
             if(verbose)
                 cout<<"[serv-add]ajout "<<header.getChemin()<<endl;
             rep = HTTPOK;
+
+
+            Crawl::SetNextUrl( header.getChemin());
+
             repondre(rep);
-            Add::Ajout nouvelleAjout = Add::Ajout(header.getChemin());
-
-            nouvelleAjout.saveFiles();
-
 
             if(verbose)
                 cout<<"[serv-add]ajout terminé"<<endl;
@@ -201,3 +204,4 @@ Serveur::~Serveur()
 {
 
 }
+

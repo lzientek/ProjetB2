@@ -6,13 +6,13 @@
 
 class Algo
 {
-    public:
-        static string generateMotImportant(Files::Fichier file);
-    protected:
-    private:
-        static string MItexte(string file);
-        static string MIhtml(string file);
-        static vector<string> important;
+public:
+    static string generateMotImportant(Files::Fichier file);
+protected:
+private:
+    static string MItexte(string file);
+    static string MIhtml(string file);
+    static vector<string> important;
 };
 
 #endif // ALGO_H

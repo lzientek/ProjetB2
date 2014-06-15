@@ -16,30 +16,30 @@ using namespace std;
 
 namespace serv
 {
-    const string ERROR404 = "/404";
-    const string HTTP_PROTOCOLE = "HTTP/1.1";
+const string ERROR404 = "/404";
+const string HTTP_PROTOCOLE = "HTTP/1.1";
 
 
-    class HttpHeader
-    {
-        public:
-            HttpHeader();
-            HttpHeader(string header);
-            HttpHeader(char* header);
-            int getAction();
-            string getChemin();
-            vector<string> getKeys();
-            virtual ~HttpHeader();
-        protected:
-        private:
-            bool parse();
-            bool parseChemin();
-            string header;
-            string action;
-            string cheminRequete;
-            string keys;
-            bool method;
-    };
+class HttpHeader
+{
+public:
+    HttpHeader();
+    HttpHeader(string header);
+    HttpHeader(char* header);
+    int getAction();
+    string getChemin();
+    vector<string> getKeys();
+    virtual ~HttpHeader();
+protected:
+private:
+    bool parse();
+    bool parseChemin();
+    string header;
+    string action;
+    string cheminRequete;
+    string keys;
+    bool method;
+};
 }
 
 

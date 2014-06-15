@@ -14,24 +14,24 @@ using namespace std;
 
 namespace Recherche
 {
-    class Resultat
-    {
-        public:
-            Resultat();
-            Resultat(vector<string> words);
-            virtual ~Resultat();
-            void trier();
-            string toXml();
-            int search();
+class Resultat
+{
+public:
+    Resultat();
+    Resultat(vector<string> words);
+    virtual ~Resultat();
+    void trier();
+    string toXml();
+    int search();
 
-        protected:
-        private:
-            void add(Files::Fichier file);
-            vector<string> words;
-            string wordsStr;
-            vector<Files::Fichier> files;
+protected:
+private:
+    void add(Files::Fichier file);
+    vector<string> words;
+    string wordsStr;
+    vector<Files::Fichier> files;
 
 
-    };
+};
 }
 #endif // Resultat_H

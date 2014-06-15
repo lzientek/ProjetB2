@@ -9,29 +9,30 @@
 
 #include "../Utils/Url.h"
 #include "../Client/HTTPclientHeader.h"
-#include "../Serveur.h"
+
 
 
 namespace Add
 {
-    class Ajout
-    {
-        public:
+class Ajout
+{
+public:
 
-            Ajout(string url,bool crawl = false);
+    Ajout(string url,bool crawl = false);
 
-            Ajout(utils::Url url,bool crawl = false);
-            virtual ~Ajout();
-            int saveFiles();
-        protected:
-            utils::Url url;
-            Files::Fichier file;
-            bool isCrawl;
-        private:
-            sf::Http::Request request;
-            sf::Http::Response reponse;
-            void cleanBoucle();
-            std::string urlToSave;
-    };
+    Ajout(utils::Url url,bool crawl = false);
+    virtual ~Ajout();
+    int saveFiles();
+protected:
+    utils::Url url;
+    Files::Fichier file;
+    bool isCrawl;
+private:
+    sf::Http req;
+    sf::Http::Request request;
+    sf::Http::Response reponse;
+    void cleanBoucle();
+    std::string urlToSave;
+};
 }
 #endif // AJOUT_H

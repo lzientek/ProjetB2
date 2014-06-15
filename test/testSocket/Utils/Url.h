@@ -9,36 +9,36 @@ using namespace std;
 
 namespace utils
 {
-    class Url
+class Url
+{
+public:
+    Url(string uri="");
+    string getUrl()
     {
-        public:
-            Url(string uri="");
-            string getUrl()
-            {
-                return url;
-            }
-            string getGet()
-            {
-                return get;
-            }
-            string getUri()
-            {
-                return uri;
-            }
-            bool isValid()
-            {
-                return (url!="");
-            }
-            virtual ~Url();
-            static bool verifUrl(string url);
-        protected:
-        private:
-            void parse();
-            string uri;
-            string url;
-            string get;
+        return url;
+    }
+    string getGet()
+    {
+        return get;
+    }
+    string getUri()
+    {
+        return uri;
+    }
+    bool isValid()
+    {
+        return (url!="");
+    }
+    virtual ~Url();
+    static bool verifUrl(string url);
+protected:
+private:
+    void parse();
+    string uri;
+    string url;
+    string get;
 
-    };
+};
 }
 
 #endif // URL_H

@@ -29,13 +29,14 @@ int Ajout::saveFiles()
         int i = 0;
         do
         {
-            sf::Http req;
+
 
             req.SetHost(url.getUrl());
 
             request.SetURI(url.getGet());
             reponse = req.SendRequest(request);
-cout<< url.getUrl()<<reponse.GetStatus()<<endl;
+            if(serv::Serveur::verbose)
+                cout<< url.getUrl()<<reponse.GetStatus()<<endl;
 
             //si on est bon
             if(reponse.GetStatus() == sf::Http::Response::Ok)
@@ -89,7 +90,8 @@ cout<< url.getUrl()<<reponse.GetStatus()<<endl;
             //si probleme internet on l'ajoute quand meme a la BDD
             else if(reponse.GetStatus() == sf::Http::Response::ConnectionFailed)
             {
-                vector<string> urls;utils::RequetteBDD reqSQLurl;
+                vector<string> urls;
+                utils::RequetteBDD reqSQLurl;
                 urls.push_back(url.getUri());
                 reqSQLurl.add(urls);
                 return -4;//no internet
@@ -132,7 +134,7 @@ cout<< url.getUrl()<<reponse.GetStatus()<<endl;
             else
             {
                 cleanBoucle();
-                cerr<<"[Ajout]"<<url.getUri()<<" 404 error"<<endl;
+                cerr<<"[Ajout]"<<url.getUri()<<" "<<reponse.GetStatus()<<" error"<<endl;
                 return -1; //erreur boucle
             }
 

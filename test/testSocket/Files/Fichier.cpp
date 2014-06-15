@@ -32,18 +32,18 @@ string Fichier::getType()
 {
     switch(type) //on retourne les strings des types pour le xml
     {
-        case F_TEXTE:
-            return "txt";
-            break;
-        case F_BINAIRE:
-            return "bin";
-            break;
-        case F_HTML:
-            return "html";
-            break;
-        default:
-            return "file";
-            break;
+    case F_TEXTE:
+        return "txt";
+        break;
+    case F_BINAIRE:
+        return "bin";
+        break;
+    case F_HTML:
+        return "html";
+        break;
+    default:
+        return "file";
+        break;
     }
 }
 

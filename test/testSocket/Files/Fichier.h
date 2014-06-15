@@ -12,64 +12,64 @@ using namespace std;
 
 namespace Files
 {
-    class Fichier
+class Fichier
+{
+public:
+
+    Fichier(string nom="",string url="",string resume="",int type=F_TEXTE,double note=0,int taile=0,string textComplet="");
+
+    virtual ~Fichier();
+
+    //___________getter
+    string getNom()
     {
-        public:
+        return nom;
+    }
+    utils::Url getURL()
+    {
+        return url;
+    }
+    string getResume()
+    {
+        return resume;
+    }
+    string getTextFull()
+    {
+        return textComplet;
+    }
+    string getExtention()
+    {
+        return extention;
+    }
+    double getNote()
+    {
+        return note;
+    }
+    string getType();
+    int getTypeInt()
+    {
+        return type;
+    }
+    int getTaille()
+    {
+        return taille;
+    }
+    //___________fin getter
+    bool isEmpty();
 
-            Fichier(string nom="",string url="",string resume="",int type=F_TEXTE,double note=0,int taile=0,string textComplet="");
+protected:
+private:
+    string getTitre();
+    string nom;
+    utils::Url url;
+    string extention;
+    string resume;
+    string textComplet;
+    double note;
+    int taille;
+    int type;
 
-            virtual ~Fichier();
-
-            //___________getter
-            string getNom()
-            {
-                return nom;
-            }
-            utils::Url getURL()
-            {
-                return url;
-            }
-            string getResume()
-            {
-                return resume;
-            }
-            string getTextFull()
-            {
-                return textComplet;
-            }
-            string getExtention()
-            {
-                return extention;
-            }
-            double getNote()
-            {
-                return note;
-            }
-            string getType();
-            int getTypeInt()
-            {
-                return type;
-            }
-            int getTaille()
-            {
-                return taille;
-            }
-            //___________fin getter
-            bool isEmpty();
-
-        protected:
-        private:
-            string getTitre();
-            string nom;
-            utils::Url url;
-            string extention;
-            string resume;
-            string textComplet;
-            double note;
-            int taille;
-            int type;
-
-    };
+};
 }
 
 #endif // FICHIER_H

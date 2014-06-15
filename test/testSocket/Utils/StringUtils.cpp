@@ -110,7 +110,7 @@ vector<string> utils::str::getUrls(string text)
             if(urlToSave.find("http")==0) //si on a bien une addresse valide
             {
 
-                    urlAretourner.push_back(urlToSave);
+                urlAretourner.push_back(urlToSave);
             }
 
         }
@@ -139,8 +139,6 @@ void utils::str::VerifUrl(vector<string> &urls)
 //            urls.erase(i));
 //    }
 }
-
-
 
 
 bool utils::str::isUpper(string str)

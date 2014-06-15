@@ -14,23 +14,23 @@
 
 namespace utils
 {
-    void runServeur();
-    void runCrawl();
-    void runCommande();
-    bool cmd();
+void runServeur();
+void runCrawl();
+void runCommande();
+bool cmd();
 
 
-    class Processus
-    {
-        public:
-            Processus();
-            virtual ~Processus();
-            void stopAll();
-            void startAll();
-        protected:
-        private:
+class Processus
+{
+public:
+    Processus();
+    virtual ~Processus();
+    void stopAll();
+    void startAll();
+protected:
+private:
 
-    };
+};
 }
 
 #endif // PROCESSUS_H

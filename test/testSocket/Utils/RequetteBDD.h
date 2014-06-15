@@ -24,34 +24,34 @@ using namespace std;
 namespace utils
 {
 
-    class RequetteBDD
+class RequetteBDD
+{
+public:
+    RequetteBDD(string query="");
+    virtual ~RequetteBDD();
+    sql::ResultSet* executeSQL(string query);
+    void add(vector<string> urls);
+    void add(Files::Fichier file);
+    void update(Files::Fichier file,string url,int temps=0);
+    bool verifUrl(string url);
+    vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=0);
+    string oldestCrawl();
+
+private:
+    string like(string word);
+    sql::mysql::MySQL_Driver *driver;
+    sql::Connection *con;
+    sql::Statement *stmt;
+};
+
+
+class DataBuf : public streambuf
+{
+public:
+    DataBuf(char * d, size_t s)
     {
-        public:
-            RequetteBDD(string query="");
-            virtual ~RequetteBDD();
-            sql::ResultSet* executeSQL(string query);
-            void add(vector<string> urls);
-            void add(Files::Fichier file);
-            void update(Files::Fichier file,string url,int temps=0);
-            bool verifUrl(string url);
-            vector<Files::Fichier> search(vector<string> words,int debut=0,int nombre=0);
-            string oldestCrawl();
-
-        private:
-            string like(string word);
-            sql::mysql::MySQL_Driver *driver;
-            sql::Connection *con;
-            sql::Statement *stmt;
-    };
-
-
-    class DataBuf : public streambuf
-    {
-        public:
-            DataBuf(char * d, size_t s)
-            {
-                setg(d, d, d + s);
-            }
-    };
+        setg(d, d, d + s);
+    }
+};
 }
 #endif // REQUETTEBDD_H

@@ -190,8 +190,8 @@ bool RequetteBDD::verifUrl(string url)
             return true;
         delete result;
     }
-    catch(...){}
-return false;
+    catch(...) {}
+    return false;
 }
 
 void RequetteBDD::update(Files::Fichier file,string url,int temps)
